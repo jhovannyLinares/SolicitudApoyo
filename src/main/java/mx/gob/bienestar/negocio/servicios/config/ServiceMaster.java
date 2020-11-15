@@ -34,9 +34,9 @@ public class ServiceMaster implements IntegrationConstants {
 	 * setSession(HttpSession session)
 	 * 
 	 */
-//	protected Long getIdSession(HttpSession session) {
-//		return getUser(session).getId();
-//	}
+	protected Long getIdSession(HttpSession session) {
+		return getUser(session).getId();
+	}
 
 	/**
 	 * Metodo para obtener el userName del usuario logeado, dependiente de
@@ -44,9 +44,9 @@ public class ServiceMaster implements IntegrationConstants {
 	 * 
 	 */
 	protected String getName(HttpSession session) {
-		
+
 		UsuarioVO usuario = getUser(session);
-		
+
 		return usuario.getNombre() + " " + usuario.getPaterno() + " " + usuario.getMaterno();
 	}
 
@@ -60,6 +60,5 @@ public class ServiceMaster implements IntegrationConstants {
 //	protected Long getEstado(HttpSession session) {
 //		return getUser(session).getEstado().getId();
 //	}
-
 
 }

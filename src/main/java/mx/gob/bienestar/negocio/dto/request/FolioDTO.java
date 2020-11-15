@@ -7,13 +7,13 @@ public class FolioDTO implements Serializable {
 
 	private static final long serialVersionUID = -1650453974147647975L;
 
-	private String folio;
+	private long folio;
 
-	public String getFolio() {
+	public long getFolio() {
 		return folio;
 	}
 
-	public void setFolio(String folio) {
+	public void setFolio(long folio) {
 		this.folio = folio;
 	}
 
