@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import mx.gob.bienestar.negocio.dto.FolioDTO;
+import mx.gob.bienestar.negocio.dto.request.FolioDTO;
 import mx.gob.bienestar.negocio.servicios.IFormularioService;
 import mx.gob.bienestar.presentacion.controlador.impl.config.IntegrationConstants;
 import mx.gob.bienestar.presentacion.controlador.impl.config.interfaces.IController;
@@ -36,6 +36,11 @@ public class FormularioController implements IController, IntegrationConstants {
 		return formularioService.getFolio(model, session,dto);
 	}
 
+	
+	
+	
+	
+	
 //	@GetMapping("/unico")
 //	public String getGeneral(Model model, HttpSession session) {
 //		return formularioService.getGeneral(model, session);

@@ -5,7 +5,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
-import mx.gob.bienestar.negocio.dto.FolioDTO;
+import mx.gob.bienestar.negocio.dto.request.FolioDTO;
 import mx.gob.bienestar.negocio.servicios.IFormularioService;
 import mx.gob.bienestar.negocio.servicios.config.ServiceMaster;
 
@@ -16,6 +16,7 @@ public class FormularioServiceImpl extends ServiceMaster implements IFormularioS
 	public String getPrincipal(Model model, HttpSession session) {
 
 		model.addAttribute("nombreCompleto", getName(session));
+		
 		model.addAttribute("folioDTO", new FolioDTO());
 
 		return PRINCIPAL;
@@ -26,7 +27,7 @@ public class FormularioServiceImpl extends ServiceMaster implements IFormularioS
 		
 		System.out.println(dto.getFolio());
 		
-		return PRINCIPAL_REDIRECT;
+		return PAGINA1_REDIRECT;
 	}
 
 }

@@ -11,6 +11,8 @@ public interface IntegrationConstants {
 	static final String PRINCIPAL = "/formulario/principal";
 	
 	static final String PRINCIPAL_REDIRECT = "redirect:/formulario/principal";
+	
+	static final String PAGINA1_REDIRECT = "redirect:/formulario/pagina1";
 
 //	
 //

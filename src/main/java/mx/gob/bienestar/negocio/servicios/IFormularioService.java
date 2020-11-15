@@ -4,7 +4,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.ui.Model;
 
-import mx.gob.bienestar.negocio.dto.FolioDTO;
+import mx.gob.bienestar.negocio.dto.request.FolioDTO;
 
 public interface IFormularioService {
 
