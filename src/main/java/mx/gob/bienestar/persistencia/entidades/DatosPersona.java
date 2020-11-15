@@ -1,5 +1,7 @@
 package mx.gob.bienestar.persistencia.entidades;
 
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,9 +19,6 @@ public class DatosPersona {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "DAT_SEQ")
 	@SequenceGenerator(sequenceName = "datos_seq", allocationSize = 1, name = "DAT_SEQ")
 	private Long id;
-	
-	@Column(name = "idDato")
-	private String idDato;
 	
 	@Column(name = "Estado")
 	private String estado;
@@ -49,9 +48,9 @@ public class DatosPersona {
 	private String edad;
 	
 	@Column(name = "Fecha_Nacimiento")
-	private String fechaNacimiento;
+	private Date fechaNacimiento;
 	
-	@Column(name = "Estado_Naciminto")
+	@Column(name = "Estado_Nacimiento")
 	private String estadoNacimiento;
 	
 	@Column(name = "Telefono_Fijo")
@@ -90,23 +89,23 @@ public class DatosPersona {
 	@Column(name = "Codigo_Postal")
 	private String codigoPostal;
 	
-	@Column(name = "Ref1")
-	private String ref1;
+	@Column(name = "Referencia1")
+	private String referencia1;
 	
-	@Column(name = "Ref2")
-	private String ref2;
+	@Column(name = "Referencia2")
+	private String referencia2;
+	
+	@Column(name = "Is_Pueblo_Indigena")
+	private String isPuebloIndigena;
 	
 	@Column(name = "Pueblo_Indigena")
 	private String puebloIndigena;
 	
-	@Column(name = "CualP")
-	private String cualP;
+	@Column(name = "Is_Idioma_Indigena")
+	private String isIdiomaIndigena;
 	
 	@Column(name = "Idioma_Indigena")
-	private String IdiomaIndigena;
-	
-	@Column(name = "CualI")
-	private String cualI;
+	private String idiomaIndigena;
 	
 	@Column(name = "Ingreso_Mensual")
 	private String ingresoMensual;
@@ -117,14 +116,6 @@ public class DatosPersona {
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	public String getIdDato() {
-		return idDato;
-	}
-
-	public void setIdDato(String idDato) {
-		this.idDato = idDato;
 	}
 
 	public String getEstado() {
@@ -199,11 +190,11 @@ public class DatosPersona {
 		this.edad = edad;
 	}
 
-	public String getFechaNacimiento() {
+	public Date getFechaNacimiento() {
 		return fechaNacimiento;
 	}
 
-	public void setFechaNacimiento(String fechaNacimiento) {
+	public void setFechaNacimiento(Date fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
@@ -311,20 +302,28 @@ public class DatosPersona {
 		this.codigoPostal = codigoPostal;
 	}
 
-	public String getRef1() {
-		return ref1;
+	public String getReferencia1() {
+		return referencia1;
 	}
 
-	public void setRef1(String ref1) {
-		this.ref1 = ref1;
+	public void setReferencia1(String referencia1) {
+		this.referencia1 = referencia1;
 	}
 
-	public String getRef2() {
-		return ref2;
+	public String getReferencia2() {
+		return referencia2;
 	}
 
-	public void setRef2(String ref2) {
-		this.ref2 = ref2;
+	public void setReferencia2(String referencia2) {
+		this.referencia2 = referencia2;
+	}
+
+	public String getIsPuebloIndigena() {
+		return isPuebloIndigena;
+	}
+
+	public void setIsPuebloIndigena(String isPuebloIndigena) {
+		this.isPuebloIndigena = isPuebloIndigena;
 	}
 
 	public String getPuebloIndigena() {
@@ -335,28 +334,20 @@ public class DatosPersona {
 		this.puebloIndigena = puebloIndigena;
 	}
 
-	public String getCualP() {
-		return cualP;
+	public String getIsIdiomaIndigena() {
+		return isIdiomaIndigena;
 	}
 
-	public void setCualP(String cualP) {
-		this.cualP = cualP;
+	public void setIsIdiomaIndigena(String isIdiomaIndigena) {
+		this.isIdiomaIndigena = isIdiomaIndigena;
 	}
 
 	public String getIdiomaIndigena() {
-		return IdiomaIndigena;
+		return idiomaIndigena;
 	}
 
 	public void setIdiomaIndigena(String idiomaIndigena) {
-		IdiomaIndigena = idiomaIndigena;
-	}
-
-	public String getCualI() {
-		return cualI;
-	}
-
-	public void setCualI(String cualI) {
-		this.cualI = cualI;
+		this.idiomaIndigena = idiomaIndigena;
 	}
 
 	public String getIngresoMensual() {
@@ -367,5 +358,4 @@ public class DatosPersona {
 		this.ingresoMensual = ingresoMensual;
 	}
 	
-
 }
