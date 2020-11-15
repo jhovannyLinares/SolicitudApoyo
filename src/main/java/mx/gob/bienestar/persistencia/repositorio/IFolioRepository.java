@@ -8,4 +8,9 @@ import mx.gob.bienestar.persistencia.entidades.Folio;
 @Repository
 public interface IFolioRepository extends JpaRepository<Folio, Long> {
 
+	@Override
+	Folio getOne(Long f);
+
+	Folio getByFolio(long f);
+
 }

@@ -42,15 +42,18 @@ public class FormularioServiceImpl extends ServiceMaster implements IFormularioS
 
 		if (configuration.getFolioMinimo() <= dto.getFolio() && configuration.getFolioMaximo() >= dto.getFolio()) {
 
-			Folio folio = new Folio();
+			if (isValid(dto.getFolio())) {
 
-			folio.setFolio(dto.getFolio());
-			folio.setUsuarioId(getIdSession(session));
-			folio.setFecha(new Date(System.currentTimeMillis()));
+				Folio folio = new Folio();
 
-			folioRepository.save(folio);
+				folio.setFolio(dto.getFolio());
+				folio.setUsuarioId(getIdSession(session));
+				folio.setFecha(new Date(System.currentTimeMillis()));
 
-			return PAGINA1_REDIRECT;
+				folioRepository.save(folio);
+
+				return PAGINA1_REDIRECT;
+			}
 
 		}
 
@@ -58,6 +61,23 @@ public class FormularioServiceImpl extends ServiceMaster implements IFormularioS
 
 		return PRINCIPAL_REDIRECT.concat("?error=true");
 
+	}
+
+	private boolean isValid(long f) {
+
+		Folio folio = folioRepository.getByFolio(f);
+
+		if (folio == null) {
+			return true;
+		}
+
+		return false;
+	}
+
+	@Override
+	public String getPagina1(Model model, HttpSession session) {
+
+		return PAGINA1;
 	}
 
 }

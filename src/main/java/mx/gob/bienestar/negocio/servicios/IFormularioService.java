@@ -12,4 +12,6 @@ public interface IFormularioService {
 
 	String getFolio(Model model, HttpSession session, FolioDTO dto);
 
+	String getPagina1(Model model, HttpSession session);
+
 }

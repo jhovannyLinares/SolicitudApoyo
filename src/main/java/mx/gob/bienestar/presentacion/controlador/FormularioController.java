@@ -31,6 +31,11 @@ public class FormularioController implements IController, IntegrationConstants {
 		return formularioService.getPrincipal(model, session);
 	}
 	
+	@GetMapping("/pagina1")
+	public String getPagina1(Model model, HttpSession session) {
+		return formularioService.getPagina1(model, session);
+	}
+	
 	@PostMapping("/folio")
 	public String getFolio(Model model, HttpSession session,FolioDTO dto) {
 		return formularioService.getFolio(model, session,dto);
