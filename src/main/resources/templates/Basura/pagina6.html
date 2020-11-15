@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3" layout:decorator="fragmentos/global">
+
+<body>
+    <div class="container">
+        <div layout:fragment="contenido">
+            <!-- Contenido -->
+
+            <form role="form" class="needs-validation" method="post" th:object="${solicitudBajaDTO}" th:action="@{/formulario/pagina6}" novalidate>
+
+                <input id="id" type="hidden" th:field="*{id}">
+                <input id="idformato" type="hidden" th:field="*{formato.id}">
+
+                <div class="form-row bd-callout-info bd-callout">
+
+                    <div class="col-sm-1 gray"></div>
+                    <div class="col-sm-11 gray">
+                        <p th:text="#{Titulo.Seccion5}"></p>
+                    </div>
+
+                    <div class="col-sm-12 white">
+                        <br>
+                    </div>
+                    <div class="col-sm-1 white"></div>
+
+                    <div class="col-sm-5">
+                        <div class="form-group">
+                            <select name="tipoBaja" th:field="*{tipoBaja}" class="form-control" id="tipoBaja" required>
+                                <option th:each="tipoBaja : ${T(mx.gob.bienestar.negocio.util.TipoBaja).values()}" th:value="${tipoBaja.valor}" th:text="#{${'Texto.'+ tipoBaja.key}}"></option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 white"></div>
+
+                    <div class="col-sm-1 white"></div>
+
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label for="nombre" th:text="#{Texto.Nombre}"></label>
+                            <input class="form-control" th:field="*{nombre}" type="text" id="nombre" maxlength="70" onkeypress="return sololetras(event)" onpaste="return false" required>
+                            <div class="invalid-feedback">
+                                <span th:text="#{Msg.Invalid.Nombre}"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label for="paterno" th:text="#{Texto.Paterno}"></label>
+                            <input class="form-control" th:field="*{paterno}" type="text" id="paterno" maxlength="70" onkeypress="return sololetras(event)" onpaste="return false" required>
+                            <div class="invalid-feedback">
+                                <span th:text="#{Msg.Invalid.Paterno}"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-1">
+                        <div class="form-group ">
+                            <label for="materno"></label>
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="NtP" onchange="activarPaterno()">
+                                <label class="custom-control-label" for="NtP" th:text="#{Texto.Nt}"></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <label for="materno" th:text="#{Texto.Materno}"></label>
+                            <input class="form-control" th:field="*{materno}" type="text" id="materno" maxlength="70" onkeypress="return sololetras(event)" onpaste="return false" required>
+                            <div class="invalid-feedback">
+                                <span th:text="#{Msg.Invalid.Materno}"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-1">
+                        <div class="form-group ">
+                            <label for="paterno"></label>
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="NtM" onchange="activarMaterno()">
+                                <label class="custom-control-label" for="NtM" th:text="#{Texto.Nt}"></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-1 white"></div>
+                    <div class="col-sm-1 white"></div>
+
+                    <div class="col-sm-5">
+                        <div class="form-group">
+                            <label for="fecha" th:text="#{Texto.Fecha.Solicitud}"></label>
+                            <input type="date" th:field="*{fecha}" class="form-control" onchange="validarFechaMinima('fecha')" id="fecha" name="fecha" maxlength="10" required>
+
+                            <div id="invalidEdad" class="invalid-feedback">
+                                <span id="fechaSpam" th:text="#{Msg.Invalid.Fecha}"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-5">
+                        <div class="form-group">
+                            <label for="programa.nombre" th:text="#{Texto.Solicito.Baja}"></label>
+                            <input class="form-control" type="text" th:field="*{formato.programa.nombre}" readonly>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-1 white"></div>
+                    <div class="col-sm-1 white"></div>
+
+                    <div class="col-sm-5">
+                        <div class="form-group">
+                            <label for="motivo" th:text="#{Texto.Motivo}"></label>
+                            <select name="motivo" th:field="*{motivo}" class="form-control" onchange="requerido('motivoDescripcion',this.value)" id="motivo" required>
+                                <option value="" th:text="#{Texto.Select}"></option>
+                                <option th:each="motivo : ${motivosBajaDTO}" th:value="${motivo.id}" th:text="${motivo.nombre}"></option>
+                            </select>
+                            <div class="invalid-feedback">
+                                <span th:text="#{Msg.Invalid.Opcion}"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-5">
+                        <div class="form-group">
+                            <label for="motivoDescripcion" th:text="#{Texto.Motivo.Descripcion}"></label>
+                            <input th:field="*{motivoDescripcion}" th:placeholder="#{PlaceHolder.Motivo}" class="form-control" type="text" id="motivoDescripcion" required>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-1 white"></div>
+                    <div class="col-sm-6 white"></div>
+
+                    <div class="col-sm-5">
+                        <div class="form-group">
+                            <label for="opciones" th:text="#{Texto.Firma}"></label>
+                            <select name="firma" th:field="*{firma}" class="form-control" id=firma required>
+                                <option value="" th:text="#{Texto.Select}"></option>
+                                <option th:each="firma : ${T(mx.gob.bienestar.negocio.util.Opciones).values()}" th:value="${firma.valor}" th:text="#{${'Texto.'+firma.key}}"></option>
+                            </select>
+                            <div class="invalid-feedback">
+                                <span th:text="#{Msg.Invalid.Opcion}"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-1 white"></div>
+
+                </div>
+
+                <div class="col-sm-12 text-right">
+                    <div class="form-group">
+                        <br>
+                        <br>
+                        <input type="button" class="btn btn-secondary" th:value="#{Boton.Atras}" th:onclick="'window.location.href=\''+@{/formulario/pagina{back}/{id}(back=${previous},id=${idFub})}+'\''">
+                        <button class="btn btn-primary" type="submit" th:text="#{Boton.Siguiente}"></button>
+                    </div>
+                </div>
+
+            </form>
+
+            <!-- Contenido -->
+        </div>
+    </div>
+</body>
+
+</html>

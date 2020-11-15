@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3" layout:decorator="fragmentos/global">
+
+<body>
+    <div class="container">
+        <div layout:fragment="contenido">
+            <!-- Contenido -->
+
+            <form role="form" class="needs-validation" method="post" th:object="${solicitudDTO}" th:action="@{/formulario/pagina4}" novalidate>
+
+                <input id="id" type="hidden" th:field="*{id}">
+                <input id="idformato" type="hidden" th:field="*{formato.id}">
+
+                <div class="form-row bd-callout-info bd-callout">
+
+                    <div class="col-sm-1 gray"></div>
+                    <div class="col-sm-11 gray">
+                        <p th:text="#{Titulo.Seccion3}"></p>
+                    </div>
+
+                    <div class="col-sm-12 white">
+                        <br>
+                    </div>
+                    <div class="col-sm-1 white"></div>
+
+                    <div class="col-sm-10">
+                        <div class="form-group">
+                            <label for="firma" th:text="#{Texto.Solicitud}"></label>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-1 white"></div>
+                    <div class="col-sm-6 white"></div>
+
+                    <div class="col-sm-5">
+                        <div class="form-group">
+                            <label for="firma" th:text="#{Texto.Firma}"></label>
+                            <select name="firma" th:field="*{firma}" class="form-control" id="firma" required>
+                                <option value="" th:text="#{Texto.Select}"></option>
+                                <option th:each="firma : ${T(mx.gob.bienestar.negocio.util.Opciones).values()}" th:value="${firma.valor}" th:text="${firma.key}"></option>
+                            </select>
+                            <div class="invalid-feedback">
+                                <span th:text="#{Msg.Invalid.Opcion}"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-sm-12 text-right">
+                    <div class="form-group">
+                        <br>
+                        <br>
+                        <input type="button" class="btn btn-secondary" th:value="#{Boton.Atras}" th:onclick="'window.location.href=\''+@{/formulario/pagina{back}/{id}(back=${previous},id=${idFub})}+'\''">
+                        <button class="btn btn-primary" type="submit" th:text="#{Boton.Siguiente}"></button>
+                    </div>
+                </div>
+
+            </form>
+
+            <!-- Contenido -->
+        </div>
+    </div>
+</body>
+
+</html>

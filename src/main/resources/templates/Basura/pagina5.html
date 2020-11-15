@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3" layout:decorator="fragmentos/global">
+
+<body>
+    <div class="container">
+        <div layout:fragment="contenido">
+            <!-- Contenido -->
+
+            <form role="form" class="needs-validation" method="post" th:object="${pagoMarcha}" th:action="@{/formulario/pagina5}" novalidate>
+
+                <input id="id" type="hidden" th:field="*{id}">
+                <input id="idformato" type="hidden" th:field="*{formato.id}">
+
+                 <div class="form-row bd-callout-info bd-callout">
+
+                    <div class="col-sm-1 gray"></div>
+                    <div class="col-sm-11 gray">
+                        <p th:text="#{Titulo.Seccion4}"></p>
+                    </div>
+
+                    <div class="col-sm-12 white">
+                        <br>
+                    </div>
+                    <div class="col-sm-1 white"></div>
+
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label for="nombre" th:text="#{Texto.Nombre}"></label>
+                            <input th:field="*{nombre}" th:placeholder="#{PlaceHolder.Marcha.Nombre}" class="form-control" type="text" id="nombre" required>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label for="paterno" th:text="#{Texto.Paterno}"></label>
+                            <input th:field="*{aPaterno}" th:placeholder="#{PlaceHolder.Marcha.APaterno}" class="form-control" type="text" id="paterno" required>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label for="materno" th:text="#{Texto.Materno}"></label>
+                            <input th:field="*{aMaterno}" th:placeholder="#{PlaceHolder.Marcha.AMaterno}" class="form-control" type="text" id="materno" required>
+                        </div>
+                    </div>
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-1 white"></div>
+                    
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label for="parentesco" th:text="#{Texto.Parentesco}"></label>
+                            <select th:field="*{parentesco}" class="form-control" id="parentesco" onchange="cargarDocumentos()" required>
+                                <option value="" th:text="#{Texto.Select}"></option>
+                                <option th:each="parentesco : ${parentescos}" th:value="${parentesco.id}" th:text="${parentesco.nombre}"></option>
+                            </select>
+                            <div class="invalid-feedback">
+                                <span th:text="#{Msg.Invalid.Parentesco}"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-5" id="divDocumentos2">
+                        <div class="form-group"  th:fragment="divDocumentos2">
+                            <label for="documento" th:text="#{Texto.Documento}"></label>
+                            <select class="form-control"  th:field="${formatoUnicoDTO.pagoMarcha.documento}" id="documento" required multiple>
+                                <option th:each="documento : ${documento}" th:value="${documento.id}" th:text="${documento.nombre}"></option>
+                            </select>
+
+                            <div class="invalid-feedback">
+                                <span th:text="#{Msg.Invalid.Documento}"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-2">
+                        <div class="form-group ">
+
+                            <div class="form-check">
+                                <input th:field="*{documento}" th:value="#{Texto.Acta}" type="radio" class="form-check-input" id="acta" name="documento" required>
+                                <label class="form-check-label" for="masculino" th:text="#{Texto.Acta}"></label>
+                            </div>
+
+                            <div class="form-check">
+                                <input th:field="*{documento}" th:value="#{Texto.Certificado}" type="radio" class="form-check-input" id="certificado" name="documento" checked required>
+                                <label class="form-check-label" for="femenino" th:text="#{Texto.Certificado}"></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-1"></div>
+
+                    <div class="col-sm-5">
+                        <div class="form-group">
+                            <label for="fecha" th:text="#{Texto.Fecha.Defuncion}"></label>
+                            <input th:field="*{fechaDefuncion}" type="date" class="form-control" id="fecha" onchange="validarFechaMinima('fecha')" required>
+                            <div class="invalid-feedback">
+                                <span th:text="#{Msg.Invalid.Fecha}"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-5">
+                        <div class="form-group">
+                            <label for="opciones" th:text="#{Texto.Firma.Auxiliar}"></label>
+                            <select name="opciones" th:field="*{firma}" class="form-control" id="opciones" required>
+                                <option value="" th:text="#{Texto.Select}"></option>
+                                <option th:each="opcion : ${T(mx.gob.bienestar.negocio.util.Opciones).values()}" th:value="${opcion.valor}" th:text="${opcion.key}"></option>
+                            </select>
+                            <div class="invalid-feedback">
+                                <span th:text="#{Msg.Invalid.Opcion}"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-sm-12 text-right">
+                    <div class="form-group">
+                        <br>
+                        <br>
+                        <input type="button" class="btn btn-secondary" th:value="#{Boton.Atras}" th:onclick="'window.location.href=\''+@{/formulario/pagina{back}/{id}(back=${previous},id=${idFub})}+'\''">
+                        <button class="btn btn-primary" type="submit" th:text="#{Boton.Siguiente}"></button>
+                    </div>
+                </div>
+
+            </form>
+
+            <!-- Contenido -->
+        </div>
+    </div>
+</body>
+
+</html>

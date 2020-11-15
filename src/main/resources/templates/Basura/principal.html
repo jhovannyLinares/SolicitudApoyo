@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+   xmlns:th="http://www.thymeleaf.org"
+   xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+   xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+   layout:decorator="fragmentos/global">
+   <body>
+      <div class="container">
+         <div layout:fragment="contenido">
+            <!-- Contenido -->
+            <div align="center" class="parentMenu">
+               <div class="btn-group">
+                  <button class="btn btn-icon"
+                     th:onclick="'window.location.href = \'' + @{/formulario/unico} + '\''">
+                  <i class="far fa-file fa-6x"></i> <br> <span style="white-space:pre-wrap;"
+                     th:text="#{Boton.Formato.Unico}"></span>
+                  </button> 
+                  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    <button class="btn btn-icon"
+                     th:onclick="'window.location.href = \'' + @{/formulario/solicitud} + '\''">
+                  <i class="far fa-file fa-6x"></i> <br> <span style="white-space:pre-wrap;"
+                     th:text="#{Boton.Formato.Desarrollo}"></span>
+                  </button> 
+                 <!--   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                  <button class="btn btn-icon"
+                     th:onclick="'window.location.href = \'' + @{/formulario/JefasdeFamilia} + '\''">
+                  <i class="far fa-file fa-6x"></i> <br> <span style="white-space:pre-wrap;"
+                     th:text="#{Boton.Formato.Jefas}"></span>
+                  </button> -->
+               </div>
+            </div>
+            <!-- Contenido -->
+         </div>
+      </div>
+   </body>
+</html>

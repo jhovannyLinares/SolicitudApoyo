@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3" layout:decorator="fragmentos/global">
+
+<body>
+    <div class="container">
+        <div layout:fragment="contenido">
+            <!-- Contenido -->
+
+            <form role="form" class="needs-validation" method="post" th:object="${medioCobroDTO}" th:action="@{/formulario/pagina7}" novalidate>
+
+                <input id="id" type="hidden" th:field="*{id}">
+                <input id="idformato" type="hidden" th:field="*{formato.id}">
+
+                <div class="form-row bd-callout-info bd-callout">
+
+                    <div class="col-sm-1 gray"></div>
+                    <div class="col-sm-11 gray">
+                        <p th:text="#{Titulo.Seccion6}"></p>
+                    </div>
+
+                    <div class="col-sm-12 white">
+                        <br>
+                    </div>
+                    <div class="col-sm-1 white"></div>
+
+                    <div class="col-sm-5">
+                        <div class="form-group">
+                            <select name="tipoMedioCobro" th:field="*{tipoMedioCobro}" class="form-control" id="tipoMedioCobro" required>
+                                <option th:each="tipoMedioCobro : ${T(mx.gob.bienestar.negocio.util.TipoMedioCobro).values()}" th:value="${tipoMedioCobro.valor}" th:text="#{${'Texto.'+ tipoMedioCobro.key}}"></option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-5">
+                        <div class="form-group">
+                            <select name="motivo" th:field="*{motivo}" class="form-control" id="motivo" required>
+                                <option th:each="motivoMedioCobro : ${T(mx.gob.bienestar.negocio.util.MotivoMedioCobro).values()}" th:value="${motivoMedioCobro.valor}" th:text="#{${'Texto.'+ motivoMedioCobro.key}}"></option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-1 white"></div>
+                    <div class="col-sm-1 white"></div>
+
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label for="tarjeta" th:text="#{Texto.Tarjeta}"></label>
+                            <input class="form-control input-number" th:field="*{tarjeta}" type="text" id="tarjeta" maxlength="20" required>
+                            <div class="invalid-feedback">
+                                <span th:text="#{Msg.Invalid.Tarjeta}"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label for="cuenta" th:text="#{Texto.Cuenta}"></label>
+                            <input class="form-control input-number" th:field="*{cuenta}" type="text" id="cuenta" maxlength="20" required>
+                            <div class="invalid-feedback">
+                                <span th:text="#{Msg.Invalid.Cuenta}"></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                     <div class="col-sm-5" id="divMotivoMedioCobro">
+                        <div class="form-group" th:fragment="divMotivoMedioCobro">
+                            <select name="motivo" th:field="${formatoUnicoDTO.medioCobro.motivo}" class="form-control" id="motivoCobro"  disabled="disabled">
+                                <option value="" th:text="#{Texto.Select}"></option>
+                                <option th:each="motivoMedioCobro : ${motivoMedioCobro}" th:value="${motivoMedioCobro.id}" th:text="${ motivoMedioCobro.nombre}"></option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="clabe" th:text="#{Texto.Clabe}"></label>
+                            <input class="form-control input-number" th:field="*{clabe}" type="text" id="clabe" maxlength="20" required>
+                            <div class="invalid-feedback">
+                                <span th:text="#{Msg.Invalid.Clabe}"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-1 white"></div>
+                    <div class="col-sm-1 white"></div>
+
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label for="folio" th:text="#{Texto.Cobro.Folio}"></label>
+                            <input class="form-control input-number" th:field="*{folio}" type="text" id="folio" maxlength="20" required>
+                            <div class="invalid-feedback">
+                                <span th:text="#{Msg.Invalid.Folio}"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-sm-12 text-right">
+                    <div class="form-group">
+                        <br>
+                        <br>
+                        <input type="button" class="btn btn-secondary" th:value="#{Boton.Atras}" th:onclick="'window.location.href=\''+@{/formulario/pagina{back}/{id}(back=${previous},id=${idFub})}+'\''">
+                        <button class="btn btn-primary" type="submit" th:text="#{Boton.Siguiente}"></button>
+                    </div>
+                </div>
+
+            </form>
+
+            <!-- Contenido -->
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,2349 @@
+<!DOCTYPE HTML>
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+    layout:decorator="fragmentos/global">
+
+    <body>
+        <div class="container">
+            <div layout:fragment="contenido">
+                <!-- Contenido-->
+                <form form role="form" class="needs-validation" id="needs-validation" method="post" th:object="${formatoUnicoDTO}" th:action="@{/formulario/unico}" novalidate="novalidate">
+
+                    <input id="id" type="text" th:field="*{id}" type="hidden">
+                    <input id="indice" type="hidden" value="1"> 
+                    
+                    <!--input id="camino" type="hidden" value="1,2,3,4,5,6,7,8,9,10,11,100"-->
+
+                    <!--ID 1-->
+                    <!--Seccion 0- Formato de verificacion y actualizacion de datos-->
+                    <div class="form-row 1 bd-callout-info bd-callout active">
+                        <div class="col-sm-1 gray"></div>
+                        <div class="col-sm-10 gray">
+                            <p th:text="#{Titulo.jefasSeccion0}"></p>
+                        </div>
+                        <div class="col-sm-1 gray"></div>
+
+                        <div class="col-sm-12 white">
+                            <br>
+                        </div>
+                        <div class="col-sm-1 white"></div>
+                        <div class="col-sm-10">
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input
+                                    type="radio"
+                                    th:field="*{tramite}"
+                                    class="custom-control-input"
+                                    id="sIncorporacion"
+                                    value="1"
+                                    name="incorporacion"
+                                    required="required">
+                                <label
+                                    class="custom-control-label"
+                                    for="sIncorporacion"
+                                    th:text="#{Texto.SolicitudIncorporacion}"></label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input
+                                    type="radio"
+                                    th:field="*{tramite}"
+                                    class="custom-control-input"
+                                    id="aBeneficiarios"
+                                    value="2"
+                                    name="beneficiario"
+                                    required="required">
+                                <label
+                                    class="custom-control-label"
+                                    for="aBeneficiarios"
+                                    th:text="#{Texto.AceptacionBeneficiarios}"></label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input
+                                    type="radio"
+                                    th:field="*{tramite}"
+                                    class="custom-control-input"
+                                    id="cAfiliacion"
+                                    value="3"
+                                    name="afiliacion"
+                                    required="required">
+                                <label
+                                    class="custom-control-label"
+                                    for="cAfiliacion"
+                                    th:text="#{Texto.CertificadoAfiliacion}"></label>
+                            </div>
+                        </div>
+                        <div class="col-sm-1 white"></div>
+                        <div class="col-sm-1 white"></div>
+                        <div class="col-sm-10">
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input
+                                    type="radio"
+                                    th:field="*{tramite}"
+                                    class="custom-control-input"
+                                    id="rAdicional"
+                                    value="4"
+                                    name="adicional"
+                                    required="required">
+                                <label
+                                    class="custom-control-label"
+                                    for="rAdicional"
+                                    th:text="#{Texto.ResponsableAdicional}"></label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input
+                                    type="radio"
+                                    th:field="*{tramite}"
+                                    class="custom-control-input"
+                                    id="cDomicilio"
+                                    value="5"
+                                    name="domicilio"
+                                    required="required">
+                                <label
+                                    class="custom-control-label"
+                                    for="cDomicilio"
+                                    th:text="#{Texto.CambioDomicilio}"></label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input
+                                    type="radio"
+                                    th:field="*{tramite}"
+                                    class="custom-control-input"
+                                    id="cResponsable"
+                                    value="6"
+                                    name="responsable"
+                                    required="required">
+                                <label
+                                    class="custom-control-label"
+                                    for="cResponsable"
+                                    th:text="#{Texto.CambioResponsable}"></label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input
+                                    type="radio"
+                                    th:field="*{tramite}"
+                                    class="custom-control-input"
+                                    id="actualizacionD"
+                                    value="7"
+                                    name="actializacion"
+                                    required="required">
+                                <label
+                                    class="custom-control-label"
+                                    for="actualizacionD"
+                                    th:text="#{Texto.ActualizacionDatos}"></label>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 white">
+                            <br>
+                        </div>
+                        <div class="col-sm-1 white"></div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label for="fecha" th:text="#{Texto.Fecha}"></label>
+                                <input
+                                    type="date"
+                                    th:field="*{beneficiario.fecha}"
+                                    class="form-control"
+                                    id="fecha"
+                                    name="fecha"
+                                    maxlength="8"
+                                    required="required">
+
+                                <div id="invalidEdad" class="invalid-feedback">
+                                    <span id="fechaSpam" th:text="#{Msg.Invalid.FechaEdad}"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-1 white"></div>
+                        <div class="col-sm-1 white"></div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label for="idPadron" th:text="#{Texto.Id_Padron}"></label>
+                                <input
+                                    class="form-control input-number"
+                                    th:placeholder="#{PlaceHolder.Id_Padron}"
+                                    th:field="*{folio}"
+                                    type="text"
+                                    id="idPadron"
+                                    maxlength="11"
+                                    onpaste="return false"
+                                    required="required">
+                                <div class="invalid-feedback">
+                                    <span th:text="#{Msg.Invalid.IdUnico}"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-1 white"></div>
+
+                    </div>
+                    <!--ID 2-->
+                    <!-- Seccion1 Datos del Responsable de las hijas e hijs en orfandad -->
+                    <div class="form-row 2 bd-callout-info bd-callout active">
+                        <div class="col-sm-1 gray"></div>
+                        <div class="col-sm-10 gray">
+                            <p th:text="#{Titulo.jefasSeccion1}"></p>
+                        </div>
+                        <div class="col-sm-1 gray"></div>
+                        <div class="col-sm-12 white">
+                            <br>
+                        </div>
+                        <div class="col-sm-1 white"></div>
+                        <!--Programa-->
+                        <div class="col-sm-5">
+                            <div class="form-group">
+                                <label for="programa" th:text="#{Texto.Programa}"></label>
+                                <select
+                                    th:field="*{programa.id}"
+                                    onchange="setPrograma(this)"
+                                    class="form-control"
+                                    id="programa"
+                                    required="required">
+                                    <option value="" th:text="#{Texto.Select}"></option>
+                                    <option
+                                        th:each="programa : ${programas}"
+                                        th:value="${programa.id}"
+                                        th:text="${programa.nombre}"></option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    <span th:text="#{Msg.Invalid.Programa}"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Area-->
+                        <div class="col-sm-5">
+                            <div class="form-group">
+                                <label for="area" th:text="#{Texto.Area}"></label>
+
+                                <input
+                                    th:field="*{beneficiario.area}"
+                                    class="form-control input-number"
+                                    type="text"
+                                    id="area"
+                                    maxlength="5"
+                                    required="required">
+                                <!-- select th:field="${formatoUnicoDTO.beneficiario.estado.id}"
+                                class="form-control readonly" id="area"> <option value=""
+                                th:text="#{Texto.Select}"></option> <option th:each="area : ${areas}"
+                                th:value="${area.id}" th:text="${area.nombre}"></option> </select-->
+                                <div class="invalid-feedback">
+                                    <span th:text="#{Msg.Invalid.area}"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-1 white"></div>
+                        <div class="col-sm-1 white"></div>
+
+                        <!--Estado-->
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="estado" th:text="#{Texto.Estado}"></label>
+                                <select
+                                    th:field="${formatoUnicoDTO.beneficiario.estado.id}"
+                                    class="form-control readonly"
+                                    id="estado"
+                                    required="required">
+                                    <option value="" th:text="#{Texto.Select}"></option>
+                                    <option
+                                        th:each="estado : ${estados}"
+                                        th:value="${estado.id}"
+                                        th:text="${estado.nombre}"></option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    <span th:text="#{Msg.Invalid.Estado}"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Region-->
+                        <div class="col-sm-3" id="divRegion">
+                            <div class="form-group" th:fragment="divRegion">
+                                <label for="region" th:text="#{Texto.Region}"></label>
+                                <select
+                                    th:field="${formatoUnicoDTO.region.id}"
+                                    class="form-control"
+                                    id="region"
+                                    required="required">
+                                    <option value="" th:text="#{Texto.Select}"></option>
+                                    <option
+                                        th:each="region : ${regiones}"
+                                        th:value="${region.id}"
+                                        th:text="${region.region}"></option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    <span th:text="#{Msg.Invalid.Region}"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Municipio-->
+                        <div class="col-sm-4" id="divMunicipioB">
+                            <div class="form-group" th:fragment="divMunicipioB">
+                                <label for="municipio" th:text="#{Texto.Municipio}"></label>
+                                <select
+                                    onchange="cargarLocalidad(this,'divLocalidadB')"
+                                    th:field="${formatoUnicoDTO.beneficiario.municipio.id}"
+                                    class="form-control"
+                                    id="municipio"
+                                    required="required">
+                                    <option value="" th:text="#{Texto.Select}"></option>
+                                    <option
+                                        th:each="municipio : ${municipios}"
+                                        th:value="${municipio.id}"
+                                        th:text="${municipio.nombre}"></option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    <span th:text="#{Msg.Invalid.Municipio}"></span>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                        <div class="col-sm-1 white"></div>
+                        <div class="col-sm-1 white"></div>
+
+                        <!--Nombre-->
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="nombre" th:text="#{Texto.Nombre}"></label>
+                                <input
+                                    class="form-control input-string"
+                                    th:placeholder="#{PlaceHolder.Nombre}"
+                                    th:field="*{beneficiario.nombre}"
+                                    type="text"
+                                    id="nombre"
+                                    maxlength="70"
+                                    onkeypress="return sololetras(event)"
+                                    onpaste="return false"
+                                    required="required">
+                                <div class="invalid-feedback">
+                                    <span th:text="#{Msg.Invalid.Nombre}"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Paterno-->
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="paterno" th:text="#{Texto.Paterno}"></label>
+                                <input
+                                    class="form-control input-string"
+                                    th:placeholder="#{PlaceHolder.APaterno}"
+                                    th:field="*{beneficiario.paterno}"
+                                    type="text"
+                                    id="paterno"
+                                    maxlength="70"
+                                    onkeypress="return sololetras(event)"
+                                    onpaste="return false"
+                                    required="required">
+                                <div class="invalid-feedback">
+                                    <span th:text="#{Msg.Invalid.Paterno}"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--BnaderaP-->
+                        <div class="col-sm-1">
+                            <div class="form-group ">
+                                <label for="paterno"></label>
+                                <div class="custom-control custom-switch">
+                                    <input
+                                        type="checkbox"
+                                        th:value="${isPaterno}"
+                                        class="custom-control-input"
+                                        id="NtP"
+                                        onchange="habilitaCheck2(this.id,'paterno','check','NtM')">
+                                    <label class="custom-control-label" for="NtP" th:text="#{Texto.Nt}"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Materno-->
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label for="materno" th:text="#{Texto.Materno}"></label>
+                                <input
+                                    class="form-control input-string"
+                                    th:placeholder="#{PlaceHolder.AMaterno}"
+                                    th:field="*{beneficiario.materno}"
+                                    type="text"
+                                    id="materno"
+                                    maxlength="70"
+                                    onkeypress="return sololetras(event)"
+                                    onpaste="return false"
+                                    required="required">
+                                <div class="invalid-feedback">
+                                    <span th:text="#{Msg.Invalid.Materno}"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--BanderaM-->
+                        <div class="col-sm-1">
+                            <div class="form-group ">
+                                <label for="materno"></label>
+                                <div class="custom-control custom-switch">
+                                    <input
+                                        type="checkbox"
+                                        th:checked="${isMaterno}"
+                                        class="custom-control-input"
+                                        id="NtM"
+                                        onchange="habilitaCheck2(this.id,'materno','check','NtP')">
+                                    <label class="custom-control-label" for="NtM" th:text="#{Texto.Nt}"></label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-1 white"></div>
+                        <div class="col-sm-1 white"></div>
+
+                        <!--Genero-->
+                        <div class="col-sm-3">
+                            <div class="form-group ">
+                                <label for="sexo" th:text="#{Texto.Sexo}"></label>
+                                <div class="custom-control custom-radio">
+                                    <input
+                                        type="radio"
+                                        th:field="*{beneficiario.sexo}"
+                                        class="custom-control-input"
+                                        id="masculino"
+                                        value="1"
+                                        name="sexo"
+                                        required="required">
+                                    <label
+                                        class="custom-control-label"
+                                        for="masculino"
+                                        th:text="#{Texto.Masculino}"></label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input
+                                        type="radio"
+                                        th:field="*{beneficiario.sexo}"
+                                        class="custom-control-input"
+                                        id="femenino"
+                                        value="0"
+                                        name="sexo"
+                                        required="required">
+                                    <label class="custom-control-label" for="femenino" th:text="#{Texto.Femenino}"></label>
+                                    <div id="invalidEdad" class="invalid-feedback">
+                                        <span id="fechaSpam" th:text="#{Msg.Invalid.Genero}"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group ">
+                            <input
+                                class="form-control"
+                                th:field="${formatoUnicoDTO.beneficiario.edad}"
+                                type="hidden"
+                                id="edadC">
+
+                        </div>
+
+                        <!--Edad-->
+                        <div class="col-sm-3">
+                            <div class="form-group ">
+                                <label for="edad" th:text="#{Texto.Edad}"></label>
+                                <input 
+                                class="form-control readonly"
+                                th:field="*{beneficiario.edad}" 
+                                type="text" 
+                                id="edadResponsable" 
+                                readonly="readonly">
+                            </div>
+                        </div>
+                        <!--Fecha-->
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label for="fecha" th:text="#{Texto.FechaNacimiento}"></label>
+                                <input
+                                    type="date"
+                                    th:field="*{beneficiario.fecha}"
+                                    class="form-control"
+                                    id="fechaNacimiento"
+                                    name="fechaNacimiento"
+                                    maxlength="10"
+                                    onchange="validFechaNacResponsable(this,'edadResponsable');"
+                                    required="required">
+
+                                <div id="invalidEdad" class="invalid-feedback">
+                                    <span id="fechaSpam" th:text="#{Msg.Invalid.FechaEdad}"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-1 white"></div>
+                        <div class="col-sm-1 white"></div>
+
+                        <!--CURP-->
+                        <div class="col-sm-5">
+                            <div class="form-group">
+                                <label for="curp" th:text="#{Texto.Curp}"></label>
+                                <input
+                                    class="form-control"
+                                    type="text"
+                                    id="curp"
+                                    th:field="*{beneficiario.curp}"
+                                    onchange="validCurp(this)"
+                                    maxlength="18"
+                                    required="required">
+                                <div class="invalid-feedback">
+                                    <span th:text="#{Msg.Invalid.Curp}"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--INE-->
+                        <div class="col-sm-5">
+                            <div class="form-group">
+                                <label
+                                    for="claveElector"
+                                    th:text="#{Texto.ClaveElector}">
+                                </label>
+                                <input
+                                    th:field="*{beneficiario.claveElector}"
+                                    class="form-control"
+                                    onkeypress="return soloTexto(event)"
+                                    type="text"
+                                    id="claveElector"
+                                    maxlength="18">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-1 white"></div>
+                        <div class="col-sm-1 white"></div>
+
+                        <!--Fecha-->
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label for="fecha" th:text="#{Texto.Fecha_Alta}"></label>
+                                <input
+                                    type="date"
+                                    th:field="*{beneficiario.fechaAlta}"
+                                    class="form-control"
+                                    id="fechaA"
+                                    name="fechaA"
+                                    maxlength="10"
+                                    onchange="validFechaNac(this,'edadB');"
+                                    required="required">
+
+                                <div id="invalidEdad" class="invalid-feedback">
+                                    <span id="fechaSpam" th:text="#{Msg.Invalid.FechaEdad}"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Calle-->
+                        <div class="col-sm-5">
+                            <div class="form-group">
+                                <label for="calle" th:text="#{Texto.Calle}"></label>
+                                <input
+                                    th:field="*{beneficiario.calle}"
+                                    class="form-control "
+                                    onkeypress="return soloTexto(event)"
+                                    type="text"
+                                    id="calle"
+                                    maxlength="150"
+                                    required="required">
+                            </div>
+                        </div>
+                        <!--NTCalle-->
+                        <div class="col-sm-1">
+                            <div class="form-group ">
+                                <label for="NtCalle"></label>
+                                <div class="custom-control custom-switch">
+                                    <input
+                                        type="checkbox"
+                                        class="custom-control-input"
+                                        id="NtCalle"
+                                        onchange="habilitaCheck(this.id,'calle','check')">
+                                    <label class="custom-control-label" for="NtCalle" th:text="#{Texto.Nt}"></label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-1 white"></div>
+                        <div class="col-sm-1 white"></div>
+
+                        <!--#Exterior-->
+                        <div class="col-sm-1">
+                            <div class="form-group">
+                                <label for="noExterior" th:text="#{Texto.NoExterior}"></label>
+                                <input
+                                    th:field="*{beneficiario.noExterior}"
+                                    class="form-control"
+                                    onkeypress="return soloTexto(event)"
+                                    type="text"
+                                    id="noExterior"
+                                    maxlength="10"
+                                    required="required">
+                                <div class="invalid-feedback">
+                                    <span th:text="#{Msg.Invalid.NoExterior}"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--NTE-->
+                        <div class="col-sm-1">
+                            <div class="form-group ">
+                                <label for="NtE"></label>
+                                <div class="custom-control custom-switch">
+                                    <input
+                                        type="checkbox"
+                                        class="custom-control-input"
+                                        id="NtE"
+                                        onchange="habilitaCheck(this.id,'noExterior','check')">
+                                    <label class="custom-control-label" for="NtE" th:text="#{Texto.Nt}"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <!--#Interior-->
+                        <div class="col-sm-1">
+                            <div class="form-group">
+                                <label for="noInterior" th:text="#{Texto.NoInterior}"></label>
+                                <input
+                                    th:field="*{beneficiario.noInterior}"
+                                    class="form-control"
+                                    onkeypress="return soloTexto(event)"
+                                    type="text"
+                                    id="noInterior"
+                                    maxlength="10"
+                                    required="required">
+                                <div class="invalid-feedback">
+                                    <span th:text="#{Msg.Invalid.NoInterior}"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--NTI-->
+                        <div class="col-sm-1">
+                            <div class="form-group ">
+                                <label for="paterno"></label>
+                                <div class="custom-control custom-switch">
+                                    <input
+                                        type="checkbox"
+                                        class="custom-control-input"
+                                        id="NtI"
+                                        onchange="habilitaCheck(this.id,'noInterior','check')">
+                                    <label class="custom-control-label" for="NtI" th:text="#{Texto.Nt}"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Manzana-->
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label for="manzana" th:text="#{Texto.Mz}"></label>
+                                <input
+                                    th:field="*{beneficiario.manzana}"
+                                    class="form-control"
+                                    onkeypress="return soloTexto(event)"
+                                    type="text"
+                                    id="manzana"
+                                    maxlength="6">
+                            </div>
+                        </div>
+                        <!--Lote-->
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label for="lote" th:text="#{Texto.Lote}"></label>
+                                <input
+                                    th:field="*{beneficiario.lote}"
+                                    class="form-control"
+                                    onkeypress="return soloTexto(event)"
+                                    type="text"
+                                    id="lote"
+                                    maxlength="10">
+                            </div>
+                        </div>
+                        <!--CP-->
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label for="cp" th:text="#{Texto.Cp}"></label>
+                                <input
+                                    th:field="*{beneficiario.cp}"
+                                    class="form-control input-number"
+                                    type="text"
+                                    id="cp"
+                                    onchange="validaCP(this.id)"
+                                    maxlength="5"
+                                    required="required">
+                                <div class="invalid-feedback">
+                                    <span th:text="#{Msg.Invalid.Cp}"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-1 white"></div>
+                        <div class="col-sm-1 white"></div>
+
+                        <!--Localidad-->
+                        <div class="col-sm-3" id="divLocalidadB">
+                            <div class="form-group" th:fragment="divLocalidadB">
+                                <label for="localidad" th:text="#{Texto.Localidad}"></label>
+                                <select
+                                    class="form-control"
+                                    th:field="${formatoUnicoDTO.beneficiario.localidad.id}"
+                                    id="localidad"
+                                    required="required">
+                                    <option value="" th:text="#{Texto.Select}"></option>
+                                    <option
+                                        th:each="localidad : ${localidades}"
+                                        th:value="${localidad.id}"
+                                        th:text="${localidad.nombre}"></option>
+                                </select>
+
+                                <div class="invalid-feedback">
+                                    <span th:text="#{Msg.Invalid.Municipio}"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Colonia-->
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="colonia" th:text="#{Texto.Colonia}"></label>
+                                <input
+                                    th:field="*{beneficiario.colonia}"
+                                    class="form-control"
+                                    onkeypress="return soloTexto(event)"
+                                    type="text"
+                                    id="colonia"
+                                    required="required">
+                                <div class="invalid-feedback">
+                                    <span th:text="#{Msg.Invalid.Colonia}"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Telefono-->
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label for="telefono" th:text="#{Texto.TelefoFijo}"></label>
+                                <input
+                                    th:field="*{beneficiario.telefono}"
+                                    class="form-control input-number"
+                                    type="text"
+                                    id="telefono"
+                                    onchange="validaTelefono(this)"
+                                    maxlength="10">
+                                <div id="invalidEdad" class="invalid-feedback">
+                                    <span th:text="#{Msg.Invalid.Telefono}"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Celular-->
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label for="celular" th:text="#{Texto.Celular}"></label>
+                                <input
+                                    th:field="*{beneficiario.celular}"
+                                    class="form-control input-number"
+                                    type="text"
+                                    id="celular"
+                                    onchange="validaTelefono(this)"
+                                    maxlength="10">
+                                <div id="invalidEdad" class="invalid-feedback">
+                                    <span th:text="#{Msg.Invalid.Telefono}"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-1 white"></div>
+                        <div class="col-sm-1 white"></div>
+
+                        <!--Referencia 1-->
+                        <div class="col-sm-5">
+                            <div class="form-group">
+                                <label for="referecia1" th:text="#{Texto.Referencia1}"></label>
+                                <input
+                                    th:field="*{beneficiario.referencia1}"
+                                    class="form-control"
+                                    onkeypress="return soloTexto(event)"
+                                    type="text"
+                                    id="referecia1"
+                                    maxlength="500">
+                            </div>
+                        </div>
+                        <!--Referencia 2-->
+                        <div class="col-sm-5">
+                            <div class="form-group">
+                                <label for="referecia2" th:text="#{Texto.Referencia2}"></label>
+                                <input
+                                    th:field="*{beneficiario.referencia2}"
+                                    class="form-control"
+                                    onkeypress="return soloTexto(event)"
+                                    type="text"
+                                    id="referecia2"
+                                    maxlength="500">
+                            </div>
+                        </div>
+                    
+                        <div class="col-sm-1 white"></div>
+                        <div class="col-sm-1 white"></div>
+
+                        <!--Parentesco-->
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label for="parentesco" th:text="#{Texto.Parentesco}"></label>
+                                <select
+                                    th:field="*{pagoMarcha.parentesco}"
+                                    class="form-control"
+                                    id="parentesco2"
+                                    onchange="cargarDocumentos2()"
+                                    required="required">
+                                    <option value="" th:text="#{Texto.Select}"></option>
+                                    <option
+                                        th:each="parentesco : ${parentescos}"
+                                        th:value="${parentesco.id}"
+                                        th:text="${parentesco.nombre}"></option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    <span th:text="#{Msg.Invalid.Parentesco}"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-2 white"></div>
+
+                        <div class="col-sm-4" id="divDocumentos2">
+                            <div class="form-group" th:fragment="divDocumentos2">
+                                <label for="documento" th:text="#{Texto.Documento}"></label>
+                                <select
+                                    class="form-control"
+                                    th:field="${formatoUnicoDTO.pagoMarcha.documento}"
+                                    id="documento"
+                                    required="required">
+                                    <option value="" th:text="#{Texto.Select}"></option>
+                                    <option
+                                        th:each="documento : ${documento}"
+                                        th:value="${documento.id}"
+                                        th:text="${documento.nombre}"></option>
+                                </select>
+
+                                <div class="invalid-feedback">
+                                    <span th:text="#{Msg.Invalid.Documento}"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-1 white"></div>
+                        <div class="col-sm-1 white"></div>
+
+                        <!--Pueblo-->
+                        <div class="col-sm-5">
+                            <div class="form-group">
+                                <label for="puebloIndigena" th:text="#{Texto.PuebloIndigena}"></label>
+                                <div class="col-sm-1 white"></div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input
+                                        type="radio"
+                                        class="custom-control-input"
+                                        name="pertenecePuebloI"
+                                        id="pertenecePuebloISi"
+                                        value="1"
+                                        onchange="habilitaCheck('true','argumentoPueblo','radio')">
+                                    <label
+                                        class="custom-control-label"
+                                        for="pertenecePuebloISi"
+                                        th:text="#{Texto.Si}"></label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input
+                                        type="radio"
+                                        class="custom-control-input"
+                                        name="pertenecePuebloI"
+                                        id="pertenecePuebloINo"
+                                        value="0"
+                                        required="required"
+                                        onchange="habilitaCheck('false','argumentoPueblo','radio')">
+                                    <label
+                                        class="custom-control-label"
+                                        for="pertenecePuebloINo"
+                                        th:text="#{Texto.No}"></label>
+                                    <div class="col-sm-1 white"></div>
+                                    <div class="invalid-feedback">
+                                        <span th:text="#{Msg.Invalid.check}"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--CualPueblo-->
+                        <div class="col-sm-5">
+                            <div class="form-group">
+                                <label for="argumentoPueblo" th:text="#{Texto.Cual}"></label>
+                                <select class="form-control readonly" id="argumentoPueblo" required="required">
+                                    <option value="" th:text="#{Texto.Select}"></option>
+                                    <option
+                                        th:each="puebloIndigena : ${pueblosIndigenas}"
+                                        th:value="${puebloIndigena.id}"
+                                        th:text="${puebloIndigena.nombre}"></option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    <span th:text="#{Msg.Invalid.Estado}"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-1 white"></div>
+                        <div class="col-sm-1 white"></div>
+
+                        <!--Idioma-->
+                        <div class="col-sm-5">
+                            <div class="form-group">
+                                <label for="hablaIdiomaI" th:text="#{Texto.IdiomaIndigena}"></label>
+                                <div class="col-sm-1 white"></div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input
+                                        type="radio"
+                                        class="custom-control-input"
+                                        name="hablaIdiomaI"
+                                        id="hablaIdiomaISi"
+                                        value="1"
+                                        onchange="habilitaCheck('true','argumentoIdioma','radio')">
+                                    <label class="custom-control-label" for="hablaIdiomaISi" th:text="#{Texto.Si}"></label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input
+                                        type="radio"
+                                        class="custom-control-input"
+                                        name="hablaIdiomaI"
+                                        id="hablaIdiomaINo"
+                                        value="0"
+                                        required="required"
+                                        onchange="habilitaCheck('false','argumentoIdioma','radio')">
+                                    <label class="custom-control-label" for="hablaIdiomaINo" th:text="#{Texto.No}"></label>
+                                    <div class="col-sm-1 white"></div>
+                                    <div class="invalid-feedback">
+                                        <span th:text="#{Msg.Invalid.check}"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--CualIdioma-->
+                        <div class="col-sm-5">
+                            <div class="form-group">
+                                <label for="argumentoIdioma" th:text="#{Texto.Cual}"></label>
+                                <input
+                                    class="form-control"
+                                    onkeypress="return soloTexto(event)"
+                                    type="text"
+                                    id="argumentoIdioma">
+                                <div class="invalid-feedback">
+                                    <span th:text="#{Msg.Invalid.argumento}"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-1 white"></div>
+                        <div class="col-sm-1 white"></div>
+
+                        <!--Primera Parte-->
+                        <div class="form-group col-sm-10">
+                            <div class="col-sm-1 white"></div>
+                            <label for="nivelEstudio" th:text="#{Texto.Nivel}"></label>
+                            <div class="col-sm-1 white"></div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input
+                                    type="radio"
+                                    class="custom-control-input"
+                                    th:field="*{beneficiario.estudio}"
+                                    name="nivelEstudios"
+                                    id="primaria"
+                                    value="1"
+                                    required="required"
+                                    onchange="habilitaCheckestudios('false','argumentocarrera','radio')">
+                                <label class="custom-control-label" for="primaria" th:text="#{Texto.primaria}"></label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input
+                                    type="radio"
+                                    class="custom-control-input"
+                                    th:field="*{beneficiario.estudio}"
+                                    name="nivelEstudios"
+                                    id="secundaria"
+                                    value="2"
+                                    required="required"
+                                    onchange="habilitaCheckestudios('false','argumentocarrera','radio')">
+                                <label
+                                    class="custom-control-label"
+                                    for="secundaria"
+                                    th:text="#{Texto.secundaria}"></label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input
+                                    type="radio"
+                                    class="custom-control-input"
+                                    th:field="*{beneficiario.estudio}"
+                                    name="nivelEstudios"
+                                    id="preaparatoria"
+                                    value="3"
+                                    onchange="habilitaCheckestudios('false','argumentocarrera','radio')">
+                                <label
+                                    class="custom-control-label"
+                                    for="preaparatoria"
+                                    th:text="#{Texto.preparatoria}"></label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input
+                                    type="radio"
+                                    class="custom-control-input"
+                                    th:field="*{beneficiario.estudio}"
+                                    name="nivelEstudios"
+                                    id="carreraTecnica"
+                                    value="4"
+                                    required="required"
+                                    onchange="habilitaCheckestudios('false','argumentocarrera','radio')">
+                                <label
+                                    class="custom-control-label"
+                                    for="carreraTecnica"
+                                    th:text="#{Texto.carreratecnica}">
+                                </label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input
+                                    type="radio"
+                                    class="custom-control-input"
+                                    th:field="*{beneficiario.estudio}"
+                                    name="nivelEstudios"
+                                    id="licenciatura"
+                                    value="5"
+                                    onchange="habilitaCheckestudios('false','argumentocarrera','radio')">
+                                <label
+                                    class="custom-control-label"
+                                    for="licenciatura"
+                                    th:text="#{Texto.licenciatura}">
+                                </label>
+                            </div>
+
+                        </div>
+                        <div class="col-sm-1 white"></div>
+                        <div class="col-sm-1 white"></div>
+
+                        <!--SegundaParte-->
+                        <div class="form-group col-sm-10">
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input
+                                    type="radio"
+                                    class="custom-control-input"
+                                    th:field="*{beneficiario.estudio}"
+                                    name="nivelEstudios"
+                                    id="otros"
+                                    value="6"
+                                    required="required"
+                                    onchange="habilitaCheckestudios('true','argumentocarrera','radio')">
+                                <label class="custom-control-label" for="otros" th:text="#{Texto.otro}"></label>
+                                <div class="col-sm-1 white"></div>
+                                <div class="invalid-feedback">
+                                    <span th:text="#{Msg.Invalid.check}"></span>
+                                </div>
+                            </div>
+                            <!--Argumnto-->
+                            <div class="form-group col-sm-4">
+                                <label for="argumentocarrera" th:text="#{Texto.Cual}"></label>
+                                <input
+                                    class="form-control"
+                                    th:field="*{beneficiario.argumentoEstudio}"
+                                    onkeypress="return soloTexto(event)"
+                                    type="text"
+                                    id="argumentocarrera"
+                                    disabled="true"
+                                    required="required">
+                                <div class="invalid-feedback">
+                                    <span th:text="#{Msg.Invalid.argumento}"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--ID 4-->
+                    <!-- Seccion 3 hijas e hijos hasta 23 años-->
+                    <div class="form-row 4 bd-callout-info bd-callout active">
+                        <div class="col-sm-1 gray"></div>
+                        <div class="col-sm-10 gray">
+                            <p th:text="#{Titulo.jefasSeccion2}"></p>
+                        </div>
+                        <div class="col-sm-1 gray"></div>
+
+                        <div class="col-sm-12 white">
+                            <br>
+                        </div>
+                        <div class="col-sm-1 white"></div>
+                        <!--IdPadron-->
+                        <div class="col-sm-6">
+                            <label for="idPadron" th:text="#{Texto.Id_Padron}"></label>
+                            <input
+                                class="form-control input-number"
+                                th:placeholder="#{PlaceHolder.Id_Padron}"
+                                th:field="*{hijos.idpadron}"
+                                type="text"
+                                id="idPadron"
+                                maxlength="11"
+                                onpaste="return false"
+                                required="required">
+                            <div class="invalid-feedback">
+                                <span th:text="#{Msg.Invalid.IdUnico}"></span>
+                            </div>
+
+                        </div>
+
+                        <div class="col-sm-4 white"></div>
+                        <div class="col-sm-1 white"></div>
+                        <div class="col-sm-1 white"></div>
+
+                        <!--Nombre-->
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="nombre" th:text="#{Texto.Nombre}"></label>
+                                <input
+                                    th:field="*{hijos.nombre}"
+                                    th:placeholder="#{PlaceHolder.Marcha.Nombre}"
+                                    class="form-control"
+                                    type="text"
+                                    id="nombre"
+                                    required="required"
+                                    maxlength="70">
+                            </div>
+                        </div>
+                        <!--Paterno-->
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="paternoMar" th:text="#{Texto.Paterno}"></label>
+                                <input
+                                    th:field="*{hijos.paterno}"
+                                    th:placeholder="#{PlaceHolder.Marcha.APaterno}"
+                                    class="form-control"
+                                    type="text"
+                                    id="paternoMar"
+                                    required="required"
+                                    maxlength="70">
+                            </div>
+                        </div>
+                        <!--NTP-->
+                        <div class="col-sm-1">
+                            <div class="form-group ">
+                                <label for="NtPMar"></label>
+                                <div class="custom-control custom-switch">
+                                    <input
+                                        type="checkbox"
+                                        class="custom-control-input"
+                                        id="NtPMar"
+                                        onchange="habilitaCheck2(this.id,'paternoMar','check','NtMMar')">
+                                    <label class="custom-control-label" for="NtPMar" th:text="#{Texto.Nt}"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Materno-->
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label for="maternoMar" th:text="#{Texto.Materno}"></label>
+                                <input
+                                    th:field="*{hijos.materno}"
+                                    th:placeholder="#{PlaceHolder.Marcha.AMaterno}"
+                                    class="form-control"
+                                    type="text"
+                                    id="maternoMar"
+                                    required="required"
+                                    maxlength="70">
+                            </div>
+                        </div>
+                        <!--NTM-->
+                        <div class="col-sm-1">
+                            <div class="form-group ">
+                                <label for="NtMMar"></label>
+                                <div class="custom-control custom-switch">
+                                    <input
+                                        type="checkbox"
+                                        class="custom-control-input"
+                                        id="NtMMar"
+                                        onchange="habilitaCheck2(this.id,'maternoMar','check','NtPMar')">
+                                    <label class="custom-control-label" for="NtMMar" th:text="#{Texto.Nt}"></label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-1 white"></div>
+                        <div class="col-sm-1 white"></div>
+
+                        <!--CURP-->
+                        <div class="col-sm-5">
+                            <div class="form-group">
+                                <label for="curp" th:text="#{Texto.Curp}"></label>
+                                <input
+                                    class="form-control"
+                                    type="text"
+                                    id="curpAux"
+                                    th:field="*{hijos.curp}"
+                                    onchange="validCurp(this)"
+                                    required="required"
+                                    maxlength="18">
+                                <div class="invalid-feedback">
+                                    <span th:text="#{Msg.Invalid.Curp}"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--nino Edad-->
+                        <div class="form-group ">
+                            <input
+                                class="form-control"
+                                th:field="*{hijos.edad}"
+                                type="hidden"
+                                id="edadC">
+                        </div>
+                        <!--Edad-->
+                        <div class="col-sm-1">
+                            <div class="form-group ">
+                                <label for="edad" th:text="#{Texto.Edad}"></label>
+                                <input 
+                                class="form-control readonly"
+                                th:field="*{hijos.edad}" 
+                                type="text" 
+                                id="edadHijos" 
+                                readonly="readonly"
+                                onfocus="validaedadmonto(value);">
+                            </div>    
+                        </div>
+                        <!--Fecha-->
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label for="fecha" th:text="#{Texto.FechaNacimiento}"></label>
+                                <input
+                                    type="date"
+                                    th:field="*{hijos.fechaNa}"
+                                    class="form-control"
+                                    id="fechaNacimientoN"
+                                    name="fechaNacimientoN"
+                                    maxlength="10"
+                                    onchange="validFechaNacHijosJefasFam(this,'edadHijos');"
+                                    required="required">
+
+                                <div id="invalidEdad" class="invalid-feedback">
+                                    <span id="fechaSpam" th:text="#{Msg.Invalid.FechaEdad}"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-1 white"></div>
+                        <div class="col-sm-1 white"></div>
+<!--Aqui funciona-->
+                        <!--Escolaridad-->
+                        <div class="col-sm-5">
+                            <div class="form-group">
+                                <label for="gradosescolaridad" th:text="#{Texto.Escolaridad}"></label>
+                                <select
+                                    th:field="*{hijos.escolaridad}"
+                                    class="form-control"
+                                    id="gradosescolaridad"
+                                    onchange="cargarEscolaridad(this,'Monto','gradosescolaridad');"
+                                    required="required"
+                                    disabled="disabled">
+                                    <option value="" th:text="#{Texto.Select}"></option>
+                                    <option
+                                        th:each="escolaridadd : ${gradoEscoalridad}"
+                                        th:value="${escolaridadd.id}"
+                                        th:text="${escolaridadd.grado}"></option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    <span th:text="#{Msg.Invalid.Parentesco}"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Monto-->
+                        <div class="col-sm-5">
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <label for="Monto" th:text="#{Texto.Monto}"></label>
+                                    <input
+                                        class="form-control input-number"
+                                        th:placeholder="#{PlaceHolder.Monto}"
+                                        th:field="*{hijos.monto}"
+                                        type="text"
+                                        id="Monto"
+                                        maxlength="5"
+                                        required="required"
+                                        readonly="readonly"
+                                        value="null">
+                                    <div class="invalid-feedback">
+                                        <span th:text="#{Msg.Invalid.Nombre}"></span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!--ID 5-->
+                    <!--Seccion 4 Informacion de la madre-->
+                    <div class="form-row 5 bd-callout-info bd-callout active">
+                        <div class="col-sm-1 gray"></div>
+                        <div class="col-sm-10 gray">
+                            <p th:text="#{Titulo.jefasSeccion3}"></p>
+                        </div>
+                        <div class="col-sm-1 gray"></div>
+                        <div class="col-sm-12 white">
+                            <br>
+                        </div>
+                        <div class="col-sm-1 white"></div>
+                        <!--Estado-->
+                        <div class="col-sm-5">
+                            <div class="form-group">
+                                <label for="estado" th:text="#{Texto.Estado}"></label>
+                                <select
+                                    th:field="${formatoUnicoDTO.beneficiario.estado.id}"
+                                    class="form-control readonly"
+                                    id="estado"
+                                    required="required">
+                                    <option value="" th:text="#{Texto.Select}"></option>
+                                    <option
+                                        th:each="estado : ${estados}"
+                                        th:value="${estado.id}"
+                                        th:text="${estado.nombre}"></option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    <span th:text="#{Msg.Invalid.Estado}"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Municipio-->
+                        <div class="col-sm-5" id="divMunicipioB">
+                            <div class="form-group" th:fragment="divMunicipioB">
+                                <label for="municipio" th:text="#{Texto.Municipio}"></label>
+                                <select
+                                    onchange="cargarLocalidad(this,'divLocalidadB')"
+                                    th:field="${formatoUnicoDTO.beneficiario.municipio.id}"
+                                    class="form-control"
+                                    id="municipio"
+                                    required="required">
+                                    <option value="" th:text="#{Texto.Select}"></option>
+                                    <option
+                                        th:each="municipio : ${municipios}"
+                                        th:value="${municipio.id}"
+                                        th:text="${municipio.nombre}"></option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    <span th:text="#{Msg.Invalid.Municipio}"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-1 white"></div>
+                        <div class="col-sm-1 white"></div>
+
+                        <!--Region-->
+                        <div class="col-sm-5" id="divRegion">
+                            <div class="form-group" th:fragment="divRegion">
+                                <label for="region" th:text="#{Texto.Region}"></label>
+                                <select
+                                    th:field="${formatoUnicoDTO.region.id}"
+                                    class="form-control"
+                                    id="region"
+                                    required="required">
+                                    <option value="" th:text="#{Texto.Select}"></option>
+                                    <option
+                                        th:each="region : ${regiones}"
+                                        th:value="${region.id}"
+                                        th:text="${region.region}"></option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    <span th:text="#{Msg.Invalid.Region}"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--EntidadN-->
+                        <div class="col-sm-5">
+                            <div class="form-group">
+                                <label for="EntidadNacimiento" th:text="#{Texto.EntidadNacimiento}"></label>
+
+                                <input
+                                    th:field="*{beneficiario.area}"
+                                    class="form-control input-string"
+                                    type="text"
+                                    id="EntidadNacimiento"
+                                    maxlength="20"
+                                    th:placeholder="#{PlaceHolder.EntidadNacimiento}"
+                                    required="required">
+                                <!-- select th:field="${formatoUnicoDTO.beneficiario.estado.id}"
+                                class="form-control readonly" id="area"> <option value=""
+                                th:text="#{Texto.Select}"></option> <option th:each="area : ${areas}"
+                                th:value="${area.id}" th:text="${area.nombre}"></option> </select-->
+                                <div class="invalid-feedback">
+                                    <span th:text="#{Msg.Invalid.area}"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-1 white"></div>
+                        <div class="col-sm-1 white"></div>
+
+                        <!--Nombre-->
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="nombre" th:text="#{Texto.Nombre}"></label>
+                                <input
+                                    class="form-control input-string"
+                                    th:placeholder="#{PlaceHolder.Nombre}"
+                                    th:field="*{beneficiario.nombre}"
+                                    type="text"
+                                    id="nombre"
+                                    maxlength="70"
+                                    onkeypress="return sololetras(event)"
+                                    onpaste="return false"
+                                    required="required">
+                                <div class="invalid-feedback">
+                                    <span th:text="#{Msg.Invalid.Nombre}"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Paterno-->
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="paterno" th:text="#{Texto.Paterno}"></label>
+                                <input
+                                    class="form-control input-string"
+                                    th:placeholder="#{PlaceHolder.APaterno}"
+                                    th:field="*{beneficiario.paterno}"
+                                    type="text"
+                                    id="paternoMadredifunta"
+                                    maxlength="70"
+                                    onkeypress="return sololetras(event)"
+                                    onpaste="return false"
+                                    required="required">
+                                <div class="invalid-feedback">
+                                    <span th:text="#{Msg.Invalid.Paterno}"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--NTP-->
+                        <div class="col-sm-1">
+                            <div class="form-group ">
+                                <label for="paternoMadredifunta"></label>
+                                <div class="custom-control custom-switch">
+                                    <input
+                                        type="checkbox"
+                                        th:value="${isPaterno}"
+                                        class="custom-control-input"
+                                        id="NtPMadredifunta"
+                                        onchange="habilitaCheck2(this.id,'paternoMadredifunta','check','NtMMadredifunta')">
+                                    <label class="custom-control-label" for="NtPMadredifunta" th:text="#{Texto.Nt}"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Materno-->
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label for="maternoMadredifunta" th:text="#{Texto.Materno}"></label>
+                                <input
+                                    class="form-control input-string"
+                                    th:placeholder="#{PlaceHolder.AMaterno}"
+                                    th:field="*{beneficiario.materno}"
+                                    type="text"
+                                    id="maternoMadredifunta"
+                                    maxlength="70"
+                                    onkeypress="return sololetras(event)"
+                                    onpaste="return false"
+                                    required="required">
+                                <div class="invalid-feedback">
+                                    <span th:text="#{Msg.Invalid.Materno}"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--NTM-->
+                        <div class="col-sm-1">
+                            <div class="form-group ">
+                                <label for="maternoMadredifunta"></label>
+                                <div class="custom-control custom-switch">
+                                    <input
+                                        type="checkbox"
+                                        th:checked="${isMaterno}"
+                                        class="custom-control-input"
+                                        id="NtMMadredifunta"
+                                        onchange="habilitaCheck2(this.id,'maternoMadredifunta','check','NtPMadredifunta')">
+                                    <label class="custom-control-label" for="NtMMadredifunta" th:text="#{Texto.Nt}"></label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-1 white"></div>
+                        <div class="col-sm-1 white"></div>
+
+                        <!--Genero-->
+                        <div class="col-sm-3">
+                            <div class="form-group ">
+                                <label for="sexoM" th:text="#{Texto.Sexo}"></label>
+                                <div class="custom-control custom-checkbox">
+                                    <input
+                                        type="checkbox"
+                                        th:field="*{beneficiario.sexo}"
+                                        class="custom-control-input"
+                                        id="femeninoM"
+                                        value="0"s
+                                        name="sexoM"
+                                        required="required">
+                                    <label class="custom-control-label" for="femeninoM" th:text="#{Texto.Femenino}"></label>
+                                    <div id="invalidEdad" class="invalid-feedback">
+                                        <span id="fechaSpam" th:text="#{Msg.Invalid.Genero}"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group ">
+                            <input
+                                class="form-control"
+                                th:field="${formatoUnicoDTO.beneficiario.edad}"
+                                type="hidden"
+                                id="edadC">
+
+                        </div>
+                        <!--Edad-->
+                        <div class="col-sm-3">
+                            <div class="form-group ">
+                                <label for="edad" th:text="#{Texto.Edad}"></label>
+                                <input class="form-control readonly" type="text" id="edadB" readonly="readonly">
+                            </div>
+                        </div>
+                        <!--Fecha-->
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label for="fecha" th:text="#{Texto.FechaNacimiento}"></label>
+                                <input
+                                    type="date"
+                                    th:field="*{beneficiario.fecha}"
+                                    class="form-control"
+                                    id="fechaNacimientoM"
+                                    name="fechaNacimientoM"
+                                    maxlength="10"
+                                    onchange="validFechaNac(this,'edadB');"
+                                    required="required">
+
+                                <div id="invalidEdad" class="invalid-feedback">
+                                    <span id="fechaSpam" th:text="#{Msg.Invalid.FechaEdad}"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-1 white"></div>
+                        <div class="col-sm-1 white"></div>
+
+                        <!--CURP-->
+                        <div class="col-sm-5">
+                            <div class="form-group">
+                                <label for="curp" th:text="#{Texto.Curp}"></label>
+                                <input
+                                    class="form-control"
+                                    type="text"
+                                    id="curp"
+                                    th:field="*{beneficiario.curp}"
+                                    onchange="validCurp(this)"
+                                    maxlength="18"
+                                    required="required">
+                                <div class="invalid-feedback">
+                                    <span th:text="#{Msg.Invalid.Curp}"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Elector-->
+                        <div class="col-sm-5">
+                            <div class="form-group">
+                                <label
+                                    for="claveElector"
+                                    th:text="#{Texto.ClaveElector}"
+                                    th:field="*{beneficiario.claveElector}"></label>
+                                <input
+                                    th:field="*{beneficiario.claveElector}"
+                                    class="form-control"
+                                    onkeypress="return soloTexto(event)"
+                                    type="text"
+                                    id="claveElector"
+                                    maxlength="18">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-1 white"></div>
+                        <div class="col-sm-1 white"></div>
+
+                        <!--Calle-->
+                        <div class="col-sm-5">
+                            <div class="form-group">
+                                <label for="calleM" th:text="#{Texto.Calle}"></label>
+                                <input
+                                    th:field="*{beneficiario.calle}"
+                                    class="form-control "
+                                    onkeypress="return soloTexto(event)"
+                                    type="text"
+                                    id="calleM"
+                                    maxlength="150"
+                                    required="required">
+                            </div>
+                        </div>
+                        <!--NTC-->
+                        <div class="col-sm-1">
+                            <div class="form-group ">
+                                <label for="NtCalleM"></label>
+                                <div class="custom-control custom-switch">
+                                    <input
+                                        type="checkbox"
+                                        class="custom-control-input"
+                                        id="NtCalleM"
+                                        onchange="habilitaCheck(this.id,'calleM','check')">
+                                    <label class="custom-control-label" for="NtCalleM" th:text="#{Texto.Nt}"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <!--#Exterior-->
+                        <div class="col-sm-1">
+                            <div class="form-group">
+                                <label for="numExtM" th:text="#{Texto.NoExterior}"></label>
+                                <input
+                                    th:field="*{beneficiario.noExterior}"
+                                    class="form-control"
+                                    onkeypress="return soloTexto(event)"
+                                    type="text"
+                                    id="numExtM"
+                                    maxlength="10"
+                                    required="required">
+                                <div class="invalid-feedback">
+                                    <span th:text="#{Msg.Invalid.NoExterior}"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--#NTE-->
+                        <div class="col-sm-1">
+                            <div class="form-group">
+                                <label for="NtEM"></label>
+                                <div class="custom-control custom-switch">
+                                    <input
+                                        type="checkbox"
+                                        class="custom-control-input"
+                                        id="NtEM"
+                                        onchange="habilitaCheck(this.id,'numExtM','check')">
+                                    <label class="custom-control-label" for="NtEM" th:text="#{Texto.Nt}"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <!--#Interior-->
+                        <div class="col-sm-1">
+                            <div class="form-group">
+                                <label for="numIntM" th:text="#{Texto.NoInterior}"></label>
+                                <input
+                                    th:field="*{beneficiario.noInterior}"
+                                    class="form-control"
+                                    onkeypress="return soloTexto(event)"
+                                    type="text"
+                                    id="numIntM"
+                                    maxlength="10"
+                                    required="required">
+                                <div class="invalid-feedback">
+                                    <span th:text="#{Msg.Invalid.NoInterior}"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--#NTI-->
+                        <div class="col-sm-1">
+                            <div class="form-group ">
+                                <label for="NtIM"></label>
+                                <div class="custom-control custom-switch">
+                                    <input
+                                        type="checkbox"
+                                        class="custom-control-input"
+                                        id="NtIM"
+                                        onchange="habilitaCheck(this.id,'numIntM','check')">
+                                    <label class="custom-control-label" for="NtIM" th:text="#{Texto.Nt}"></label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-1 white"></div>
+                        <div class="col-sm-1 white"></div>
+
+                        <!--Manzana-->
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label for="manzana" th:text="#{Texto.Mz}"></label>
+                                <input
+                                    th:field="*{beneficiario.manzana}"
+                                    class="form-control"
+                                    onkeypress="return soloTexto(event)"
+                                    type="text"
+                                    id="manzana"
+                                    maxlength="6">
+                            </div>
+                        </div>
+                        <!--Lote-->
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label for="lote" th:text="#{Texto.Lote}"></label>
+                                <input
+                                    th:field="*{beneficiario.lote}"
+                                    class="form-control"
+                                    onkeypress="return soloTexto(event)"
+                                    type="text"
+                                    id="lote"
+                                    maxlength="10">
+                            </div>
+                        </div>
+                        <!--CP-->
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label for="cp" th:text="#{Texto.Cp}"></label>
+                                <input
+                                    th:field="*{beneficiario.cp}"
+                                    class="form-control input-number"
+                                    type="text"
+                                    id="cp"
+                                    onchange="validaCP(this.id)"
+                                    maxlength="5"
+                                    required="required">
+                                <div class="invalid-feedback">
+                                    <span th:text="#{Msg.Invalid.Cp}"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Localidad-->
+                        <div class="col-sm-4" id="divLocalidadB">
+                            <div class="form-group" th:fragment="divLocalidadB">
+                                <label for="localidad" th:text="#{Texto.Localidad}"></label>
+                                <select
+                                    class="form-control"
+                                    th:field="${formatoUnicoDTO.beneficiario.localidad.id}"
+                                    id="localidad"
+                                    required="required">
+                                    <option value="" th:text="#{Texto.Select}"></option>
+                                    <option
+                                        th:each="localidad : ${localidades}"
+                                        th:value="${localidad.id}"
+                                        th:text="${localidad.nombre}"></option>
+                                </select>
+
+                                <div class="invalid-feedback">
+                                    <span th:text="#{Msg.Invalid.Municipio}"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-1 white"></div>
+                        <div class="col-sm-1 white"></div>
+
+                        <!--Colonia-->
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="colonia" th:text="#{Texto.Colonia}"></label>
+                                <input
+                                    th:field="*{beneficiario.colonia}"
+                                    class="form-control"
+                                    onkeypress="return soloTexto(event)"
+                                    type="text"
+                                    id="colonia"
+                                    required="required">
+                                <div class="invalid-feedback">
+                                    <span th:text="#{Msg.Invalid.Colonia}"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Telefono-->
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label for="telefono" th:text="#{Texto.TelefoFijo}"></label>
+                                <input
+                                    th:field="*{beneficiario.telefono}"
+                                    class="form-control input-number"
+                                    type="text"
+                                    id="telefono"
+                                    onchange="validaTelefono(this)"
+                                    maxlength="10">
+                                <div id="invalidEdad" class="invalid-feedback">
+                                    <span th:text="#{Msg.Invalid.Telefono}"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Celular-->
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label for="celular" th:text="#{Texto.Celular}"></label>
+                                <input
+                                    th:field="*{beneficiario.celular}"
+                                    class="form-control input-number"
+                                    type="text"
+                                    id="celular"
+                                    onchange="validaTelefono(this)"
+                                    maxlength="10">
+                                <div id="invalidEdad" class="invalid-feedback">
+                                    <span th:text="#{Msg.Invalid.Telefono}"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Fecha-->
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="fecha" th:text="#{Texto.Fecha_Defuncion}"></label>
+                                <input
+                                    type="date"
+                                    th:field="*{beneficiario.fecha}"
+                                    class="form-control"
+                                    id="Fecha_Alta"
+                                    name="Fecha_Alta"
+                                    maxlength="10"
+                                    onchange="validFechaNac(this,'edadB');"
+                                    required="required">
+
+                                <div id="invalidEdad" class="invalid-feedback">
+                                    <span id="fechaSpam" th:text="#{Msg.Invalid.FechaEdad}"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-1 white"></div>
+                        <div class="col-sm-1 white"></div>
+
+                        <!--CausaD-->
+                        <div class="col-sm-5">
+                            <div class="form-group">
+                                <label for="Causa_Defuncion" th:text="#{Texto.Causa_Defuncion}"></label>
+                                <input
+                                    th:field="*{beneficiario.referencia1}"
+                                    th:placeholder="#{PlaceHolder.Causa_Defuncion}"
+                                    class="form-control"
+                                    onkeypress="return soloTexto(event)"
+                                    type="text"
+                                    id="Causa_Defuncion"
+                                    maxlength="500">
+                            </div>
+                        </div>
+                        <!--ActaD-->
+                        <div class="col-sm-5">
+                            <div class="form-group">
+                                <label for="Acta_Defuncion" th:text="#{Texto.Acta_Defuncion}"></label>
+                                <input
+                                    th:field="*{beneficiario.referencia2}"
+                                    th:placeholder="#{PlaceHolder.Acta_Defuncion}"
+                                    class="form-control"
+                                    onkeypress="return soloTexto(event)"
+                                    type="text"
+                                    id="Acta_Defuncion"
+                                    maxlength="500">
+                            </div>
+                        </div>
+                    </div>
+                    <!--ID 6-->
+                    <!-- Seccion 5 solicitud-->
+                    <div class="form-row 6 bd-callout-info bd-callout active">
+
+                        <div class="col-sm-1 gray"></div>
+                        <div class="col-sm-9 gray">
+                            <p th:text="#{Titulo.jefasSeccion4}"></p>
+                        </div>
+
+                        <div class="col-sm-2 gray">
+                            <div class="form-group">
+                                <label for="paterno"></label>
+                                <div class="custom-control custom-switch">
+                                    <input
+                                        type="checkbox"
+                                        class="custom-control-input"
+                                        id="Nt3"
+                                        onchange="habilitaCheck(this.id,'form-control','clase2')">
+                                    <label class="custom-control-label" for="Nt3" th:text="#{Texto.No.Seccion}"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-1 gray"></div>
+
+                        <div class="col-sm-12 white">
+                            <br>
+                        </div>
+                        <div class="col-sm-1 white"></div>
+
+                        <div class="col-sm-10">
+                            <div class="form-group">
+                                <label for="firma" style="text-align: justify;" th:text="#{Texto.Solicitud}"></label>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-1 white"></div>
+                        <div class="col-sm-6 white"></div>
+
+                        <div class="col-sm-5">
+                            <div class="form-group">
+                                <label for="firma" th:text="#{Texto.Firma}"></label>
+                                <select
+                                    name="firma"
+                                    th:field="*{solicitud.firma}"
+                                    class="form-control"
+                                    id="firma"
+                                    required="required">
+                                    <option value="" th:text="#{Texto.Select}"></option>
+                                    <option
+                                        th:each="firma : ${T(mx.gob.bienestar.negocio.util.Opciones).values()}"
+                                        th:value="${firma.valor}"
+                                        th:text="${firma.key}"></option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    <span th:text="#{Msg.Invalid.Opcion}"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--ID 7-->
+                    <!-- Seccion 6 Acuse de Orden de pago en su caso-->
+                    <div class="form-row 7 bd-callout-info bd-callout active">
+                        <div class="col-sm-1 gray"></div>
+                        <div class="col-sm-9 gray">
+                            <p th:text="#{Titulo.jefasSeccion5}"></p>
+                        </div>
+                        <div class="col-sm-2 gray">
+                            <div class="form-group">
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox" 
+                                    class="custom-control-input" 
+                                    id="Nt4" 
+                                    onchange="habilitaCheck(this.id,'form-control','clase2')">
+                                    <label class="custom-control-label" for="Nt4" th:text="#{Texto.No.Seccion}"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 white">
+                            <br> </div>
+                        <div class="col-sm-1 white"></div>
+                        <div class="col-sm-11">
+                            <div class="form-group">
+                                <div class="col-sm-10">
+                                    <div class="form-group">
+                                        <label for="firma" th:text="#{Texto.Recibo_Conformidad}"></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-1 white"></div>
+                        <div class="col-sm-5">
+                            <div class="form-group">
+                                <input class="form-control input-number" th:field="*{acuse.referenciaTelecom}" th:placeholder="#{PlaceHolder.NumeroReferencia}" type="text" id="nombre" maxlength="17" onpaste="return false" required="required">
+                                <div class="invalid-feedback"> <span th:text="#{Msg.Invalid.ReferenciaTelecomm}"></span> </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 white"></div>
+                        <div class="col-sm-1 white"></div>
+                        <div class="col-sm-10">
+                            <div class="form-group">
+                                <label for="firma"  style="text-align: justify;" th:text="#{Texto.MensajeConformidad}"></label>
+                            </div>
+                        </div>
+                        <div class="col-sm-1 white"></div>
+                        <div class="col-sm-6 white"></div>
+                        <div class="col-sm-5">
+                            <div class="form-group">
+                                <label for="firma" th:text="#{Texto.Firma}"></label>
+                                <select name="firma" class="form-control" th:field="*{acuse.firmaTelecom}" id="firma" required="required">
+                                    <option value="" th:text="#{Texto.Select}"></option>
+                                    <option th:each="firma : ${T(mx.gob.bienestar.negocio.util.Opciones).values()}" th:value="${firma.valor}" th:text="${firma.key}"></option>
+                                </select>
+                                <div class="invalid-feedback"> <span th:text="#{Msg.Invalid.Opcion}"></span> </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--ID 8-->
+                    <!-- Seccion 7 Acuse de tarjeta en su caso-->
+                    <div class="form-row 6 bd-callout-info bd-callout active">
+                        <div class="col-sm-1 gray"></div>
+                        <div class="col-sm-9 gray">
+                            <p th:text="#{Titulo.jefasSeccion6}"></p>
+                        </div>
+                        <div class="col-sm-2 gray">
+                            <div class="form-group">
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox" 
+                                    class="custom-control-input" 
+                                    id="Nt5" 
+                                    onchange="habilitaCheck(this.id,'form-control','clase2')">
+                                    <label class="custom-control-label" for="Nt5" th:text="#{Texto.No.Seccion}"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 white">
+                            <br> </div>
+                        <div class="col-sm-1 white"></div>
+                        <div class="col-sm-11">
+                            <div class="form-group">
+                                <div class="col-sm-10">
+                                    <div class="form-group">
+                                        <label for="firma" th:text="#{Texto.Recibo_Conformidad_Tarjeta_Azteca}"></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-1 white"></div>
+                        <div class="col-sm-5">
+                            <div class="form-group">
+                                <input class="form-control input-number" th:field="*{acuse.referenciaAzteca}"  th:placeholder="#{PlaceHolder.CodigoBarrasAzteca}" type="text" id="nombre" maxlength="10" onpaste="return false" required="required">
+                                <div class="invalid-feedback"> <span th:text="#{Msg.Invalid.CodigoBarrasAzteca}"></span> </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 white"></div>
+                        <div class="col-sm-1 white"></div>
+                        <div class="col-sm-11">
+                            <div class="form-group">
+                                <div class="col-sm-10">
+                                    <div class="form-group">
+                                        <label for="firma" style="text-align: justify;" th:text="#{Texto.Recibo_Conformidad_Tarjeta_Banorte}"></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-1 white"></div>
+                        <div class="col-sm-5">
+                            <div class="form-group">
+                                <input class="form-control input-number" th:field="*{acuse.referenciaBanorte}" th:placeholder="#{PlaceHolder.CodigoBarrasBanorte}" type="text" id="nombre" maxlength="16" onpaste="return false" required="required">
+                                <div class="invalid-feedback"> <span th:text="#{Msg.Invalid.Tarjeta}"></span> </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 white"></div>
+                        <div class="col-sm-1 white"></div>
+                        <div class="col-sm-10">
+                            <div class="form-group">
+                                <label for="firma"  style="text-align: justify;" th:text="#{Texto.MensajeConformidad_Tarjeta}"></label>
+                            </div>
+                        </div>
+                        <div class="col-sm-1 white"></div>
+                        <div class="col-sm-6 white"></div>
+                        <div class="col-sm-5">
+                            <div class="form-group">
+                                <label for="firma" th:text="#{Texto.Firma}"></label>
+                                <select name="firma" class="form-control" th:field="*{acuse.firmaTarjeta}" id="firma" required="required">
+                                    <option value="" th:text="#{Texto.Select}"></option>
+                                    <option th:each="firma : ${T(mx.gob.bienestar.negocio.util.Opciones).values()}" th:value="${firma.valor}" th:text="${firma.key}"></option>
+                                </select>
+                                <div class="invalid-feedback"> <span th:text="#{Msg.Invalid.Opcion}"></span> </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--ID 9-->
+                    <!-- Seccion 8 Aviso simplificado de provacidad-->
+                    <div class="form-row 9 bd-callout-info bd-callout active">
+                        <div class="col-sm-1 gray"></div>
+                        <div class="col-sm-10 gray">
+                            <p th:text="#{Titulo.jefasSeccion7}"></p>
+                        </div>
+                        <div class="col-sm-1 gray"></div>
+
+                        <div class="col-sm-12 white">
+                            <br>
+                        </div>
+                        <div class="col-sm-1 white"></div>
+                        <div class="col-sm-10">
+                            <div class="form-group">
+                                <label for="firma" style="text-align: justify;" th:text="#{Texto.Privacidad}"></label>
+                            </div>
+                        </div>
+                        <div class="col-sm-1 white"></div>
+                    </div>
+                    <!--ID 10-->
+                    <!-- Seccion 9 Compromiso solidario-->
+                    <div class="form-row 10 bd-callout-info bd-callout active">
+
+                        <div class="col-sm-1 gray"></div>
+                        <div class="col-sm-9 gray">
+                            <p th:text="#{Titulo.jefasSeccion8}"></p>
+                        </div>
+
+                        <div class="col-sm-2 gray">
+                            <div class="form-group">
+                                <label for="paterno"></label>
+                                <div class="custom-control custom-switch">
+                                    <input
+                                        type="checkbox"
+                                        class="custom-control-input"
+                                        id="Nt9"
+                                        onchange="habilitaCheck(this.id,'form-control','clase2')">
+                                    <label class="custom-control-label" for="Nt9" th:text="#{Texto.No.Seccion}"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-1 gray"></div>
+
+                        <div class="col-sm-12 white">
+                            <br>
+                        </div>
+                        <div class="col-sm-1 white"></div>
+
+                        <div class="col-sm-10">
+                            <div class="form-group">
+                                <label for="firma" style="text-align: justify;" th:text="#{Texto.Compromiso}"></label>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-1 white"></div>
+                        <div class="col-sm-1 white"></div>
+
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label for="firma" th:text="#{Texto.NombreRespPrograma}"></label>
+                                <select
+                                    name="firma"
+                                    th:field="*{compromisoSolidario.firmaTestigo1}"
+                                    class="form-control"
+                                    id="firma"
+                                    required="required">
+                                    <option value="" th:text="#{Texto.Select}"></option>
+                                    <option
+                                        th:each="firma : ${T(mx.gob.bienestar.negocio.util.Opciones).values()}"
+                                        th:value="${firma.valor}"
+                                        th:text="${firma.key}"></option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    <span th:text="#{Msg.Invalid.Opcion}"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="firma" th:text="#{Texto.Firma.Responsable}"></label>
+                                <select
+                                    name="firma"
+                                    th:field="*{compromisoSolidario.firmaResponsable}"
+                                    class="form-control"
+                                    id="firma"
+                                    required="required">
+                                    <option value="" th:text="#{Texto.Select}"></option>
+                                    <option
+                                        th:each="firma : ${T(mx.gob.bienestar.negocio.util.Opciones).values()}"
+                                        th:value="${firma.valor}"
+                                        th:text="${firma.key}"></option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    <span th:text="#{Msg.Invalid.Opcion}"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="firma" th:text="#{Texto.NombreyFirmaTestigo}"></label>
+                                <select
+                                    name="firma"
+                                    th:field="*{compromisoSolidario.firmaTestigo2}"
+                                    class="form-control"
+                                    id="firma">
+                                    <option value="" th:text="#{Texto.Select}"></option>
+                                    <option
+                                        th:each="firma : ${T(mx.gob.bienestar.negocio.util.Opciones).values()}"
+                                        th:value="${firma.valor}"
+                                        th:text="${firma.key}"></option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    <span th:text="#{Msg.Invalid.Opcion}"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--ID 11-->
+                    <!-- Seccion 10 Elavoracion-->
+                    <div class="form-row 11 bd-callout-info bd-callout active">
+
+                        <div class="col-sm-1 gray"></div>
+                        <div class="col-sm-9 gray">
+                            <p th:text="#{Titulo.Seccion10}"></p>
+                        </div>
+
+                        <div class="col-sm-2 gray">
+                            <div class="form-group">
+                                <label for="paterno"></label>
+                                <div class="custom-control custom-switch">
+                                    <input
+                                        type="checkbox"
+                                        class="custom-control-input"
+                                        id="Nt10"
+                                        onchange="habilitaCheck(this.id,'form-control','clase2')">
+                                    <label class="custom-control-label" for="Nt10" th:text="#{Texto.No.Seccion}"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-1 gray"></div>
+
+                        <div class="col-sm-12 white">
+                            <br>
+                        </div>
+                        <div class="col-sm-1 white"></div>
+
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label for="lugarElab" th:text="#{Texto.Lugar}"></label>
+                                <select
+                                    name="lugarElab"
+                                    th:field="*{elaboracion.lugar}"
+                                    class="form-control"
+                                    id="lugarElab"
+                                    required="required">
+                                    <option value="" th:text="#{Texto.Select}"></option>
+                                    <option
+                                        th:each="lugar : ${T(mx.gob.bienestar.negocio.util.Lugar).values()}"
+                                        th:value="${lugar.valor}"
+                                        th:text="${lugar.key}"></option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    <span th:text="#{Msg.Invalid.Opcion}"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="quien" th:text="#{Texto.Elaboro}"></label>
+                                <select
+                                    name="quien"
+                                    th:field="*{elaboracion.quienElaboro}"
+                                    class="form-control"
+                                    id="quien"
+                                    required="required">
+                                    <option value="" th:text="#{Texto.Select}"></option>
+                                    <option
+                                        th:each="quien : ${T(mx.gob.bienestar.negocio.util.Quien).values()}"
+                                        th:value="${quien.valor}"
+                                        th:text="${quien.key}"></option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    <span th:text="#{Msg.Invalid.Opcion}"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="quienElaboroId" th:text="#{Texto.ID}"></label>
+                                <input
+                                    th:field="*{elaboracion.quienElaboroId}"
+                                    class="form-control input-number"
+                                    type="text"
+                                    id="quienElaboroId"
+                                    required="required"
+                                    maxlength="6">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-1 white"></div>
+                        <div class="col-sm-1 white"></div>
+
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="nombreElab" th:text="#{Texto.Nombre}"></label>
+                                <input
+                                    class="form-control input-string"
+                                    th:placeholder="#{PlaceHolder.Nombre}"
+                                    th:field="*{elaboracion.nombre}"
+                                    type="text"
+                                    id="nombreElab"
+                                    maxlength="70"
+                                    onkeypress="return sololetras(event)"
+                                    return="return"
+                                    sololetras(event)" onpaste="
+                                    false" required>
+                            <div class="
+                                    invalid-feedback"="
+                                    invalid-feedback""="invalid-feedback"
+                                    "">
+                                <span th:text="#{Msg.Invalid.Nombre}"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label for="paternoEla" th:text="#{Texto.Paterno}"></label>
+                            <input
+                                class="form-control input-string"
+                                th:placeholder="#{PlaceHolder.APaterno}"
+                                th:field="*{elaboracion.paterno}"
+                                type="text"
+                                id="paternoEla"
+                                maxlength="70"
+                                onkeypress="return sololetras(event)"
+                                onpaste="return false"
+                                required="required">
+                            <div class="invalid-feedback">
+                                <span th:text="#{Msg.Invalid.Paterno}"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-1">
+                        <div class="form-group ">
+                            <label for="paternoElab"></label>
+                            <div class="custom-control custom-switch">
+                                <input
+                                    type="checkbox"
+                                    th:value="${isPaterno}"
+                                    class="custom-control-input"
+                                    id="paternoElab"
+                                    onchange="habilitaCheck2(this.id,'paternoEla','check','maternoEla')">
+                                <label class="custom-control-label" for="paternoElab" th:text="#{Texto.Nt}"></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <label for="maternoElab" th:text="#{Texto.Materno}"></label>
+                            <input
+                                class="form-control input-string"
+                                th:placeholder="#{PlaceHolder.AMaterno}"
+                                th:field="*{elaboracion.materno}"
+                                type="text"
+                                id="maternoElab"
+                                maxlength="70"
+                                onkeypress="return sololetras(event)"
+                                onpaste="return false"
+                                required="required">
+                            <div class="invalid-feedback">
+                                <span th:text="#{Msg.Invalid.Materno}"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-1">
+                        <div class="form-group ">
+                            <label for="maternoEla"></label>
+                            <div class="custom-control custom-switch">
+                                <input
+                                    type="checkbox"
+                                    th:checked="${isMaterno}"
+                                    class="custom-control-input"
+                                    id="maternoEla"
+                                    onchange="habilitaCheck2(this.id,'maternoElab','check','paternoElab')">
+                                <label class="custom-control-label" for="maternoEla" th:text="#{Texto.Nt}"></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-1 white"></div>
+                    <div class="col-sm-1 white"></div>
+
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label for="firma" th:text="#{Texto.Firma}"></label>
+                            <select
+                                name="firma"
+                                th:field="*{elaboracion.firma}"
+                                class="form-control"
+                                id="firma"
+                                required="required">
+                                <option value="" th:text="#{Texto.Select}"></option>
+                                <option
+                                    th:each="firma : ${T(mx.gob.bienestar.negocio.util.Opciones).values()}"
+                                    th:value="${firma.valor}"
+                                    th:text="${firma.key}"></option>
+                            </select>
+                            <div class="invalid-feedback">
+                                <span th:text="#{Msg.Invalid.Opcion}"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!--Botones--->
+                <div class="col-sm-12 text-right">
+                    <div class="form-group">
+                        <br>
+                        <br>
+                        <button
+                            class="btn btn-secondary pull-right"
+                            type="button"
+                            id="jefasprev"
+                            th:text="#{Boton.Atras}"></button>
+                        <button
+                            class="btn btn-primary pull-right"
+                            type="submit"
+                            id="jefasnext"
+                            th:text="#{Boton.Siguiente}"></button>
+                    </div>
+                </div>
+                <!-- Contenido -->
+            </div>
+        </div>
+    </body>
+
+</html>
