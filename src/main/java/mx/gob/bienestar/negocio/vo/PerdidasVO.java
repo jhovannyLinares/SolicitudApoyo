@@ -134,67 +134,67 @@ public class PerdidasVO {
 		CantidadAvicola = cantidadAvicola;
 	}
 
-	public String isMaiz() {
+	public String getIsMaiz() {
 		return isMaiz;
 	}
 
-	public void setMaiz(String isMaiz) {
+	public void setIsMaiz(String isMaiz) {
 		this.isMaiz = isMaiz;
 	}
 
-	public String isFrijol() {
+	public String getIsFrijol() {
 		return isFrijol;
 	}
 
-	public void setFrijol(String isFrijol) {
+	public void setIsFrijol(String isFrijol) {
 		this.isFrijol = isFrijol;
 	}
 
-	public String isArroz() {
+	public String getIsArroz() {
 		return isArroz;
 	}
 
-	public void setArroz(String isArroz) {
+	public void setIsArroz(String isArroz) {
 		this.isArroz = isArroz;
 	}
 
-	public String isCitricos() {
+	public String getIsCitricos() {
 		return isCitricos;
 	}
 
-	public void setCitricos(String isCitricos) {
+	public void setIsCitricos(String isCitricos) {
 		this.isCitricos = isCitricos;
 	}
 
-	public String isCacao() {
+	public String getIsCacao() {
 		return isCacao;
 	}
 
-	public void setCacao(String isCacao) {
+	public void setIsCacao(String isCacao) {
 		this.isCacao = isCacao;
 	}
 
-	public String isCoco() {
+	public String getIsCoco() {
 		return isCoco;
 	}
 
-	public void setCoco(String isCoco) {
+	public void setIsCoco(String isCoco) {
 		this.isCoco = isCoco;
 	}
 
-	public String isCana() {
+	public String getIsCana() {
 		return isCana;
 	}
 
-	public void setCana(String isCana) {
+	public void setIsCana(String isCana) {
 		this.isCana = isCana;
 	}
 
-	public String isSorgo() {
+	public String getIsSorgo() {
 		return isSorgo;
 	}
 
-	public void setSorgo(String isSorgo) {
+	public void setIsSorgo(String isSorgo) {
 		this.isSorgo = isSorgo;
 	}
 
@@ -214,91 +214,91 @@ public class PerdidasVO {
 		CultivoSuperficie = cultivoSuperficie;
 	}
 
-	public String isColchon() {
+	public String getIsColchon() {
 		return isColchon;
 	}
 
-	public void setColchon(String isColchon) {
+	public void setIsColchon(String isColchon) {
 		this.isColchon = isColchon;
 	}
 
-	public String isCama() {
+	public String getIsCama() {
 		return isCama;
 	}
 
-	public void setCama(String isCama) {
+	public void setIsCama(String isCama) {
 		this.isCama = isCama;
 	}
 
-	public String isComedor() {
+	public String getIsComedor() {
 		return isComedor;
 	}
 
-	public void setComedor(String isComedor) {
+	public void setIsComedor(String isComedor) {
 		this.isComedor = isComedor;
 	}
 
-	public String isSala() {
+	public String getIsSala() {
 		return isSala;
 	}
 
-	public void setSala(String isSala) {
+	public void setIsSala(String isSala) {
 		this.isSala = isSala;
 	}
 
-	public String isEstufa() {
+	public String getIsEstufa() {
 		return isEstufa;
 	}
 
-	public void setEstufa(String isEstufa) {
+	public void setIsEstufa(String isEstufa) {
 		this.isEstufa = isEstufa;
 	}
 
-	public String isRefrigerador() {
+	public String getIsRefrigerador() {
 		return isRefrigerador;
 	}
 
-	public void setRefrigerador(String isRefrigerador) {
+	public void setIsRefrigerador(String isRefrigerador) {
 		this.isRefrigerador = isRefrigerador;
 	}
 
-	public String isLavadora() {
+	public String getIsLavadora() {
 		return isLavadora;
 	}
 
-	public void setLavadora(String isLavadora) {
+	public void setIsLavadora(String isLavadora) {
 		this.isLavadora = isLavadora;
 	}
 
-	public String isRadio() {
+	public String getIsRadio() {
 		return isRadio;
 	}
 
-	public void setRadio(String isRadio) {
+	public void setIsRadio(String isRadio) {
 		this.isRadio = isRadio;
 	}
 
-	public String isTelevision() {
+	public String getIsTelevision() {
 		return isTelevision;
 	}
 
-	public void setTelevision(String isTelevision) {
+	public void setIsTelevision(String isTelevision) {
 		this.isTelevision = isTelevision;
 	}
 
-	public String isMicroondas() {
+	public String getIsMicroondas() {
 		return isMicroondas;
 	}
 
-	public void setMicroondas(String isMicroondas) {
+	public void setIsMicroondas(String isMicroondas) {
 		this.isMicroondas = isMicroondas;
 	}
 
-	public String isComputadora() {
+	public String getIsComputadora() {
 		return isComputadora;
 	}
 
-	public void setComputadora(String isComputadora) {
+	public void setIsComputadora(String isComputadora) {
 		this.isComputadora = isComputadora;
 	}
 
@@ -310,7 +310,7 @@ public class PerdidasVO {
 		this.otrosMobiliario = otrosMobiliario;
 	}
 
-	public String isDanoParcial() {
+	public String getDanoParcial() {
 		return danoParcial;
 	}
 
@@ -318,7 +318,7 @@ public class PerdidasVO {
 		this.danoParcial = danoParcial;
 	}
 
-	public String isDanoTotal() {
+	public String getDanoTotal() {
 		return danoTotal;
 	}
 
@@ -326,23 +326,23 @@ public class PerdidasVO {
 		this.danoTotal = danoTotal;
 	}
 
-	public String isAdobe() {
+	public String getIsAdobe() {
 		return isAdobe;
 	}
 
-	public void setAdobe(String isAdobe) {
+	public void setIsAdobe(String isAdobe) {
 		this.isAdobe = isAdobe;
 	}
 
-	public String isCemento() {
+	public String getIsCemento() {
 		return isCemento;
 	}
 
-	public void setCemento(String isCemento) {
+	public void setIsCemento(String isCemento) {
 		this.isCemento = isCemento;
 	}
 
-	public String isIsladrillo() {
+	public String getIsladrillo() {
 		return isladrillo;
 	}
 
@@ -350,11 +350,11 @@ public class PerdidasVO {
 		this.isladrillo = isladrillo;
 	}
 
-	public String isMadera() {
+	public String getIsMadera() {
 		return isMadera;
 	}
 
-	public void setMadera(String isMadera) {
+	public void setIsMadera(String isMadera) {
 		this.isMadera = isMadera;
 	}
 
@@ -366,7 +366,7 @@ public class PerdidasVO {
 		this.otrosMaterial = otrosMaterial;
 	}
 
-	public String isIsenergiaElectrica() {
+	public String getIsenergiaElectrica() {
 		return isenergiaElectrica;
 	}
 
@@ -374,43 +374,43 @@ public class PerdidasVO {
 		this.isenergiaElectrica = isenergiaElectrica;
 	}
 
-	public String isAgua() {
+	public String getIsAgua() {
 		return isAgua;
 	}
 
-	public void setAgua(String isAgua) {
+	public void setIsAgua(String isAgua) {
 		this.isAgua = isAgua;
 	}
 
-	public String isGas() {
+	public String getIsGas() {
 		return isGas;
 	}
 
-	public void setGas(String isGas) {
+	public void setIsGas(String isGas) {
 		this.isGas = isGas;
 	}
 
-	public String isDrenaje() {
+	public String getIsDrenaje() {
 		return isDrenaje;
 	}
 
-	public void setDrenaje(String isDrenaje) {
+	public void setIsDrenaje(String isDrenaje) {
 		this.isDrenaje = isDrenaje;
 	}
 
-	public String isVialidad() {
+	public String getIsVialidad() {
 		return isVialidad;
 	}
 
-	public void setVialidad(String isVialidad) {
+	public void setIsVialidad(String isVialidad) {
 		this.isVialidad = isVialidad;
 	}
 
-	public String isTelefono() {
+	public String getIsTelefono() {
 		return isTelefono;
 	}
 
-	public void setTelefono(String isTelefono) {
+	public void setIsTelefono(String isTelefono) {
 		this.isTelefono = isTelefono;
 	}
 
@@ -421,4 +421,5 @@ public class PerdidasVO {
 	public void setOtrosServicios(String otrosServicios) {
 		this.otrosServicios = otrosServicios;
 	}
+
 }

@@ -7,10 +7,8 @@ import java.util.List;
 import mx.gob.bienestar.negocio.vo.AuxRecibirApoyoVO;
 import mx.gob.bienestar.negocio.vo.BancoVO;
 import mx.gob.bienestar.negocio.vo.DatosPersonaVO;
-import mx.gob.bienestar.negocio.vo.PerdidasVO;
-import mx.gob.bienestar.persistencia.entidades.Banco;
-import mx.gob.bienestar.persistencia.entidades.AuxRecibirApoyo;
 import mx.gob.bienestar.negocio.vo.IncorporacionVO;
+import mx.gob.bienestar.negocio.vo.PerdidasVO;
 
 public class SolicitudDTO implements Serializable {
 

@@ -1,15 +1,5 @@
 package mx.gob.bienestar.negocio.vo;
 
-import java.sql.Date;
-
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
-
-import org.springframework.format.annotation.DateTimeFormat;
-
 public class AuxRecibirApoyoVO {
 	
 	private Long id;
@@ -24,8 +14,7 @@ public class AuxRecibirApoyoVO {
 	
 	private String edad;
 	
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private Date fechaNacimiento;
+	private String fechaNacimiento;
 	
 	private String estadoNacimiento;
 	
@@ -109,11 +98,11 @@ public class AuxRecibirApoyoVO {
 		this.edad = edad;
 	}
 
-	public Date getFechaNacimiento() {
+	public String getFechaNacimiento() {
 		return fechaNacimiento;
 	}
 
-	public void setFechaNacimiento(Date fechaNacimiento) {
+	public void setFechaNacimiento(String fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 

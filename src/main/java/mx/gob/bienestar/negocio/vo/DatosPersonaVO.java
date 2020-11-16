@@ -2,8 +2,6 @@ package mx.gob.bienestar.negocio.vo;
 
 import java.sql.Date;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
 public class DatosPersonaVO {
 
 	private Long id;
@@ -26,8 +24,7 @@ public class DatosPersonaVO {
 
 	private String edad;
 
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private Date fechaNacimiento;
+	private String fechaNacimiento;
 
 	private String estadoNacimiento;
 
@@ -149,11 +146,11 @@ public class DatosPersonaVO {
 		this.edad = edad;
 	}
 
-	public Date getFechaNacimiento() {
+	public String getFechaNacimiento() {
 		return fechaNacimiento;
 	}
 
-	public void setFechaNacimiento(Date fechaNacimiento) {
+	public void setFechaNacimiento(String fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
