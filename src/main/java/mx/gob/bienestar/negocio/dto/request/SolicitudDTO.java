@@ -9,6 +9,7 @@ import mx.gob.bienestar.negocio.vo.AuxRecibirApoyoVO;
 import mx.gob.bienestar.negocio.vo.BancoVO;
 import mx.gob.bienestar.negocio.vo.CompromisoAuxiliarVO;
 import mx.gob.bienestar.negocio.vo.DatosPersonaVO;
+import mx.gob.bienestar.negocio.vo.ElaboracionVO;
 import mx.gob.bienestar.negocio.vo.IncorporacionVO;
 import mx.gob.bienestar.negocio.vo.PerdidasVO;
 
@@ -27,20 +28,20 @@ public class SolicitudDTO implements Serializable {
 	private boolean firmaCompromisoAuxiliar;
 
 	private DatosPersonaVO datosPersona = new DatosPersonaVO();
-	
+
 	private PerdidasVO perdidas = new PerdidasVO();
-	
-//	private BancoVO banco = new BancoVO();
 
 	private List<IncorporacionVO> incorporacionVOs = new ArrayList<IncorporacionVO>();
 
 	private AuxRecibirApoyoVO auxRecibirApoyo = new AuxRecibirApoyoVO();
 
 	private BancoVO banco = new BancoVO();
-	
+
 	private CompromisoAuxiliarVO compromisoAuxiliar = new CompromisoAuxiliarVO();
-	
+
 	private ApoyoVO apoyo = new ApoyoVO();
+
+	private ElaboracionVO elaboracion = new ElaboracionVO();
 
 	public Long getId() {
 		return id;
@@ -98,20 +99,20 @@ public class SolicitudDTO implements Serializable {
 		this.perdidas = perdidas;
 	}
 
-	public AuxRecibirApoyoVO getAuxRecibirApoyo() {
-		return auxRecibirApoyo;
-	}
-
-	public void setAuxRecibirApoyo(AuxRecibirApoyoVO auxRecibirApoyo) {
-		this.auxRecibirApoyo = auxRecibirApoyo;
-	}
-
 	public List<IncorporacionVO> getIncorporacionVOs() {
 		return incorporacionVOs;
 	}
 
 	public void setIncorporacionVOs(List<IncorporacionVO> incorporacionVOs) {
 		this.incorporacionVOs = incorporacionVOs;
+	}
+
+	public AuxRecibirApoyoVO getAuxRecibirApoyo() {
+		return auxRecibirApoyo;
+	}
+
+	public void setAuxRecibirApoyo(AuxRecibirApoyoVO auxRecibirApoyo) {
+		this.auxRecibirApoyo = auxRecibirApoyo;
 	}
 
 	public BancoVO getBanco() {
@@ -137,18 +138,22 @@ public class SolicitudDTO implements Serializable {
 	public void setApoyo(ApoyoVO apoyo) {
 		this.apoyo = apoyo;
 	}
-	
-	
 
-//
-//	private BancoVO banco = new BancoVO();
-//
-//	private ApoyoVO apoyo = new ApoyoVO();
-//
-//	private List<IncorporacionVO> incorporaciones = new ArrayList<IncorporacionVO>();
-//
-//	private DaniosPerdidasVO perdidas = new DaniosPerdidasVO();
-//
-//	private ElaboracionVO elaboracion = new ElaboracionVO();
+	public ElaboracionVO getElaboracion() {
+		return elaboracion;
+	}
+
+	public void setElaboracion(ElaboracionVO elaboracion) {
+		this.elaboracion = elaboracion;
+	}
+
+	@Override
+	public String toString() {
+		return "SolicitudDTO [id=" + id + ", tipoSolicitud=" + tipoSolicitud + ", fecha=" + fecha + ", firmaSolicitud="
+				+ firmaSolicitud + ", firmaCompromisoAuxiliar=" + firmaCompromisoAuxiliar + ", datosPersona="
+				+ datosPersona + ", perdidas=" + perdidas + ", incorporacionVOs=" + incorporacionVOs
+				+ ", auxRecibirApoyo=" + auxRecibirApoyo + ", banco=" + banco + ", compromisoAuxiliar="
+				+ compromisoAuxiliar + ", apoyo=" + apoyo + ", elaboracion=" + elaboracion + "]";
+	}
 
 }

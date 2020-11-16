@@ -3,19 +3,21 @@ package mx.gob.bienestar.negocio.vo;
 public class ElaboracionVO {
 
 	private Long id;
-	
-	private String elaboracion;
-	
+
+	private String persona;
+
 	private String lugar;
-	
+
 	private String quienElaboro;
-	
+
+	private String dependencia;
+
 	private String nombre;
-	
+
 	private String paterno;
-	
+
 	private String materno;
-	
+
 	private Boolean isFirma;
 
 	public Long getId() {
@@ -26,12 +28,12 @@ public class ElaboracionVO {
 		this.id = id;
 	}
 
-	public String getElaboracion() {
-		return elaboracion;
+	public String getPersona() {
+		return persona;
 	}
 
-	public void setElaboracion(String elaboracion) {
-		this.elaboracion = elaboracion;
+	public void setPersona(String persona) {
+		this.persona = persona;
 	}
 
 	public String getLugar() {
@@ -48,6 +50,14 @@ public class ElaboracionVO {
 
 	public void setQuienElaboro(String quienElaboro) {
 		this.quienElaboro = quienElaboro;
+	}
+
+	public String getDependencia() {
+		return dependencia;
+	}
+
+	public void setDependencia(String dependencia) {
+		this.dependencia = dependencia;
 	}
 
 	public String getNombre() {
@@ -80,5 +90,6 @@ public class ElaboracionVO {
 
 	public void setIsFirma(Boolean isFirma) {
 		this.isFirma = isFirma;
-	}	
+	}
+
 }
