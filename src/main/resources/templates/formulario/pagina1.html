@@ -67,16 +67,291 @@
                      <p th:text="#{Texto.Seccion1.Titulo}"></p>
                   </div>
                   <div class="col-sm-1 gray"></div>
-                  <div class="col-sm-1 white"></div>
-                  <div class="col-sm-4">
+                  <!-- <div class="col-sm-1 white"></div>  -->
+                  <!-- Estado -->
+                  <div class="col-sm-3">
                      <div class="form-group">
-                        <label for="folio" ></label>
-                        <input th:field="*{datosPersona.estado}" class="form-control" type="text" id="folio" th:placeholder="#{PlaceHolder.Formato.Folio}" required>
-                        <div class="invalid-feedback">
-                           <span th:text="#{Msg.Invalid.Folio}"></span>
-                        </div>
+                        <label for="estado"> <spam th:text="#{Texto.Estado}"></spam> </label>
+                        <input th:field="*{datosPersona.estado}" class="form-control" type="text" id="estado" th:placeholder="#{PlaceHolder.Formato.Estado}" >
+<!--                         <div class="invalid-feedback"> -->
+<!--                            <span th:text="#{Msg.Invalid.Folio}"></span> -->
+<!--                         </div> -->
                      </div>
                   </div>
+                  <!-- Region -->
+                  <div class="col-sm-3">
+                     <div class="form-group">
+                        <label for="region"> <spam th:text="#{Texto.Region}"></spam> </label>
+                        <input th:field="*{datosPersona.region}" class="form-control" type="text" id="region" th:placeholder="#{PlaceHolder.Formato.Region}" >
+<!--                         <div class="invalid-feedback"> -->
+<!--                            <span th:text="#{Msg.Invalid.Folio}"></span> -->
+<!--                         </div> -->
+                     </div>
+                  </div>
+                   <!-- Municipio -->
+                  <div class="col-sm-3">
+                     <div class="form-group">
+                        <label for="municipio"> <spam th:text="#{Texto.Municipio}"></spam> </label>
+                        <input th:field="*{datosPersona.municipio}" class="form-control" type="text" id="municipio" th:placeholder="#{PlaceHolder.Formato.Municipio}" >
+<!--                         <div class="invalid-feedback"> -->
+<!--                            <span th:text="#{Msg.Invalid.Folio}"></span> -->
+<!--                         </div> -->
+                     </div>
+                  </div>
+                   <!-- Area -->
+                  <div class="col-sm-3">
+                     <div class="form-group">
+                        <label for="area"> <spam th:text="#{Texto.Area}"></spam> </label>
+                        <input th:field="*{datosPersona.area}" class="form-control" type="text" id="area" th:placeholder="#{PlaceHolder.Formato.Area}" >
+<!--                         <div class="invalid-feedback"> -->
+<!--                            <span th:text="#{Msg.Invalid.Folio}"></span> -->
+<!--                         </div> -->
+                     </div>
+                  </div>
+                  <!--  <div class="col-sm-1 white"></div> -->
+                  <!-- Nombres -->
+                  <div class="col-sm-4">
+                     <div class="form-group">
+                        <label for="nombre"> <spam th:text="#{Texto.Nombre}"></spam> </label>
+                        <input th:field="*{datosPersona.nombres}" class="form-control" type="text" id="nombre" th:placeholder="#{PlaceHolder.Nombre}" >
+<!--                         <div class="invalid-feedback"> -->
+<!--                            <span th:text="#{Msg.Invalid.Folio}"></span> -->
+<!--                         </div> -->
+                     </div>
+                  </div>
+                  <!-- Paterno -->
+                  <div class="col-sm-4">
+                     <div class="form-group">
+                        <label for="paterno"> <spam th:text="#{Texto.Paterno}"></spam> </label>
+                        <input th:field="*{datosPersona.paterno}" class="form-control" type="text" id="paterno" th:placeholder="#{PlaceHolder.APaterno}" >
+<!--                         <div class="invalid-feedback"> -->
+<!--                            <span th:text="#{Msg.Invalid.Folio}"></span> -->
+<!--                         </div> -->
+                     </div>
+                  </div>
+                  <!-- Materno -->
+                  <div class="col-sm-4">
+                     <div class="form-group">
+                        <label for="materno"> <spam th:text="#{Texto.Materno}"></spam> </label>
+                        <input th:field="*{datosPersona.materno}" class="form-control" type="text" id="materno" th:placeholder="#{PlaceHolder.AMaterno}" >
+                       <!--  <div class="invalid-feedback">
+                           <span th:text="#{Msg.Invalid.Folio}"></span>
+                        </div>
+                         -->
+                     </div>
+                  </div>
+                  <!-- Sexo -->
+                  <div class="col-sm-1">
+                  <label for="sexo"> <spam th:text="#{Texto.Sexo}"></spam> </label>
+					<div class="form-group">
+			            <div class="custom-control custom-radio custom-control-inline">    
+			                <input type="radio" id="option1" name="option1" class="custom-control-input" th:value="#{Texto.Hombre}" th:field="*{datosPersona.sexo}">
+			                <label class="custom-control-label" for="option1" th:text="#{Texto.H}"></label>
+			            </div>
+			            <div class="custom-control custom-radio custom-control-inline">
+			                <input type="radio" id="option2" name="option2" class="custom-control-input" th:value="#{Texto.Mujer}" th:field="*{datosPersona.sexo}">
+			                <label class="custom-control-label" for="option2" th:text="#{Texto.M}"></label>
+			            </div>
+			        </div>            
+                  </div>
+                  <!-- Edad -->
+                  <div class="col-sm-1">
+                     <div class="form-group">
+                        <label for="edad"> <spam th:text="#{Texto.Edad}"></spam> </label>
+                        <input th:field="*{datosPersona.edad}" class="form-control" type="text" id="edad" th:placeholder="#{PlaceHolder.Edad}">
+                        <!-- 
+                        <div class="invalid-feedback">
+                            <span th:text="#{Msg.Invalid.Folio}"></span>  
+                        </div> 
+                        -->
+                     </div>
+                  </div>
+                  <!-- Fecha -->
+                  <div class="col-sm-3">
+                     <div class="form-group">
+                        <label for="fecha"> <spam th:text="#{Texto.FechaNacimiento}"></spam> </label>
+                        <input th:field="*{datosPersona.fechaNacimiento}" class="form-control" type="date" id="fecha" th:placeholder="#{PlaceHolder.FechaNacimiento}">
+                     </div>
+                  </div>
+                  <!-- EstadoNacimineto -->
+                  <div class="col-sm-3">
+                     <div class="form-group">
+                        <label for="nacimiento"> <spam th:text="#{Texto.EstadoNacimiento}"></spam> </label>
+                        <input th:field="*{datosPersona.estadoNacimiento}" class="form-control" type="text" id="nacimiento" th:placeholder="#{PlaceHolder.EstadoNacimiento}">
+                     </div>
+                  </div>
+                  <!-- Telefono -->
+                  <div class="col-sm-2">
+                     <div class="form-group">
+                        <label for="telefono"> <spam th:text="#{Texto.TelefoFijo}"></spam> </label>
+                        <input th:field="*{datosPersona.telfonoFijo}" class="form-control" type="text" id="telefono" th:placeholder="#{PlaceHolder.TelefoFijo}">
+                     </div>
+                  </div>
+                  <!-- Celular -->
+                  <div class="col-sm-2">
+                     <div class="form-group">
+                        <label for="celular"> <spam th:text="#{Texto.Celular}"></spam> </label>
+                        <input th:field="*{datosPersona.celular}" class="form-control" type="text" id="celular" th:placeholder="#{PlaceHolder.Celular}">
+                     </div>
+                  </div>
+                   <!-- Clave Electoral -->
+                  <div class="col-sm-6">
+                     <div class="form-group">
+                        <label for="electoral"> <spam th:text="#{Texto.ClaveElector}"></spam> </label>
+                        <input th:field="*{datosPersona.claveElectoral}" class="form-control" type="text" id="electoral" th:placeholder="#{PlaceHolder.ClaveElector}">
+                     </div>
+                  </div>
+                  <!-- CURP -->
+                  <div class="col-sm-6">
+                     <div class="form-group">
+                        <label for="curp"> <spam th:text="#{Texto.Curp}"></spam> </label>
+                        <input th:field="*{datosPersona.curp}" class="form-control" type="text" id="curp" th:placeholder="#{PlaceHolder.Curp}">
+                     </div>
+                  </div>
+                  <!-- Localidad -->
+                  <div class="col-sm-3">
+                     <div class="form-group">
+                        <label for="localidad"> <spam th:text="#{Texto.Localidad}"></spam> </label>
+                        <input th:field="*{datosPersona.localidad}" class="form-control" type="text" id="localidad" th:placeholder="#{PlaceHolder.Localidad}">
+                     </div>
+                  </div>
+                  <!-- Colonia -->
+                  <div class="col-sm-2">
+                     <div class="form-group">
+                        <label for="colonia"> <spam th:text="#{Texto.Colonia}"></spam> </label>
+                        <input th:field="*{datosPersona.colonia}" class="form-control" type="text" id="colonia" th:placeholder="#{PlaceHolder.Colonia}">
+                     </div>
+                  </div>
+                  <!-- Calle -->
+                  <div class="col-sm-2">
+                     <div class="form-group">
+                        <label for="calle"> <spam th:text="#{Texto.Calle}"></spam> </label>
+                        <input th:field="*{datosPersona.calle}" class="form-control" type="text" id="calle" th:placeholder="#{PlaceHolder.Calle}">
+                     </div>
+                  </div>
+                  <!-- # Ext -->
+                  <div class="col-sm-1">
+                     <div class="form-group">
+                        <label for="exterior"> <spam th:text="#{Texto.NoExterior}"></spam> </label>
+                        <input th:field="*{datosPersona.numExt}" class="form-control" type="text" id="exterior" th:placeholder="#{PlaceHolder.NoExterior}">
+                     </div>
+                  </div>
+                  <!-- # Int -->
+                  <div class="col-sm-1">
+                     <div class="form-group">
+                        <label for="interior"> <spam th:text="#{Texto.NoInterior}"></spam> </label>
+                        <input th:field="*{datosPersona.numInt}" class="form-control" type="text" id="interior" th:placeholder="#{PlaceHolder.NoInterior}">
+                     </div>
+                  </div>
+                  <!-- MZ -->
+                  <div class="col-sm-1">
+                     <div class="form-group">
+                        <label for="manzana"> <spam th:text="#{Texto.Mz}"></spam> </label>
+                        <input th:field="*{datosPersona.manzana}" class="form-control" type="text" id="manzana" th:placeholder="#{PlaceHolder.Mz}">
+                     </div>
+                  </div>
+                  <!-- LOTE -->
+                  <div class="col-sm-1">
+                     <div class="form-group">
+                        <label for="lote"> <spam th:text="#{Texto.Lote}"></spam> </label>
+                        <input th:field="*{datosPersona.lote}" class="form-control" type="text" id="lote" th:placeholder="#{PlaceHolder.Lote}">
+                     </div>
+                  </div>
+                  <!-- CP -->
+                  <div class="col-sm-1">
+                     <div class="form-group">
+                        <label for="cp"> <spam th:text="#{Texto.Cp}"></spam> </label>
+                        <input th:field="*{datosPersona.codigoPostal}" class="form-control" type="text" id="cp" th:placeholder="#{PlaceHolder.Cp}">
+                     </div>
+                  </div>
+                  <!-- Referencia 1 -->
+                  <div class="col-sm-6">
+                     <div class="form-group">
+                        <label for="ref1"> <spam th:text="#{Texto.Referencia1}"></spam> </label>
+                        <input th:field="*{datosPersona.referencia1}" class="form-control" type="text" id="ref1" th:placeholder="#{PlaceHolder.Referencia1}">
+                     </div>
+                  </div>
+                  <!-- Referencia 2 -->
+                  <div class="col-sm-6">
+                     <div class="form-group">
+                        <label for="ref2"> <spam th:text="#{Texto.Referencia2}"></spam> </label>
+                        <input th:field="*{datosPersona.referencia2}" class="form-control" type="text" id="ref2" th:placeholder="#{PlaceHolder.Referencia2}">
+                     </div>
+                  </div>
+                  <!-- Pueblos Indigenas -->
+                  <div class="col-sm-3">
+                     <div class="form-group">
+                        <label for="pueblo"> <spam th:text="#{Texto.PuebloIndigena}"></spam> </label>
+                        <div class="custom-control custom-radio custom-control-inline">    
+			                <input type="radio" id="option1" name="option1" class="custom-control-input" th:value="#{Texto.Si}" th:field="*{datosPersona.isPuebloIndigena}">
+			                <label class="custom-control-label" for="option1" th:text="#{Texto.Si}"></label>
+			            </div>
+			            <div class="custom-control custom-radio custom-control-inline">
+			                <input type="radio" id="option2" name="option2" class="custom-control-input" th:value="#{Texto.No}" th:field="*{datosPersona.isPuebloIndigena}">
+			                <label class="custom-control-label" for="option2" th:text="#{Texto.No}"></label>
+			            </div>
+                     </div>
+                  </div>
+                  <!-- Cual Pueblo -->
+                  <div class="col-sm-3">
+                     <div class="form-group">
+                        <label for="pueblo1"> <spam th:text="#{Texto.Cual}"> </spam> </label> <!--    -->
+                        <input th:field="*{datosPersona.puebloIndigena}" class="form-control" type="text" id="pueblo1" th:placeholder="#{PlaceHolder.PuebloIndigena}">
+                     </div>
+                  </div>
+                  <!-- Idioma Indigena -->
+                  <div class="col-sm-3">
+                     <div class="form-group">
+                        <label for="idioma"> <spam th:text="#{Texto.IdiomaIndigena}"></spam> </label> <br>
+                         <div class="custom-control custom-radio custom-control-inline">    
+			                <input type="radio" id="option1" name="option1" class="custom-control-input" th:value="#{Texto.Si}" th:field="*{datosPersona.isIdiomaIndigena}">
+			                <label class="custom-control-label" for="option1" th:text="#{Texto.Si}"></label>
+			            </div>
+			            <div class="custom-control custom-radio custom-control-inline">
+			                <input type="radio" id="option2" name="option2" class="custom-control-input" th:value="#{Texto.No}" th:field="*{datosPersona.isIdiomaIndigena}">
+			                <label class="custom-control-label" for="option2" th:text="#{Texto.No}"></label>
+			            </div>
+                     </div>
+                  </div>
+                  <!-- Cual Idioma -->
+                  <div class="col-sm-3">
+                     <div class="form-group">
+                        <label for="idioma1"><spam th:text="#{Texto.Cual}"></spam> </label> <!--   -->
+                        <input th:field="*{datosPersona.idiomaIndigena}" class="form-control" type="text" id="idioma1" th:placeholder="#{PlaceHolder.IdiomaIndigena}">
+                     </div>
+                  </div>
+                  <!-- Ingresos -->
+                  <div class="col-sm-12">
+                     <div class="form-group">
+                        <label for="ingresos"> <spam th:text="#{Texto.Sueldo}"></spam> </label>
+                         <div class="custom-control custom-radio custom-control-inline">    
+			                <input type="radio" id="option1" name="option1" class="custom-control-input" th:value="#{Texto.Menor}" th:field="*{datosPersona.ingresoMensual}">
+			                <label class="custom-control-label" for="option1" th:text="#{Texto.Menor}"></label>
+			            </div>
+			            <div class="custom-control custom-radio custom-control-inline">
+			                <input type="radio" id="option2" name="option2" class="custom-control-input" th:value="#{Texto.Menor1}" th:field="*{datosPersona.ingresoMensual}">
+			                <label class="custom-control-label" for="option2" th:text="#{Texto.Menor1}"></label>
+			            </div>
+			            <div class="custom-control custom-radio custom-control-inline">
+			                <input type="radio" id="option3" name="option3" class="custom-control-input" th:value="#{Texto.Menor2}" th:field="*{datosPersona.ingresoMensual}">
+			                <label class="custom-control-label" for="option3" th:text="#{Texto.Menor2}"></label>
+			            </div>
+			            <div class="custom-control custom-radio custom-control-inline">
+			                <input type="radio" id="option4" name="option4" class="custom-control-input" th:value="#{Texto.Menor3}" th:field="*{datosPersona.ingresoMensual}">
+			                <label class="custom-control-label" for="option4" th:text="#{Texto.Menor3}"></label>
+			            </div>
+			            <div class="custom-control custom-radio custom-control-inline">
+			                <input type="radio" id="option5" name="option5" class="custom-control-input" th:value="#{Texto.Menor4}" th:field="*{datosPersona.ingresoMensual}">
+			                <label class="custom-control-label" for="option5" th:text="#{Texto.Menor4}"></label>
+			            </div>
+			            <div class="custom-control custom-radio custom-control-inline">
+			                <input type="radio" id="option6" name="option6" class="custom-control-input" th:value="#{Texto.Mas}" th:field="*{datosPersona.ingresoMensual}">
+			                <label class="custom-control-label" for="option6" th:text="#{Texto.Mas}"></label>
+			            </div>
+                     </div>
+                  </div>
+                  
+                  
                   <div class="col-sm-7 white"></div>
                   <div class="col-sm-1 white" th:if="${(param.error != null)}"></div>
                   <div class="alert alert-danger" role="alert" th:if="${(param.error != null)}">
