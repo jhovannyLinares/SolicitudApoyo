@@ -6,6 +6,7 @@ import java.util.List;
 
 import mx.gob.bienestar.negocio.vo.AuxRecibirApoyoVO;
 import mx.gob.bienestar.negocio.vo.BancoVO;
+import mx.gob.bienestar.negocio.vo.CompromisoAuxiliarVO;
 import mx.gob.bienestar.negocio.vo.DatosPersonaVO;
 import mx.gob.bienestar.negocio.vo.IncorporacionVO;
 import mx.gob.bienestar.negocio.vo.PerdidasVO;
@@ -35,6 +36,8 @@ public class SolicitudDTO implements Serializable {
 	private AuxRecibirApoyoVO auxRecibirApoyo = new AuxRecibirApoyoVO();
 
 	private BancoVO banco = new BancoVO();
+	
+	private CompromisoAuxiliarVO compromisoAuxiliar = new CompromisoAuxiliarVO();
 
 	public Long getId() {
 		return id;
@@ -115,6 +118,16 @@ public class SolicitudDTO implements Serializable {
 	public void setBanco(BancoVO banco) {
 		this.banco = banco;
 	}
+
+	public CompromisoAuxiliarVO getCompromisoAuxiliar() {
+		return compromisoAuxiliar;
+	}
+
+	public void setCompromisoAuxiliar(CompromisoAuxiliarVO compromisoAuxiliar) {
+		this.compromisoAuxiliar = compromisoAuxiliar;
+	}
+	
+	
 
 //
 //	private BancoVO banco = new BancoVO();

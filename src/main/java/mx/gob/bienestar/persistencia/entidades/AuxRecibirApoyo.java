@@ -39,7 +39,7 @@ public class AuxRecibirApoyo {
 	private String edad;
 
 	@Column(name = "fecha_nacimiento")
-	private Date fechaNacimiento;
+	private String fechaNacimiento;
 
 	@Column(name = "estado_nacimiento")
 	private String estadoNacimiento;
@@ -144,11 +144,11 @@ public class AuxRecibirApoyo {
 		this.edad = edad;
 	}
 
-	public Date getFechaNacimiento() {
+	public String getFechaNacimiento() {
 		return fechaNacimiento;
 	}
 
-	public void setFechaNacimiento(Date fechaNacimiento) {
+	public void setFechaNacimiento(String fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
