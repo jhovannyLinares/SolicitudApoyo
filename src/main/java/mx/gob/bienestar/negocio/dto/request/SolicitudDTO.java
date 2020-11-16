@@ -1,33 +1,42 @@
 package mx.gob.bienestar.negocio.dto.request;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import mx.gob.bienestar.negocio.vo.AuxRecibirApoyoVO;
+import mx.gob.bienestar.negocio.vo.BancoVO;
 import mx.gob.bienestar.negocio.vo.DatosPersonaVO;
-import mx.gob.bienestar.persistencia.entidades.AuxRecibirApoyo;
+import mx.gob.bienestar.negocio.vo.IncorporacionVO;
 
 public class SolicitudDTO implements Serializable {
 
 	private static final long serialVersionUID = -1650453974147647975L;
 
-	private long folio;
+	private Long id;
 
 	private String tipoSolicitud;
 
 	private String fecha;
 
+	private boolean firmaSolicitud;
+
+	private boolean firmaCompromisoAuxiliar;
+
 	private DatosPersonaVO datosPersona = new DatosPersonaVO();
-	
+
+	private List<IncorporacionVO> incorporacionVOs = new ArrayList<IncorporacionVO>();
+
 	private AuxRecibirApoyoVO auxRecibirApoyo = new AuxRecibirApoyoVO();
 
-	private Boolean firmaSolicitud;
+	private BancoVO banco = new BancoVO();
 
-	public long getFolio() {
-		return folio;
+	public Long getId() {
+		return id;
 	}
 
-	public void setFolio(long folio) {
-		this.folio = folio;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getTipoSolicitud() {
@@ -46,6 +55,22 @@ public class SolicitudDTO implements Serializable {
 		this.fecha = fecha;
 	}
 
+	public boolean isFirmaSolicitud() {
+		return firmaSolicitud;
+	}
+
+	public void setFirmaSolicitud(boolean firmaSolicitud) {
+		this.firmaSolicitud = firmaSolicitud;
+	}
+
+	public boolean isFirmaCompromisoAuxiliar() {
+		return firmaCompromisoAuxiliar;
+	}
+
+	public void setFirmaCompromisoAuxiliar(boolean firmaCompromisoAuxiliar) {
+		this.firmaCompromisoAuxiliar = firmaCompromisoAuxiliar;
+	}
+
 	public DatosPersonaVO getDatosPersona() {
 		return datosPersona;
 	}
@@ -61,7 +86,32 @@ public class SolicitudDTO implements Serializable {
 	public void setAuxRecibirApoyo(AuxRecibirApoyoVO auxRecibirApoyo) {
 		this.auxRecibirApoyo = auxRecibirApoyo;
 	}
-	
-	
+
+	public List<IncorporacionVO> getIncorporacionVOs() {
+		return incorporacionVOs;
+	}
+
+	public void setIncorporacionVOs(List<IncorporacionVO> incorporacionVOs) {
+		this.incorporacionVOs = incorporacionVOs;
+	}
+
+	public BancoVO getBanco() {
+		return banco;
+	}
+
+	public void setBanco(BancoVO banco) {
+		this.banco = banco;
+	}
+
+//
+//	private BancoVO banco = new BancoVO();
+//
+//	private ApoyoVO apoyo = new ApoyoVO();
+//
+//	private List<IncorporacionVO> incorporaciones = new ArrayList<IncorporacionVO>();
+//
+//	private DaniosPerdidasVO perdidas = new DaniosPerdidasVO();
+//
+//	private ElaboracionVO elaboracion = new ElaboracionVO();
 
 }

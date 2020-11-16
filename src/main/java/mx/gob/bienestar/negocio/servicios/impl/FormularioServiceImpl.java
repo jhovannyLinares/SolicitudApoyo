@@ -77,7 +77,7 @@ public class FormularioServiceImpl extends ServiceMaster implements IFormularioS
 
 	@Override
 	public String getPagina1(Model model, HttpSession session) {
-
+		model.addAttribute("nombreCompleto", getName(session));
 		model.addAttribute("solicitudDTO", new SolicitudDTO());
 
 		return PAGINA1;
