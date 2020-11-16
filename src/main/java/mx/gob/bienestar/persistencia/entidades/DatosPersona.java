@@ -4,111 +4,118 @@ import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.MapsId;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "m_datosPersona")
 public class DatosPersona {
-	
+
 	@Id
 	@Column(unique = true, name = "id")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "DAT_SEQ")
 	@SequenceGenerator(sequenceName = "datos_seq", allocationSize = 1, name = "DAT_SEQ")
 	private Long id;
-	
+
 	@Column(name = "Estado")
 	private String estado;
-	
+
 	@Column(name = "Region")
 	private String region;
-	
+
 	@Column(name = "Municipio")
 	private String municipio;
-	
+
 	@Column(name = "Area")
 	private String area;
-	
+
 	@Column(name = "Nombres")
 	private String nombres;
-	
+
 	@Column(name = "Paterno")
 	private String paterno;
-	
+
 	@Column(name = "Materno")
 	private String materno;
-	
+
 	@Column(name = "Sexo")
 	private String sexo;
-	
+
 	@Column(name = "Edad")
 	private String edad;
-	
+
 	@Column(name = "Fecha_Nacimiento")
 	private Date fechaNacimiento;
-	
+
 	@Column(name = "Estado_Nacimiento")
 	private String estadoNacimiento;
-	
+
 	@Column(name = "Telefono_Fijo")
 	private String telfonoFijo;
-	
+
 	@Column(name = "Celular")
 	private String celular;
-	
+
 	@Column(name = "Clave_Electoral")
 	private String claveElectoral;
-	
+
 	@Column(name = "CURP", unique = true)
 	private String curp;
-	
+
 	@Column(name = "Localidad")
 	private String localidad;
-	
+
 	@Column(name = "Colonia")
 	private String colonia;
-	
+
 	@Column(name = "Calle")
 	private String calle;
-	
+
 	@Column(name = "Num_Ext")
 	private String numExt;
-	
+
 	@Column(name = "Num_Int")
 	private String numInt;
-	
+
 	@Column(name = "Manzana")
 	private String manzana;
-	
+
 	@Column(name = "Lote")
 	private String lote;
-	
+
 	@Column(name = "Codigo_Postal")
 	private String codigoPostal;
-	
+
 	@Column(name = "Referencia1")
 	private String referencia1;
-	
+
 	@Column(name = "Referencia2")
 	private String referencia2;
-	
+
 	@Column(name = "Is_Pueblo_Indigena")
 	private String isPuebloIndigena;
-	
+
 	@Column(name = "Pueblo_Indigena")
 	private String puebloIndigena;
-	
+
 	@Column(name = "Is_Idioma_Indigena")
 	private String isIdiomaIndigena;
-	
+
 	@Column(name = "Idioma_Indigena")
 	private String idiomaIndigena;
-	
+
 	@Column(name = "Ingreso_Mensual")
 	private String ingresoMensual;
+
+	@MapsId
+	@OneToOne(fetch = FetchType.EAGER)
+	private Solicitud solicitud;
 
 	public Long getId() {
 		return id;
@@ -357,5 +364,5 @@ public class DatosPersona {
 	public void setIngresoMensual(String ingresoMensual) {
 		this.ingresoMensual = ingresoMensual;
 	}
-	
+
 }
