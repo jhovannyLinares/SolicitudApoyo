@@ -422,4 +422,25 @@ public class PerdidasVO {
 		this.otrosServicios = otrosServicios;
 	}
 
+	@Override
+	public String toString() {
+		return "PerdidasVO [cantidadVacuno=" + cantidadVacuno + ", cantidadCaprino=" + cantidadCaprino
+				+ ", cantidadOvino=" + cantidadOvino + ", CantidadPorcino=" + CantidadPorcino + ", CantidadEquino="
+				+ CantidadEquino + ", CantidadAvicola=" + CantidadAvicola + ", isMaiz=" + isMaiz + ", isFrijol="
+				+ isFrijol + ", isArroz=" + isArroz + ", isCitricos=" + isCitricos + ", isCacao=" + isCacao
+				+ ", isCoco=" + isCoco + ", isCana=" + isCana + ", isSorgo=" + isSorgo + ", CultivoOtro=" + CultivoOtro
+				+ ", CultivoSuperficie=" + CultivoSuperficie + ", isColchon=" + isColchon + ", isCama=" + isCama
+				+ ", isComedor=" + isComedor + ", isSala=" + isSala + ", isEstufa=" + isEstufa + ", isRefrigerador="
+				+ isRefrigerador + ", isLavadora=" + isLavadora + ", isRadio=" + isRadio + ", isTelevision="
+				+ isTelevision + ", isMicroondas=" + isMicroondas + ", isComputadora=" + isComputadora
+				+ ", otrosMobiliario=" + otrosMobiliario + ", danoParcial=" + danoParcial + ", danoTotal=" + danoTotal
+				+ ", isAdobe=" + isAdobe + ", isCemento=" + isCemento + ", isladrillo=" + isladrillo + ", isMadera="
+				+ isMadera + ", otrosMaterial=" + otrosMaterial + ", isenergiaElectrica=" + isenergiaElectrica
+				+ ", isAgua=" + isAgua + ", isGas=" + isGas + ", isDrenaje=" + isDrenaje + ", isVialidad=" + isVialidad
+				+ ", isTelefono=" + isTelefono + ", otrosServicios=" + otrosServicios + ", toString()="
+				+ super.toString() + "]";
+	}
+	
+	
+
 }

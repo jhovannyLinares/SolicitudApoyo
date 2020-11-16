@@ -314,4 +314,19 @@ public class DatosPersonaVO {
 		this.ingresoMensual = ingresoMensual;
 	}
 
+	@Override
+	public String toString() {
+		return "DatosPersonaVO [id=" + id + ", estado=" + estado + ", region=" + region + ", municipio=" + municipio
+				+ ", area=" + area + ", nombres=" + nombres + ", paterno=" + paterno + ", materno=" + materno
+				+ ", sexo=" + sexo + ", edad=" + edad + ", fechaNacimiento=" + fechaNacimiento + ", estadoNacimiento="
+				+ estadoNacimiento + ", telfonoFijo=" + telfonoFijo + ", celular=" + celular + ", claveElectoral="
+				+ claveElectoral + ", curp=" + curp + ", localidad=" + localidad + ", colonia=" + colonia + ", calle="
+				+ calle + ", numExt=" + numExt + ", numInt=" + numInt + ", manzana=" + manzana + ", lote=" + lote
+				+ ", codigoPostal=" + codigoPostal + ", referencia1=" + referencia1 + ", referencia2=" + referencia2
+				+ ", isPuebloIndigena=" + isPuebloIndigena + ", puebloIndigena=" + puebloIndigena
+				+ ", isIdiomaIndigena=" + isIdiomaIndigena + ", idiomaIndigena=" + idiomaIndigena + ", ingresoMensual="
+				+ ingresoMensual + ", toString()=" + super.toString() + "]";
+	}
+	
+
 }
