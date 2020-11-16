@@ -6,6 +6,9 @@ public interface IntegrationConstants {
 	static final String USERNAME = "username";
 	
 	static final String LOGIN = "/Seguridad/login";
+	
+	static final String REGISTRO = "/Seguridad/registrar";
+	
 	static final String INDEX = "/index";
 	
 	static final String PRINCIPAL = "/formulario/principal";
@@ -15,6 +18,8 @@ public interface IntegrationConstants {
 	static final String PRINCIPAL_REDIRECT = "redirect:/formulario/principal";
 	
 	static final String PAGINA1_REDIRECT = "redirect:/formulario/pagina1";
+	
+	static final String LOGIN_REDIRECT = "redirect:/seguridad/login";
 
 //	
 //

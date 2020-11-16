@@ -6,7 +6,95 @@
         <div layout:fragment="contenido">
             <!-- Contenido -->
 
-           <form role="form" class="needs-validation" method="post" th:object="${folioDTO}" th:action="@{/formulario/folio}" novalidate>
+           <form role="form" class="needs-validation" method="post" th:object="${solicitudDTO}" th:action="@{/formulario/folio}" novalidate>
+           
+<!--            Solicitud de Apoyo -->
+           
+               <div class="form-row bd-callout-info bd-callout active">
+                  <div class="col-sm-1 gray"></div>
+                  <div class="col-sm-10 gray">
+                     <p th:text="#{Texto.Seccion0.Titulo}"></p>
+                  </div>
+                  <div class="col-sm-1 gray"></div>
+                  
+                  <div class="col-sm-12 white">&nbsp;</div>
+                  
+                  <div class="col-sm-1 white"></div>
+                  
+                  <div class="col-sm-4">
+					<div class="form-group">
+			            <div class="custom-control custom-radio custom-control-inline">    
+			                <input type="radio" id="option1" name="option1" class="custom-control-input" th:value="#{Texto.Emergencia.Social}" th:field="*{tipoSolicitud}">
+			                <label class="custom-control-label" for="option1" th:text="#{Texto.Emergencia.Social}"></label>
+			            </div>
+			            <div class="custom-control custom-radio custom-control-inline">
+			                <input type="radio" id="option2" name="option2" class="custom-control-input" th:value="#{Texto.Emergencia.Natural}" th:field="*{tipoSolicitud}">
+			                <label class="custom-control-label" for="option2" th:text="#{Texto.Emergencia.Natural}"></label>
+			            </div>
+			            <div class="custom-control custom-radio custom-control-inline">
+			                <input type="radio" id="option3" name="option3" class="custom-control-input" th:value="#{Texto.Ayuda.Humanitaria}" th:field="*{tipoSolicitud}">
+			                <label class="custom-control-label" for="option3" th:text="#{Texto.Ayuda.Humanitaria}"></label>
+			            </div>
+			        </div>            
+                  </div>
+                  
+                  <div class="col-sm-4">
+					<div class="form-group">
+						<label for="start"><spam th:text="#{Texto.Fecha}"></spam> </label>
+						<input type="date" id="start" name="trip-start"  min="2020-01-01" max="2020-12-31">
+					</div>            
+                  </div>
+                  
+                  <div class="col-sm-3 white"></div>
+                  <div class="col-sm-1 white" th:if="${(param.error != null)}"></div>
+                  <div class="alert alert-danger" role="alert" th:if="${(param.error != null)}">
+                     <i class="fa fa-warning"> 
+                     <span
+                        th:text=#{Texto.NotFolio}></span> 
+                     </i>
+                  </div>
+                  <div class="col-sm-12 white">
+                     <br>
+                  </div>
+               </div>
+   
+               
+           <!--            Solicitud de Apoyo -->
+               
+               <div class="form-row bd-callout-info bd-callout active">
+                  <div class="col-sm-1 gray"></div>
+                  <div class="col-sm-10 gray">
+                     <p th:text="#{Texto.Seccion1.Titulo}"></p>
+                  </div>
+                  <div class="col-sm-1 gray"></div>
+                  <div class="col-sm-1 white"></div>
+                  <div class="col-sm-4">
+                     <div class="form-group">
+                        <label for="folio" ></label>
+                        <input th:field="*{datosPersona.estado}" class="form-control" type="text" id="folio" th:placeholder="#{PlaceHolder.Formato.Folio}" required>
+                        <div class="invalid-feedback">
+                           <span th:text="#{Msg.Invalid.Folio}"></span>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-sm-7 white"></div>
+                  <div class="col-sm-1 white" th:if="${(param.error != null)}"></div>
+                  <div class="alert alert-danger" role="alert" th:if="${(param.error != null)}">
+                     <i class="fa fa-warning"> 
+                     <span
+                        th:text=#{Texto.NotFolio}></span> 
+                     </i>
+                  </div>
+                  <div class="col-sm-12 white">
+                     <br>
+                  </div>
+               </div>
+               
+               
+               
+               
+               
+               
                <div class="form-row bd-callout-info bd-callout active">
                   <div class="col-sm-1 gray"></div>
                   <div class="col-sm-10 gray">
@@ -36,6 +124,223 @@
                      <br>
                   </div>
                </div>
+               
+               
+               <div class="form-row bd-callout-info bd-callout active">
+                  <div class="col-sm-1 gray"></div>
+                  <div class="col-sm-10 gray">
+                     <p th:text="#{Titulo.Folio}"></p>
+                  </div>
+                  <div class="col-sm-1 gray"></div>
+                  <div class="col-sm-1 white"></div>
+                  <div class="col-sm-4">
+                     <div class="form-group">
+                        <label for="folio" ></label>
+                        pagina1
+<!--                         <input  class="form-control input-number" type="text" id="folio" th:placeholder="#{PlaceHolder.Formato.Folio}" required> -->
+                        <div class="invalid-feedback">
+                           <span th:text="#{Msg.Invalid.Folio}"></span>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-sm-7 white"></div>
+                  <div class="col-sm-1 white" th:if="${(param.error != null)}"></div>
+                  <div class="alert alert-danger" role="alert" th:if="${(param.error != null)}">
+                     <i class="fa fa-warning"> 
+                     <span
+                        th:text=#{Texto.NotFolio}></span> 
+                     </i>
+                  </div>
+                  <div class="col-sm-12 white">
+                     <br>
+                  </div>
+               </div>
+               
+               <div class="form-row bd-callout-info bd-callout active">
+                  <div class="col-sm-1 gray"></div>
+                  <div class="col-sm-10 gray">
+                     <p th:text="#{Titulo.Folio}"></p>
+                  </div>
+                  <div class="col-sm-1 gray"></div>
+                  <div class="col-sm-1 white"></div>
+                  <div class="col-sm-4">
+                     <div class="form-group">
+                        <label for="folio" ></label>
+                        pagina1
+<!--                         <input  class="form-control input-number" type="text" id="folio" th:placeholder="#{PlaceHolder.Formato.Folio}" required> -->
+                        <div class="invalid-feedback">
+                           <span th:text="#{Msg.Invalid.Folio}"></span>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-sm-7 white"></div>
+                  <div class="col-sm-1 white" th:if="${(param.error != null)}"></div>
+                  <div class="alert alert-danger" role="alert" th:if="${(param.error != null)}">
+                     <i class="fa fa-warning"> 
+                     <span
+                        th:text=#{Texto.NotFolio}></span> 
+                     </i>
+                  </div>
+                  <div class="col-sm-12 white">
+                     <br>
+                  </div>
+               </div>
+               
+               <div class="form-row bd-callout-info bd-callout active">
+                  <div class="col-sm-1 gray"></div>
+                  <div class="col-sm-10 gray">
+                     <p th:text="#{Titulo.Folio}"></p>
+                  </div>
+                  <div class="col-sm-1 gray"></div>
+                  <div class="col-sm-1 white"></div>
+                  <div class="col-sm-4">
+                     <div class="form-group">
+                        <label for="folio" ></label>
+                        pagina1
+<!--                         <input  class="form-control input-number" type="text" id="folio" th:placeholder="#{PlaceHolder.Formato.Folio}" required> -->
+                        <div class="invalid-feedback">
+                           <span th:text="#{Msg.Invalid.Folio}"></span>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-sm-7 white"></div>
+                  <div class="col-sm-1 white" th:if="${(param.error != null)}"></div>
+                  <div class="alert alert-danger" role="alert" th:if="${(param.error != null)}">
+                     <i class="fa fa-warning"> 
+                     <span
+                        th:text=#{Texto.NotFolio}></span> 
+                     </i>
+                  </div>
+                  <div class="col-sm-12 white">
+                     <br>
+                  </div>
+               </div>
+               
+               <div class="form-row bd-callout-info bd-callout active">
+                  <div class="col-sm-1 gray"></div>
+                  <div class="col-sm-10 gray">
+                     <p th:text="#{Titulo.Folio}"></p>
+                  </div>
+                  <div class="col-sm-1 gray"></div>
+                  <div class="col-sm-1 white"></div>
+                  <div class="col-sm-4">
+                     <div class="form-group">
+                        <label for="folio" ></label>
+                        pagina1
+<!--                         <input  class="form-control input-number" type="text" id="folio" th:placeholder="#{PlaceHolder.Formato.Folio}" required> -->
+                        <div class="invalid-feedback">
+                           <span th:text="#{Msg.Invalid.Folio}"></span>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-sm-7 white"></div>
+                  <div class="col-sm-1 white" th:if="${(param.error != null)}"></div>
+                  <div class="alert alert-danger" role="alert" th:if="${(param.error != null)}">
+                     <i class="fa fa-warning"> 
+                     <span
+                        th:text=#{Texto.NotFolio}></span> 
+                     </i>
+                  </div>
+                  <div class="col-sm-12 white">
+                     <br>
+                  </div>
+               </div>
+               
+               <div class="form-row bd-callout-info bd-callout active">
+                  <div class="col-sm-1 gray"></div>
+                  <div class="col-sm-10 gray">
+                     <p th:text="#{Titulo.Folio}"></p>
+                  </div>
+                  <div class="col-sm-1 gray"></div>
+                  <div class="col-sm-1 white"></div>
+                  <div class="col-sm-4">
+                     <div class="form-group">
+                        <label for="folio" ></label>
+                        pagina1
+<!--                         <input  class="form-control input-number" type="text" id="folio" th:placeholder="#{PlaceHolder.Formato.Folio}" required> -->
+                        <div class="invalid-feedback">
+                           <span th:text="#{Msg.Invalid.Folio}"></span>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-sm-7 white"></div>
+                  <div class="col-sm-1 white" th:if="${(param.error != null)}"></div>
+                  <div class="alert alert-danger" role="alert" th:if="${(param.error != null)}">
+                     <i class="fa fa-warning"> 
+                     <span
+                        th:text=#{Texto.NotFolio}></span> 
+                     </i>
+                  </div>
+                  <div class="col-sm-12 white">
+                     <br>
+                  </div>
+               </div>
+               
+               <div class="form-row bd-callout-info bd-callout active">
+                  <div class="col-sm-1 gray"></div>
+                  <div class="col-sm-10 gray">
+                     <p th:text="#{Titulo.Folio}"></p>
+                  </div>
+                  <div class="col-sm-1 gray"></div>
+                  <div class="col-sm-1 white"></div>
+                  <div class="col-sm-4">
+                     <div class="form-group">
+                        <label for="folio" ></label>
+                        pagina1
+<!--                         <input  class="form-control input-number" type="text" id="folio" th:placeholder="#{PlaceHolder.Formato.Folio}" required> -->
+                        <div class="invalid-feedback">
+                           <span th:text="#{Msg.Invalid.Folio}"></span>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-sm-7 white"></div>
+                  <div class="col-sm-1 white" th:if="${(param.error != null)}"></div>
+                  <div class="alert alert-danger" role="alert" th:if="${(param.error != null)}">
+                     <i class="fa fa-warning"> 
+                     <span
+                        th:text=#{Texto.NotFolio}></span> 
+                     </i>
+                  </div>
+                  <div class="col-sm-12 white">
+                     <br>
+                  </div>
+               </div>
+               
+               <div class="form-row bd-callout-info bd-callout active">
+                  <div class="col-sm-1 gray"></div>
+                  <div class="col-sm-10 gray">
+                     <p th:text="#{Titulo.Folio}"></p>
+                  </div>
+                  <div class="col-sm-1 gray"></div>
+                  <div class="col-sm-1 white"></div>
+                  <div class="col-sm-4">
+                     <div class="form-group">
+                        <label for="folio" ></label>
+                        pagina1
+<!--                         <input  class="form-control input-number" type="text" id="folio" th:placeholder="#{PlaceHolder.Formato.Folio}" required> -->
+                        <div class="invalid-feedback">
+                           <span th:text="#{Msg.Invalid.Folio}"></span>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-sm-7 white"></div>
+                  <div class="col-sm-1 white" th:if="${(param.error != null)}"></div>
+                  <div class="alert alert-danger" role="alert" th:if="${(param.error != null)}">
+                     <i class="fa fa-warning"> 
+                     <span
+                        th:text=#{Texto.NotFolio}></span> 
+                     </i>
+                  </div>
+                  <div class="col-sm-12 white">
+                     <br>
+                  </div>
+               </div>
+               
+               
+               
+               
+               
+               
                <div class="col-sm-12 text-right">
                   <div class="form-group">
                      <br>

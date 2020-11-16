@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import mx.gob.bienestar.negocio.dto.request.FolioDTO;
+import mx.gob.bienestar.negocio.dto.request.SolicitudDTO;
 import mx.gob.bienestar.negocio.servicios.IFormularioService;
 import mx.gob.bienestar.negocio.servicios.config.ServiceMaster;
 import mx.gob.bienestar.persistencia.entidades.Configuracion;
@@ -76,6 +77,8 @@ public class FormularioServiceImpl extends ServiceMaster implements IFormularioS
 
 	@Override
 	public String getPagina1(Model model, HttpSession session) {
+
+		model.addAttribute("solicitudDTO", new SolicitudDTO());
 
 		return PAGINA1;
 	}

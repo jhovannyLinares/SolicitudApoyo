@@ -47,7 +47,21 @@ public class ServiceMaster implements IntegrationConstants {
 
 		UsuarioVO usuario = getUser(session);
 
-		return usuario.getNombre() + " " + usuario.getPaterno() + " " + usuario.getMaterno();
+		StringBuilder builder = new StringBuilder();
+
+		builder.append(usuario.getNombre());
+
+		if (usuario.getPaterno() != null) {
+			builder.append(" ");
+			builder.append(usuario.getPaterno());
+		}
+
+		if (usuario.getMaterno() != null) {
+			builder.append(" ");
+			builder.append(usuario.getMaterno());
+		}
+
+		return builder.toString();
 	}
 
 	/**
