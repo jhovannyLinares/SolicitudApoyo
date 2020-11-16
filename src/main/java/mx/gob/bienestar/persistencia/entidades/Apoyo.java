@@ -21,8 +21,17 @@ public class Apoyo {
 	@SequenceGenerator(sequenceName = "apoyo_seq", allocationSize = 1, name = "APOYO_SEQ")
 	private Long id;
 
-	@Column(name = "apoyo")
-	private String apoyo;
+	@Column(name = "alimentario")
+	private String alimentario;
+	
+	@Column(name = "especie")
+	private String especie;
+	
+	@Column(name = "transfEcono")
+	private String transfEcono;
+	
+	@Column(name = "otro")
+	private String otro;
 
 	@Column(name = "tipo")
 	private String tipo;
@@ -46,14 +55,6 @@ public class Apoyo {
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	public String getApoyo() {
-		return apoyo;
-	}
-
-	public void setApoyo(String apoyo) {
-		this.apoyo = apoyo;
 	}
 
 	public String getTipo() {
@@ -94,6 +95,38 @@ public class Apoyo {
 
 	public void setSolicitud(Solicitud solicitud) {
 		this.solicitud = solicitud;
+	}
+
+	public String getAlimentario() {
+		return alimentario;
+	}
+
+	public void setAlimentario(String alimentario) {
+		this.alimentario = alimentario;
+	}
+
+	public String getEspecie() {
+		return especie;
+	}
+
+	public void setEspecie(String especie) {
+		this.especie = especie;
+	}
+
+	public String getTransfEcono() {
+		return transfEcono;
+	}
+
+	public void setTransfEcono(String transfEcono) {
+		this.transfEcono = transfEcono;
+	}
+
+	public String getOtro() {
+		return otro;
+	}
+
+	public void setOtro(String otro) {
+		this.otro = otro;
 	}
 
 	

@@ -4,7 +4,13 @@ public class ApoyoVO {
 
 	private Long id;
 	
-	private String apoyo;
+	private String alimentario;
+	
+	private String especie;
+	
+	private String transfEcono;
+	
+	private String otro;
 		
 	private String tipo;
 		
@@ -20,14 +26,6 @@ public class ApoyoVO {
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	public String getApoyo() {
-		return apoyo;
-	}
-
-	public void setApoyo(String apoyo) {
-		this.apoyo = apoyo;
 	}
 
 	public String getTipo() {
@@ -60,5 +58,37 @@ public class ApoyoVO {
 
 	public void setDarSeguimiento(Boolean darSeguimiento) {
 		this.darSeguimiento = darSeguimiento;
+	}
+
+	public String getAlimentario() {
+		return alimentario;
+	}
+
+	public void setAlimentario(String alimentario) {
+		this.alimentario = alimentario;
+	}
+
+	public String getEspecie() {
+		return especie;
+	}
+
+	public void setEspecie(String especie) {
+		this.especie = especie;
+	}
+
+	public String getTransfEcono() {
+		return transfEcono;
+	}
+
+	public void setTransfEcono(String transfEcono) {
+		this.transfEcono = transfEcono;
+	}
+
+	public String getOtro() {
+		return otro;
+	}
+
+	public void setOtro(String otro) {
+		this.otro = otro;
 	}
 }

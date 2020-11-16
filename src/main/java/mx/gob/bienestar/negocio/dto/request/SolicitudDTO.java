@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import mx.gob.bienestar.negocio.vo.ApoyoVO;
 import mx.gob.bienestar.negocio.vo.AuxRecibirApoyoVO;
 import mx.gob.bienestar.negocio.vo.BancoVO;
 import mx.gob.bienestar.negocio.vo.CompromisoAuxiliarVO;
@@ -38,6 +39,8 @@ public class SolicitudDTO implements Serializable {
 	private BancoVO banco = new BancoVO();
 	
 	private CompromisoAuxiliarVO compromisoAuxiliar = new CompromisoAuxiliarVO();
+	
+	private ApoyoVO apoyo = new ApoyoVO();
 
 	public Long getId() {
 		return id;
@@ -125,6 +128,14 @@ public class SolicitudDTO implements Serializable {
 
 	public void setCompromisoAuxiliar(CompromisoAuxiliarVO compromisoAuxiliar) {
 		this.compromisoAuxiliar = compromisoAuxiliar;
+	}
+
+	public ApoyoVO getApoyo() {
+		return apoyo;
+	}
+
+	public void setApoyo(ApoyoVO apoyo) {
+		this.apoyo = apoyo;
 	}
 	
 	
