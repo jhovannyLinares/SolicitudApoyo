@@ -24,6 +24,11 @@ public void setIsFirma(String isFirma) {
 	this.isFirma = isFirma;
 }
 
+@Override
+public String toString() {
+	return "CompromisoAuxiliarVO [id=" + id + ", isFirma=" + isFirma + ", toString()=" + super.toString() + "]";
+}
+
 
 
 

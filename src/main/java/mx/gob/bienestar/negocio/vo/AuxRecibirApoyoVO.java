@@ -242,6 +242,18 @@ public class AuxRecibirApoyoVO {
 		this.documentoTres = documentoTres;
 	}
 
+	@Override
+	public String toString() {
+		return "AuxRecibirApoyoVO [id=" + id + ", nombre=" + nombre + ", paterno=" + paterno + ", materno=" + materno
+				+ ", sexo=" + sexo + ", edad=" + edad + ", fechaNacimiento=" + fechaNacimiento + ", estadoNacimiento="
+				+ estadoNacimiento + ", telefonoFijo=" + telefonoFijo + ", celular=" + celular + ", claveElector="
+				+ claveElector + ", curp=" + curp + ", localidad=" + localidad + ", colonia=" + colonia + ", calle="
+				+ calle + ", numExt=" + numExt + ", numInt=" + numInt + ", manzana=" + manzana + ", lote=" + lote
+				+ ", codigoPostal=" + codigoPostal + ", parentesco=" + parentesco + ", documentoUno=" + documentoUno
+				+ ", documentoDos=" + documentoDos + ", documentoTres=" + documentoTres + ", toString()="
+				+ super.toString() + "]";
+	}
+
 	
 	
 }
