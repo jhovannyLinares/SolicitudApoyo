@@ -8,15 +8,15 @@ public class FolioDTO implements Serializable {
 
 	private static final long serialVersionUID = -1650453974147647975L;
 
-	private long folio;
+	private Long folio;
 
 	private DatosPersona datosPersona = new DatosPersona();
 
-	public long getFolio() {
+	public Long getFolio() {
 		return folio;
 	}
 
-	public void setFolio(long folio) {
+	public void setFolio(Long folio) {
 		this.folio = folio;
 	}
 
