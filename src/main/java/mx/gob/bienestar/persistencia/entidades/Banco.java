@@ -2,9 +2,12 @@ package mx.gob.bienestar.persistencia.entidades;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.MapsId;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -17,22 +20,26 @@ public class Banco {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "BANCO_SEQ")
 	@SequenceGenerator(sequenceName = "banco_seq", allocationSize = 1, name = "BANCO_SEQ")
 	private Long id;
-	
+
 	@Column(name = "tiene_Cuenta_Bancaria")
 	private String tieneCuentaBancaria;
-	
+
 	@Column(name = "banco")
 	private String banco;
-	
+
 	@Column(name = "tarjeta")
 	private String tarjeta;
-	
+
 	@Column(name = "clabe")
 	private String clabe;
-	
+
 	@Column(name = "cuenta")
 	private String cuenta;
-	
+
+	@MapsId
+	@OneToOne(fetch = FetchType.EAGER)
+	private Solicitud solicitud;
+
 	public Long getId() {
 		return id;
 	}
@@ -81,8 +88,12 @@ public class Banco {
 		this.cuenta = cuenta;
 	}
 
-	
-	
-	
-	
+	public Solicitud getSolicitud() {
+		return solicitud;
+	}
+
+	public void setSolicitud(Solicitud solicitud) {
+		this.solicitud = solicitud;
+	}
+
 }

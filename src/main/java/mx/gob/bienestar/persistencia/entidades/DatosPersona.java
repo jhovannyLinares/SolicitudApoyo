@@ -365,4 +365,12 @@ public class DatosPersona {
 		this.ingresoMensual = ingresoMensual;
 	}
 
+	public Solicitud getSolicitud() {
+		return solicitud;
+	}
+
+	public void setSolicitud(Solicitud solicitud) {
+		this.solicitud = solicitud;
+	}
+
 }

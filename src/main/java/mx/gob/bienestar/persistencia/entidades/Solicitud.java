@@ -27,7 +27,76 @@ public class Solicitud {
 	@Column(name = "fecha")
 	private String fecha;
 
+	@Column(name = "firmaSolicitud")
+	private boolean firmaSolicitud;
+
 	@OneToOne(mappedBy = "solicitud", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private DatosPersona datosPersona = new DatosPersona();
+
+	@OneToOne(mappedBy = "solicitud", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	private AuxRecibirApoyo auxiliar = new AuxRecibirApoyo();
+
+	@OneToOne(mappedBy = "solicitud", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	private Banco banco = new Banco();
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getTipoSolicitud() {
+		return tipoSolicitud;
+	}
+
+	public void setTipoSolicitud(String tipoSolicitud) {
+		this.tipoSolicitud = tipoSolicitud;
+	}
+
+	public String getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(String fecha) {
+		this.fecha = fecha;
+	}
+
+	public boolean isFirmaSolicitud() {
+		return firmaSolicitud;
+	}
+
+	public void setFirmaSolicitud(boolean firmaSolicitud) {
+		this.firmaSolicitud = firmaSolicitud;
+	}
+
+	public DatosPersona getDatosPersona() {
+		return datosPersona;
+	}
+
+	public void setDatosPersona(DatosPersona datosPersona) {
+		this.datosPersona = datosPersona;
+	}
+
+	public AuxRecibirApoyo getAuxiliar() {
+		return auxiliar;
+	}
+
+	public void setAuxiliar(AuxRecibirApoyo auxiliar) {
+		this.auxiliar = auxiliar;
+	}
+
+	public Banco getBanco() {
+		return banco;
+	}
+
+	public void setBanco(Banco banco) {
+		this.banco = banco;
+	}
+	
+	
+	
+	
 
 }
