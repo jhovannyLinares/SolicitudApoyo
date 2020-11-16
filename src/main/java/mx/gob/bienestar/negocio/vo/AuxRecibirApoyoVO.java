@@ -8,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class AuxRecibirApoyoVO {
 	
 	private Long id;
@@ -22,6 +24,7 @@ public class AuxRecibirApoyoVO {
 	
 	private String edad;
 	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date fechaNacimiento;
 	
 	private String estadoNacimiento;

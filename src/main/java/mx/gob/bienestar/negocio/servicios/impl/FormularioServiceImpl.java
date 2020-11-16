@@ -1,6 +1,8 @@
 package mx.gob.bienestar.negocio.servicios.impl;
 
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
@@ -12,6 +14,7 @@ import mx.gob.bienestar.negocio.dto.request.FolioDTO;
 import mx.gob.bienestar.negocio.dto.request.SolicitudDTO;
 import mx.gob.bienestar.negocio.servicios.IFormularioService;
 import mx.gob.bienestar.negocio.servicios.config.ServiceMaster;
+import mx.gob.bienestar.negocio.vo.IncorporacionVO;
 import mx.gob.bienestar.persistencia.entidades.Configuracion;
 import mx.gob.bienestar.persistencia.entidades.Folio;
 import mx.gob.bienestar.persistencia.repositorio.IConfiguracionRepository;
@@ -78,9 +81,30 @@ public class FormularioServiceImpl extends ServiceMaster implements IFormularioS
 	@Override
 	public String getPagina1(Model model, HttpSession session) {
 		model.addAttribute("nombreCompleto", getName(session));
-		model.addAttribute("solicitudDTO", new SolicitudDTO());
+
+		SolicitudDTO dto = new SolicitudDTO();
+
+		List<IncorporacionVO> incorporacionVOs = new ArrayList<IncorporacionVO>();
+
+		IncorporacionVO vo;
+		for (int i = 0; i < 7; i++) {
+			vo = new IncorporacionVO();
+			incorporacionVOs.add(vo);
+		}
+
+		dto.setIncorporacionVOs(incorporacionVOs);
+
+		model.addAttribute("solicitudDTO", dto);
 
 		return PAGINA1;
+	}
+
+	@Override
+	public String postPagina1(Model model, HttpSession session, SolicitudDTO dto) {
+		
+		System.out.println(dto.toString());
+		
+		return PRINCIPAL_REDIRECT;
 	}
 
 }

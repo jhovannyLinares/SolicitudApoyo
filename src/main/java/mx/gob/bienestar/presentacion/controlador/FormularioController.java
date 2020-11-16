@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import mx.gob.bienestar.negocio.dto.request.FolioDTO;
+import mx.gob.bienestar.negocio.dto.request.SolicitudDTO;
 import mx.gob.bienestar.negocio.servicios.IFormularioService;
 import mx.gob.bienestar.presentacion.controlador.impl.config.IntegrationConstants;
 import mx.gob.bienestar.presentacion.controlador.impl.config.interfaces.IController;
@@ -41,6 +42,10 @@ public class FormularioController implements IController, IntegrationConstants {
 		return formularioService.getFolio(model, session,dto);
 	}
 
+	@PostMapping("/pagina1")
+	public String postPagina1(Model model, HttpSession session,SolicitudDTO dto) {
+		return formularioService.postPagina1(model, session,dto);
+	}
 	
 	
 	

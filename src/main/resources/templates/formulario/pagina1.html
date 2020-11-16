@@ -6,7 +6,7 @@
         <div layout:fragment="contenido">
             <!-- Contenido -->
 
-           <form role="form" class="needs-validation" method="post" th:object="${solicitudDTO}" th:action="@{/formulario/folio}" novalidate>
+           <form role="form" class="needs-validation" method="post" th:object="${solicitudDTO}" th:action="@{/formulario/pagina1}" novalidate>
            
 <!--            Solicitud de Apoyo -->
            
@@ -1007,47 +1007,49 @@
                   </div>
                   <div class="col-sm-12">&nbsp;</div>
                   
-                  <div class="row">
+<!--                   th:each="estado : ${estados}" -->
                   
+                  <div class="row" th:each="incorporacionVO,item : *{incorporacionVOs} ">
+                  <hr>
 	                   <div class="col-sm-2">
 	                     <div class="form-group">
 	                        <label for="nombre"> <spam th:text="#{Texto.Nombre}"></spam> </label>
-	                        <input th:field="*{datosPersona.nombres}" class="form-control" type="text" id="nombre" th:placeholder="#{PlaceHolder.Nombre}" >
+	                        <input th:field="*{incorporacionVOs[__${item.count}__].nombre}" class="form-control" type="text" id="nombre" th:placeholder="#{PlaceHolder.Nombre}" >
 	                     </div>
 	                  </div>
 	                  <!-- Paterno -->
 	                  <div class="col-sm-2">
 	                     <div class="form-group">
 	                        <label for="paterno"> <spam th:text="#{Texto.Paterno}"></spam> </label>
-	                        <input th:field="*{datosPersona.paterno}" class="form-control" type="text" id="paterno" th:placeholder="#{PlaceHolder.APaterno}" >
+	                        <input th:field="*{incorporacionVOs[__${item.count}__].paterno}" class="form-control" type="text" id="paterno" th:placeholder="#{PlaceHolder.APaterno}" >
 	                     </div>
 	                  </div>
 	                  <!-- Materno -->
 	                  <div class="col-sm-2">
 	                     <div class="form-group">
 	                        <label for="materno"> <spam th:text="#{Texto.Materno}"></spam> </label>
-	                        <input th:field="*{datosPersona.materno}" class="form-control" type="text" id="materno" th:placeholder="#{PlaceHolder.AMaterno}" >
+	                        <input th:field="*{incorporacionVOs[__${item.count}__].materno}" class="form-control" type="text" id="materno" th:placeholder="#{PlaceHolder.AMaterno}" >
 	                     </div>
 	                  </div>
 	                  
 	                   <div class="col-sm-2">
 	                     <div class="form-group">
 	                        <label for="edad"> <spam th:text="#{Texto.Edad}"></spam> </label>
-	                        <input th:field="*{datosPersona.edad}" class="form-control input-number" type="text" id="edad" th:placeholder="#{PlaceHolder.Edad}">
+	                        <input th:field="*{incorporacionVOs[__${item.count}__].edad}" class="form-control input-number" type="text" id="edad" th:placeholder="#{PlaceHolder.Edad}">
 	                     </div>
 	                  </div>
 	                  
 	                  <div class="col-sm-2">
 	                     <div class="form-group">
 	                        <label for="parentesto"> <spam th:text="#{Texto.Parentesco}"></spam> </label>
-	                        <input th:field="*{datosPersona.edad}" class="form-control" type="text" id="parentesto" th:placeholder="#{Texto.Parentesco}">
+	                        <input th:field="*{incorporacionVOs[__${item.count}__].edad}" class="form-control" type="text" id="parentesto" th:placeholder="#{Texto.Parentesco}">
 	                     </div>
 	                  </div>
 	                  
 	                  <div class="col-sm-2">
 	                     <div class="form-group">
 	                        <label for="parentesto"> <spam th:text="#{Texto.Programa}"></spam> </label>
-	                        <input th:field="*{datosPersona.edad}" class="form-control" type="text" id="parentesto" th:placeholder="#{Texto.Programa}">
+	                        <input th:field="*{incorporacionVOs[__${item.count}__].programa}" class="form-control" type="text" id="parentesto" th:placeholder="#{Texto.Programa}">
 	                     </div>
 	                  </div>
                   </div>
