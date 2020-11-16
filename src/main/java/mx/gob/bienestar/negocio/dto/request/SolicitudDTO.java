@@ -2,7 +2,9 @@ package mx.gob.bienestar.negocio.dto.request;
 
 import java.io.Serializable;
 
+import mx.gob.bienestar.negocio.vo.AuxRecibirApoyoVO;
 import mx.gob.bienestar.negocio.vo.DatosPersonaVO;
+import mx.gob.bienestar.persistencia.entidades.AuxRecibirApoyo;
 
 public class SolicitudDTO implements Serializable {
 
@@ -16,6 +18,7 @@ public class SolicitudDTO implements Serializable {
 
 	private DatosPersonaVO datosPersona = new DatosPersonaVO();
 	
+	private AuxRecibirApoyoVO auxRecibirApoyo = new AuxRecibirApoyoVO();
 
 	private Boolean firmaSolicitud;
 
@@ -51,13 +54,14 @@ public class SolicitudDTO implements Serializable {
 		this.datosPersona = datosPersona;
 	}
 
-	public Boolean getFirmaSolicitud() {
-		return firmaSolicitud;
+	public AuxRecibirApoyoVO getAuxRecibirApoyo() {
+		return auxRecibirApoyo;
 	}
 
-	public void setFirmaSolicitud(Boolean firmaSolicitud) {
-		this.firmaSolicitud = firmaSolicitud;
+	public void setAuxRecibirApoyo(AuxRecibirApoyoVO auxRecibirApoyo) {
+		this.auxRecibirApoyo = auxRecibirApoyo;
 	}
-
+	
+	
 
 }
