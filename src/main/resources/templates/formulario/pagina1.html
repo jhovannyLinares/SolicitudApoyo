@@ -539,6 +539,7 @@
 					<div class="col-sm-3">
 						<label for="codigoPostal"> <spam th:text="#{Texto.Seccion2.documento.uno}"></spam> </label>
                       <select name="select" class="form-control" th:field="*{auxRecibirApoyo.documentoUno}">
+                       <option value="null">SELECCIONE UN DOCUMENTO</option> 
                        <option value="credencialResponsable">CREDENCIAL DE ELECTOR DEL RESPONSABLE</option> 
                        <option value="actaNacBeneficiario">ACTA DE NACIMIENTO DEL BENEFICIARIO</option>
                        <option value="actaNacHijo">ACTA DE NACIMIENTO DE LA/EL HIJO</option>
@@ -555,6 +556,7 @@
 					<div class="col-sm-3 ">
 						<label for="codigoPostal"> <spam th:text="#{Texto.Seccion2.documentos.dos}"></spam> </label>
                       <select name="select" class="form-control" th:field="*{auxRecibirApoyo.documentoDos}">
+                       <option value="null">SELECCIONE UN DOCUMENTO</option> 
                        <option value="credencialResponsable">CREDENCIAL DE ELECTOR DEL RESPONSABLE</option> 
                        <option value="actaNacBeneficiario">ACTA DE NACIMIENTO DEL BENEFICIARIO</option>
                        <option value="actaNacHijo">ACTA DE NACIMIENTO DE LA/EL HIJO</option>
@@ -571,7 +573,8 @@
 					<div class="col-sm-3">
 						<label for="codigoPostal"> <spam th:text="#{Texto.Seccion2.documentos.tres}"></spam> </label>
                       <select name="select" class="form-control" th:field="*{auxRecibirApoyo.documentoTres}">
-                     <option value="credencialResponsable">CREDENCIAL DE ELECTOR DEL RESPONSABLE</option> 
+                       <option value="null">SELECCIONE UN DOCUMENTO</option> 
+                       <option value="credencialResponsable">CREDENCIAL DE ELECTOR DEL RESPONSABLE</option> 
                        <option value="actaNacBeneficiario">ACTA DE NACIMIENTO DEL BENEFICIARIO</option>
                        <option value="actaNacHijo">ACTA DE NACIMIENTO DE LA/EL HIJO</option>
                        <option value="actaMatrimonio">ACTA DE MATRIMONIO</option>
