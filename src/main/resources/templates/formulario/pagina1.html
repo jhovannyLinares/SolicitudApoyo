@@ -136,12 +136,12 @@
                   <label for="sexo"> <spam th:text="#{Texto.Sexo}"></spam> </label>
 					<div class="form-group">
 			            <div class="custom-control custom-radio custom-control-inline">    
-			                <input type="radio" id="option1" name="option1" class="custom-control-input" th:value="#{Texto.Hombre}" th:field="*{datosPersona.sexo}">
-			                <label class="custom-control-label" for="option1" th:text="#{Texto.H}"></label>
+			                <input type="radio" id="op1" name="op1" class="custom-control-input" th:value="#{Texto.Hombre}" th:field="*{datosPersona.sexo}">
+			                <label class="custom-control-label" for="op1" th:text="#{Texto.H}"></label>
 			            </div>
 			            <div class="custom-control custom-radio custom-control-inline">
-			                <input type="radio" id="option2" name="option2" class="custom-control-input" th:value="#{Texto.Mujer}" th:field="*{datosPersona.sexo}">
-			                <label class="custom-control-label" for="option2" th:text="#{Texto.M}"></label>
+			                <input type="radio" id="op2" name="op2" class="custom-control-input" th:value="#{Texto.Mujer}" th:field="*{datosPersona.sexo}">
+			                <label class="custom-control-label" for="op2" th:text="#{Texto.M}"></label>
 			            </div>
 			        </div>            
                   </div>
@@ -274,12 +274,12 @@
                      <div class="form-group">
                         <label for="pueblo"> <spam th:text="#{Texto.PuebloIndigena}"></spam> </label>
                         <div class="custom-control custom-radio custom-control-inline">    
-			                <input type="radio" id="option1" name="option1" class="custom-control-input" th:value="#{Texto.Si}" th:field="*{datosPersona.isPuebloIndigena}">
-			                <label class="custom-control-label" for="option1" th:text="#{Texto.Si}"></label>
+			                <input type="radio" id="pueblo1" name="pueblo1" class="custom-control-input" th:value="#{Texto.Si}" th:field="*{datosPersona.isPuebloIndigena}">
+			                <label class="custom-control-label" for="pueblo1" th:text="#{Texto.Si}"></label>
 			            </div>
 			            <div class="custom-control custom-radio custom-control-inline">
-			                <input type="radio" id="option2" name="option2" class="custom-control-input" th:value="#{Texto.No}" th:field="*{datosPersona.isPuebloIndigena}">
-			                <label class="custom-control-label" for="option2" th:text="#{Texto.No}"></label>
+			                <input type="radio" id="pueblo2" name="pueblo2" class="custom-control-input" th:value="#{Texto.No}" th:field="*{datosPersona.isPuebloIndigena}">
+			                <label class="custom-control-label" for="pueblo2" th:text="#{Texto.No}"></label>
 			            </div>
                      </div>
                   </div>
@@ -295,12 +295,12 @@
                      <div class="form-group">
                         <label for="idioma"> <spam th:text="#{Texto.IdiomaIndigena}"></spam> </label> <br>
                          <div class="custom-control custom-radio custom-control-inline">    
-			                <input type="radio" id="option1" name="option1" class="custom-control-input" th:value="#{Texto.Si}" th:field="*{datosPersona.isIdiomaIndigena}">
-			                <label class="custom-control-label" for="option1" th:text="#{Texto.Si}"></label>
+			                <input type="radio" id="idioma1" name="idioma1" class="custom-control-input" th:value="#{Texto.Si}" th:field="*{datosPersona.isIdiomaIndigena}">
+			                <label class="custom-control-label" for="idioma1" th:text="#{Texto.Si}"></label>
 			            </div>
 			            <div class="custom-control custom-radio custom-control-inline">
-			                <input type="radio" id="option2" name="option2" class="custom-control-input" th:value="#{Texto.No}" th:field="*{datosPersona.isIdiomaIndigena}">
-			                <label class="custom-control-label" for="option2" th:text="#{Texto.No}"></label>
+			                <input type="radio" id="idioma2" name="idioma2" class="custom-control-input" th:value="#{Texto.No}" th:field="*{datosPersona.isIdiomaIndigena}">
+			                <label class="custom-control-label" for="idioma2" th:text="#{Texto.No}"></label>
 			            </div>
                      </div>
                   </div>
@@ -316,28 +316,28 @@
                      <div class="form-group">
                         <label for="ingresos"> <spam th:text="#{Texto.Sueldo}"></spam> </label>
                          <div class="custom-control custom-radio custom-control-inline">    
-			                <input type="radio" id="option1" name="option1" class="custom-control-input" th:value="#{Texto.Menor}" th:field="*{datosPersona.ingresoMensual}">
-			                <label class="custom-control-label" for="option1" th:text="#{Texto.Menor}"></label>
+			                <input type="radio" id="ingreso1" name="ingreso1" class="custom-control-input" th:value="#{Texto.Menor}" th:field="*{datosPersona.ingresoMensual}">
+			                <label class="custom-control-label" for="ingreso1" th:text="#{Texto.Menor}"></label>
 			            </div>
 			            <div class="custom-control custom-radio custom-control-inline">
-			                <input type="radio" id="option2" name="option2" class="custom-control-input" th:value="#{Texto.Menor1}" th:field="*{datosPersona.ingresoMensual}">
-			                <label class="custom-control-label" for="option2" th:text="#{Texto.Menor1}"></label>
+			                <input type="radio" id="ingreso2" name="ingreso2" class="custom-control-input" th:value="#{Texto.Menor1}" th:field="*{datosPersona.ingresoMensual}">
+			                <label class="custom-control-label" for="ingreso2" th:text="#{Texto.Menor1}"></label>
 			            </div>
 			            <div class="custom-control custom-radio custom-control-inline">
-			                <input type="radio" id="option3" name="option3" class="custom-control-input" th:value="#{Texto.Menor2}" th:field="*{datosPersona.ingresoMensual}">
-			                <label class="custom-control-label" for="option3" th:text="#{Texto.Menor2}"></label>
+			                <input type="radio" id="ingreso3" name="ingreso3" class="custom-control-input" th:value="#{Texto.Menor2}" th:field="*{datosPersona.ingresoMensual}">
+			                <label class="custom-control-label" for="ingreso3" th:text="#{Texto.Menor2}"></label>
 			            </div>
 			            <div class="custom-control custom-radio custom-control-inline">
-			                <input type="radio" id="option4" name="option4" class="custom-control-input" th:value="#{Texto.Menor3}" th:field="*{datosPersona.ingresoMensual}">
-			                <label class="custom-control-label" for="option4" th:text="#{Texto.Menor3}"></label>
+			                <input type="radio" id="ingreso4" name="ingreso4" class="custom-control-input" th:value="#{Texto.Menor3}" th:field="*{datosPersona.ingresoMensual}">
+			                <label class="custom-control-label" for="ingreso4" th:text="#{Texto.Menor3}"></label>
 			            </div>
 			            <div class="custom-control custom-radio custom-control-inline">
-			                <input type="radio" id="option5" name="option5" class="custom-control-input" th:value="#{Texto.Menor4}" th:field="*{datosPersona.ingresoMensual}">
-			                <label class="custom-control-label" for="option5" th:text="#{Texto.Menor4}"></label>
+			                <input type="radio" id="ingreso5" name="ingreso5" class="custom-control-input" th:value="#{Texto.Menor4}" th:field="*{datosPersona.ingresoMensual}">
+			                <label class="custom-control-label" for="ingreso5" th:text="#{Texto.Menor4}"></label>
 			            </div>
 			            <div class="custom-control custom-radio custom-control-inline">
-			                <input type="radio" id="option6" name="option6" class="custom-control-input" th:value="#{Texto.Mas}" th:field="*{datosPersona.ingresoMensual}">
-			                <label class="custom-control-label" for="option6" th:text="#{Texto.Mas}"></label>
+			                <input type="radio" id="ingreso6" name="ingreso6" class="custom-control-input" th:value="#{Texto.Mas}" th:field="*{datosPersona.ingresoMensual}">
+			                <label class="custom-control-label" for="ingreso6" th:text="#{Texto.Mas}"></label>
 			            </div>
                      </div>
                   </div>
@@ -757,32 +757,244 @@
                   </div>
                </div>
                
-               
+               <!-- Seccion 6 -->
                
                <div class="form-row bd-callout-info bd-callout active">
                   <div class="col-sm-1 gray"></div>
                   <div class="col-sm-10 gray">
-                     <p th:text="#{Titulo.Incorporacion}"></p>
+                     <p th:text="#{Titulo.Perdidas}"></p>
                   </div>
                   <div class="col-sm-1 gray"></div>
-                  <div class="col-sm-6 white">
-	                  <spam class="text-justify" th:text="#{Texto.Programas.Opcion1}"></spam><br>
-	                  <spam class="text-justify" th:text="#{Texto.Programas.Opcion2}"></spam><br>
-	                  <spam class="text-justify" th:text="#{Texto.Programas.Opcion3}"></spam><br>
-	                  <spam class="text-justify" th:text="#{Texto.Programas.Opcion4}"></spam><br>
-	                  <spam class="text-justify" th:text="#{Texto.Programas.Opcion5}"></spam><br>
-	                  <spam class="text-justify" th:text="#{Texto.Programas.Opcion6}"></spam><br>
-	                  <spam class="text-justify" th:text="#{Texto.Programas.Opcion7}"></spam><br>
-	                  <spam class="text-justify" th:text="#{Texto.Programas.Opcion8}"></spam><br>
+<!--                   <div class="col-sm-1 white"></div> -->
+                  
+                <!-- Cantidad Vacunos -->
+                <div class="col-sm-2">
+	                <div class="col-sm-12">
+	                	<label for="tit"><spam th:text="#{Texto.Ganado}"></spam> </label> <!--   -->
+	                </div>
+	                  <div class="col-sm-12">
+	                     <div class="form-group">
+	                        <label for="vacuno"><spam th:text="#{Texto.CantidadVacuno}"></spam> </label> <!--   -->
+	                        <input th:field="*{perdidas.cantidadVacuno}" class="form-control" type="text" id="idioma1" th:placeholder="#{PlaceHolder.CantidadVacuno}">
+	                     </div>
+	                  </div>
+	                  <div class="col-sm-12">
+	                     <div class="form-group">
+	                        <label for="caprino"><spam th:text="#{Texto.CantidadCaprino}"></spam> </label> <!--   -->
+	                        <input th:field="*{perdidas.cantidadCaprino}" class="form-control" type="text" id="idioma1" th:placeholder="#{PlaceHolder.CantidadCaprino}">
+	                     </div>
+	                  </div>
+	                  <div class="col-sm-12">
+	                     <div class="form-group">
+	                        <label for="ovino"><spam th:text="#{Texto.CantidadOvino}"></spam> </label> <!--   -->
+	                        <input th:field="*{perdidas.cantidadOvino}" class="form-control" type="text" id="idioma1" th:placeholder="#{PlaceHolder.CantidadOvino}">
+	                     </div>
+	                  </div>
+	                  <div class="col-sm-12">
+	                     <div class="form-group">
+	                        <label for="porcino"><spam th:text="#{Texto.CantidadPorcino}"></spam> </label> <!--   -->
+	                        <input th:field="*{perdidas.CantidadPorcino}" class="form-control" type="text" id="idioma1" th:placeholder="#{PlaceHolder.CantidadPorcino}">
+	                     </div>
+	                  </div>
+	                  <div class="col-sm-12">
+	                     <div class="form-group">
+	                        <label for="equino"><spam th:text="#{Texto.CantidadEquino}"></spam> </label> <!--   -->
+	                        <input th:field="*{perdidas.CantidadEquino}" class="form-control" type="text" id="idioma1" th:placeholder="#{PlaceHolder.CantidadEquino}">
+	                     </div>
+	                  </div>
+	                  <div class="col-sm-12">
+	                     <div class="form-group">
+	                        <label for="avicola"><spam th:text="#{Texto.CantidadAvicola}"></spam> </label> <!--   -->
+	                        <input th:field="*{perdidas.CantidadAvicola}" class="form-control" type="text" id="idioma1" th:placeholder="#{PlaceHolder.CantidadAvicola}">
+	                     </div>
+	                  </div>  
                   </div>
-                  <div class="col-sm-6 white">
-	                  <spam class="text-justify" th:text="#{Texto.Programas.Opcion9}"></spam> <br>
-	                  <spam class="text-justify" th:text="#{Texto.Programas.Opcion10}"></spam><br>
-	                  <spam class="text-justify" th:text="#{Texto.Programas.Opcion11}"></spam><br>
-	                  <spam class="text-justify" th:text="#{Texto.Programas.Opcion12}"></spam><br>
-	                  <spam class="text-justify" th:text="#{Texto.Programas.Opcion13}"></spam><br>
-	                  <spam class="text-justify" th:text="#{Texto.Programas.Opcion14}"></spam><br>
-	                  <spam class="text-justify" th:text="#{Texto.Programas.Opcion15}"></spam><br>
+                  <div class="col-sm-2">
+                  	<div class="col-sm-12">
+	                	<label for="tit"><spam th:text="#{Texto.Cultivo}"></spam> </label> <!--   -->
+	                </div>
+	                <div class="custom-control custom-checkbox custom-control-inline">    
+			                <input type="checkbox" id="maiz" name="maiz" class="custom-control-input"  th:field="*{perdidas.isMaiz}"> <!-- th:value="#{Texto.Maiz}" -->
+			                <label class="custom-control-label" for="maiz" th:text="#{Texto.Maiz}"></label>
+			            </div>
+			            <div class="custom-control custom-checkbox custom-control-inline">
+			                <input type="checkbox" id="frijol" name="frijol" class="custom-control-input" th:field="*{perdidas.isFrijol}">
+			                <label class="custom-control-label" for="frijol" th:text="#{Texto.Frijo}"></label>
+			            </div>
+			            <div class="custom-control custom-checkbox custom-control-inline">
+			                <input type="checkbox" id="arroz" name="arroz" class="custom-control-input" th:field="*{perdidas.isArroz}">
+			                <label class="custom-control-label" for="arroz" th:text="#{Texto.Arroz}"></label>
+			            </div>
+			            <div class="custom-control custom-checkbox custom-control-inline">
+			                <input type="checkbox" id="citricos" name="citricos" class="custom-control-input" th:field="*{perdidas.isCitricos}">
+			                <label class="custom-control-label" for="citricos" th:text="#{Texto.Citricos}"></label>
+			            </div>
+			            <div class="custom-control custom-checkbox custom-control-inline">
+			                <input type="checkbox" id="cacao" name="cacao" class="custom-control-input" th:field="*{perdidas.isCacao}">
+			                <label class="custom-control-label" for="cacao" th:text="#{Texto.Cacao}"></label>
+			            </div>
+			            <div class="custom-control custom-checkbox custom-control-inline">
+			                <input type="checkbox" id="coco" name="coco" class="custom-control-input" th:field="*{perdidas.isCoco}">
+			                <label class="custom-control-label" for="coco" th:text="#{Texto.Coco}"></label>
+			            </div>
+			            <div class="custom-control custom-checkbox custom-control-inline">
+			                <input type="checkbox" id="cana" name="cana" class="custom-control-input" th:field="*{perdidas.isCana}">
+			                <label class="custom-control-label" for="cana" th:text="#{Texto.Cana}"></label>
+			            </div>
+			            <div class="custom-control custom-checkbox custom-control-inline">
+			                <input type="checkbox" id="sorgo" name="sorgo" class="custom-control-input" th:field="*{perdidas.isSorgo}">
+			                <label class="custom-control-label" for="sorgo" th:text="#{Texto.Sorgo}"></label>
+			            </div>
+			             <div class="col-sm-12">
+	                     <div class="form-group">
+	                        <label for="otroC"><spam th:text="#{Texto.Otro}"></spam> </label> <!--   -->
+	                        <input th:field="*{perdidas.CultivoOtro}" class="form-control" type="text" id="otroC" th:placeholder="#{PlaceHolder.Otro}">
+	                     </div>
+	                  </div>
+	                  <div class="col-sm-12">
+	                     <div class="form-group">
+	                        <label for="superficie"><spam th:text="#{Texto.Superficie}"></spam> </label> <!--   -->
+	                        <input th:field="*{perdidas.CultivoSuperficie}" class="form-control" type="text" id="superficie" th:placeholder="#{PlaceHolder.Superficie}">
+	                     </div>
+	                  </div>
+			            
+                  </div>
+                   <div class="col-sm-4">
+                   	<div class="col-sm-12">
+	                	<label for="tit"><spam th:text="#{Texto.Mobiliario}"></spam> </label> <!--   -->
+	                </div>
+	                <div class="custom-control custom-checkbox custom-control-inline">    
+		                <input type="checkbox" id="colchon" name="colchon" class="custom-control-input"  th:field="*{perdidas.isColchon}"> <!-- th:value="#{Texto.Maiz}" -->
+		                <label class="custom-control-label" for="colchon" th:text="#{Texto.Colchon}"></label>
+		            </div>
+		            <div class="custom-control custom-checkbox custom-control-inline">
+		                <input type="checkbox" id="cama" name="cama" class="custom-control-input" th:field="*{perdidas.isCama}">
+		                <label class="custom-control-label" for="cama" th:text="#{Texto.Cama}"></label>
+		            </div>
+		            <div class="custom-control custom-checkbox custom-control-inline">
+		                <input type="checkbox" id="comedor" name="comedor" class="custom-control-input" th:field="*{perdidas.isComedor}">
+		                <label class="custom-control-label" for="comedor" th:text="#{Texto.Comedor}"></label>
+		            </div>
+		            <div class="custom-control custom-checkbox custom-control-inline">
+		                <input type="checkbox" id="sala" name="sala" class="custom-control-input" th:field="*{perdidas.isSala}">
+		                <label class="custom-control-label" for="sala" th:text="#{Texto.Sala}"></label>
+		            </div>
+		            <div class="custom-control custom-checkbox custom-control-inline">
+		                <input type="checkbox" id="estufa" name="estufa" class="custom-control-input" th:field="*{perdidas.isEstufa}">
+		                <label class="custom-control-label" for="estufa" th:text="#{Texto.Estufa}"></label>
+		            </div>
+		            <div class="custom-control custom-checkbox custom-control-inline">
+		                <input type="checkbox" id="refri" name="refri" class="custom-control-input" th:field="*{perdidas.isRefrigerador}">
+		                <label class="custom-control-label" for="refri" th:text="#{Texto.Refrigerador}"></label>
+		            </div>
+		            <div class="custom-control custom-checkbox custom-control-inline">
+		                <input type="checkbox" id="lavadora" name="lavadora" class="custom-control-input" th:field="*{perdidas.isLavadora}">
+		                <label class="custom-control-label" for="lavadora" th:text="#{Texto.Lavadora}"></label>
+		            </div>
+		            <div class="custom-control custom-checkbox custom-control-inline">
+		                <input type="checkbox" id="radio" name="radio" class="custom-control-input" th:field="*{perdidas.isRadio}">
+		                <label class="custom-control-label" for="radio" th:text="#{Texto.Radio}"></label>
+		            </div>
+		            <div class="custom-control custom-checkbox custom-control-inline">
+		                <input type="checkbox" id="tele" name="tele" class="custom-control-input" th:field="*{perdidas.isTelevision}">
+		                <label class="custom-control-label" for="tele" th:text="#{Texto.Tele}"></label>
+		            </div>
+		            <div class="custom-control custom-checkbox custom-control-inline">
+		                <input type="checkbox" id="micro" name="micro" class="custom-control-input" th:field="*{perdidas.isMicroondas}">
+		                <label class="custom-control-label" for="micro" th:text="#{Texto.Microondas}"></label>
+		            </div>
+		            <div class="custom-control custom-checkbox custom-control-inline">
+		                <input type="checkbox" id="compu" name="compu" class="custom-control-input" th:field="*{perdidas.isComputadora}">
+		                <label class="custom-control-label" for="compu" th:text="#{Texto.Compu}"></label>
+		            </div>
+		             <div class="col-sm-12">
+                     <div class="form-group">
+                        <label for="otroM"><spam th:text="#{Texto.Otros}"></spam> </label> <!--   -->
+                        <input th:field="*{perdidas.otrosMobiliario}" class="form-control" type="text" id="otroM" th:placeholder="#{PlaceHolder.Otros}">
+                     </div>
+                  </div>
+                  </div>
+                  <div class="col-sm-2">
+                  	<div class="col-sm-12">
+	                	<label for="tit"><spam th:text="#{Texto.Vivienda}"></spam> </label> <!--   -->
+	                </div>
+	                <div class="custom-control custom-checkbox custom-control-inline">    
+		                <input type="checkbox" id="parcial" name="parcial" class="custom-control-input"  th:field="*{perdidas.danoParcial}"> <!-- th:value="#{Texto.Maiz}" -->
+		                <label class="custom-control-label" for="parcial" th:text="#{Texto.Parcial}"></label>
+		            </div>
+		            <div class="custom-control custom-checkbox custom-control-inline">
+		                <input type="checkbox" id="total" name="total" class="custom-control-input" th:field="*{perdidas.danoTotal}">
+		                <label class="custom-control-label" for="total" th:text="#{Texto.Total}"></label>
+		            </div>
+		            <div class="col-sm-12">
+	                	<label for="materia"><spam th:text="#{Texto.Material}"></spam> </label>
+	                </div>
+		            <div class="custom-control custom-checkbox custom-control-inline">
+		                <input type="checkbox" id="adobe" name="adobe" class="custom-control-input" th:field="*{perdidas.isAdobe}">
+		                <label class="custom-control-label" for="adobe" th:text="#{Texto.Adobe}"></label>
+		            </div>
+		            <div class="custom-control custom-checkbox custom-control-inline">
+		                <input type="checkbox" id="cemento" name="cemento" class="custom-control-input" th:field="*{perdidas.isCemento}">
+		                <label class="custom-control-label" for="cemento" th:text="#{Texto.Cemento}"></label>
+		            </div>
+		            <div class="custom-control custom-checkbox custom-control-inline">
+		                <input type="checkbox" id="ladrillo" name="ladrillo" class="custom-control-input" th:field="*{perdidas.isladrillo}">
+		                <label class="custom-control-label" for="ladrillo" th:text="#{Texto.Ladrillo}"></label>
+		            </div>
+		            <div class="custom-control custom-checkbox custom-control-inline">
+		                <input type="checkbox" id="madera" name="madera" class="custom-control-input" th:field="*{perdidas.isMadera}">
+		                <label class="custom-control-label" for="madera" th:text="#{Texto.Madera}"></label>
+		            </div>
+		             <div class="col-sm-12">
+                     <div class="form-group">
+                        <label for="otroMat"><spam th:text="#{Texto.Otro}"></spam> </label>
+                        <input th:field="*{perdidas.otrosMaterial}" class="form-control" type="text" id="otroMat" th:placeholder="#{PlaceHolder.Otro}">
+                     </div>
+                  </div>
+                  </div>
+                  <div class="col-sm-2">
+                  	<div class="col-sm-12">
+	                	<label for="tit"><spam th:text="#{Texto.Servicios}"></spam> </label> <!--   -->
+	                </div>
+	                <div class="custom-control custom-checkbox custom-control-inline">
+		                <input type="checkbox" id="energia" name="energia" class="custom-control-input" th:field="*{perdidas.isenergiaElectrica}">
+		                <label class="custom-control-label" for="energia" th:text="#{Texto.Energia}"></label>
+		            </div>
+		            <div class="custom-control custom-checkbox custom-control-inline">
+		                <input type="checkbox" id="agua" name="agua" class="custom-control-input" th:field="*{perdidas.isAgua}">
+		                <label class="custom-control-label" for="agua" th:text="#{Texto.Agua}"></label>
+		            </div>
+		            <div class="custom-control custom-checkbox custom-control-inline">
+		                <input type="checkbox" id="gas" name="gas" class="custom-control-input" th:field="*{perdidas.isGas}">
+		                <label class="custom-control-label" for="gas" th:text="#{Texto.Gas}"></label>
+		            </div>
+	                <div class="custom-control custom-checkbox custom-control-inline">
+		                <input type="checkbox" id="drenaje" name="drenaje" class="custom-control-input" th:field="*{perdidas.isDrenaje}">
+		                <label class="custom-control-label" for="drenaje" th:text="#{Texto.Drenaje}"></label>
+		            </div>
+		            <div class="custom-control custom-checkbox custom-control-inline">
+		                <input type="checkbox" id="vialidad" name="vialidad" class="custom-control-input" th:field="*{perdidas.isVialidad}">
+		                <label class="custom-control-label" for="vialidad" th:text="#{Texto.Vialidad}"></label>
+		            </div>
+		            <div class="custom-control custom-checkbox custom-control-inline">
+		                <input type="checkbox" id="telefono" name="telefono" class="custom-control-input" th:field="*{perdidas.isTelefono}">
+		                <label class="custom-control-label" for="telefono" th:text="#{Texto.Telefono}"></label>
+		            </div>
+		             <div class="col-sm-12">
+                     <div class="form-group">
+                        <label for="otroMat"><spam th:text="#{Texto.Otro}"></spam> </label>
+                        <input th:field="*{perdidas.otrosServicios}" class="form-control" type="text" id="otroMat" th:placeholder="#{PlaceHolder.Otro}">
+                     </div>
+                  </div>
+                  </div>
+                  
+                  <div class="col-sm-7 white"></div>
+                  <div class="col-sm-1 white" th:if="${(param.error != null)}"></div>
+                  <div class="alert alert-danger" role="alert" th:if="${(param.error != null)}">
+                     <i class="fa fa-warning"> 
+                     <span
+                        th:text=#{Texto.NotFolio}></span> 
+                     </i>
                   </div>
                   <div class="col-sm-12">&nbsp;</div>
                   
@@ -841,6 +1053,8 @@
                      <br>
                   </div>
                </div>
+               
+               <!-- Fin seccion 6 -->
                
                <div class="form-row bd-callout-info bd-callout active">
                   <div class="col-sm-1 gray"></div>

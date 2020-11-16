@@ -7,6 +7,9 @@ import java.util.List;
 import mx.gob.bienestar.negocio.vo.AuxRecibirApoyoVO;
 import mx.gob.bienestar.negocio.vo.BancoVO;
 import mx.gob.bienestar.negocio.vo.DatosPersonaVO;
+import mx.gob.bienestar.negocio.vo.PerdidasVO;
+import mx.gob.bienestar.persistencia.entidades.Banco;
+import mx.gob.bienestar.persistencia.entidades.AuxRecibirApoyo;
 import mx.gob.bienestar.negocio.vo.IncorporacionVO;
 
 public class SolicitudDTO implements Serializable {
@@ -24,6 +27,10 @@ public class SolicitudDTO implements Serializable {
 	private boolean firmaCompromisoAuxiliar;
 
 	private DatosPersonaVO datosPersona = new DatosPersonaVO();
+	
+	private PerdidasVO perdidas = new PerdidasVO();
+	
+//	private BancoVO banco = new BancoVO();
 
 	private List<IncorporacionVO> incorporacionVOs = new ArrayList<IncorporacionVO>();
 
@@ -77,6 +84,14 @@ public class SolicitudDTO implements Serializable {
 
 	public void setDatosPersona(DatosPersonaVO datosPersona) {
 		this.datosPersona = datosPersona;
+	}
+
+	public PerdidasVO getPerdidas() {
+		return perdidas;
+	}
+
+	public void setPerdidas(PerdidasVO perdidas) {
+		this.perdidas = perdidas;
 	}
 
 	public AuxRecibirApoyoVO getAuxRecibirApoyo() {

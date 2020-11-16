@@ -1,163 +1,90 @@
-package mx.gob.bienestar.persistencia.entidades;
+package mx.gob.bienestar.negocio.vo;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.MapsId;
-import javax.persistence.OneToOne;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "m_Perdidas")
-public class DaniosPerdidas {
-
-	@Id
-	@Column(unique = true, name = "id")
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "PER_SEQ")
-	@SequenceGenerator(sequenceName = "perdidas_seq", allocationSize = 1, name = "PER_SEQ")
-	private Long id;
-
-	@Column(name = "Cantidad_Vacuno")
+public class PerdidasVO {
+	
 	private String cantidadVacuno;
-
-	@Column(name = "Cantidad_Caprino")
+	
 	private String cantidadCaprino;
-
-	@Column(name = "Cantidad_Ovino")
+	
 	private String cantidadOvino;
-
-	@Column(name = "Cantidad_Porcino")
+	
 	private String CantidadPorcino;
-
-	@Column(name = "Cantidad_Equino")
+	
 	private String CantidadEquino;
-
-	@Column(name = "Cantidad_Avicola")
+	
 	private String CantidadAvicola;
-
-	@Column(name = "Is_Maiz")
+	
 	private boolean isMaiz;
 	
-	@Column(name = "Is_Frijol")
 	private boolean isFrijol;
 	
-	@Column(name = "Is_Arroz")
 	private boolean isArroz;
 	
-	@Column(name = "Is_Citricos")
 	private boolean isCitricos;
 	
-	@Column(name = "Is_Cacao")
 	private boolean isCacao;
 	
-	@Column(name = "Is_Coco")
 	private boolean isCoco;
 	
-	@Column(name = "Is_Cana")
 	private boolean isCana;
 	
-	@Column(name = "Is_Sorgo")
 	private boolean isSorgo;
 	
-	@Column(name = "Cultivo_Otro")
 	private String CultivoOtro;
-
-	@Column(name = "Cultivo_Superficie")
+	
 	private String CultivoSuperficie;
-
-	@Column(name = "Is_Colchon")
+	
 	private boolean isColchon;
 	
-	@Column(name = "Is_Cama")
 	private boolean isCama;
 	
-	@Column(name = "Is_Comedor")
 	private boolean isComedor;
 	
-	@Column(name = "Is_Sala")
 	private boolean isSala;
 	
-	@Column(name = "Is_Estufa")
 	private boolean isEstufa;
 	
-	@Column(name = "Is_Refrigerador")
 	private boolean isRefrigerador;
 	
-	@Column(name = "Is_Lavadora")
 	private boolean isLavadora;
 	
-	@Column(name = "Is_Radio")
 	private boolean isRadio;
 	
-	@Column(name = "Is_Television")
 	private boolean isTelevision;
 	
-	@Column(name = "Is_Microondas")
 	private boolean isMicroondas;
 	
-	@Column(name = "Is_Computadora")
 	private boolean isComputadora;
 	
-	@Column(name = "Otros_Mobiliario")
 	private String otrosMobiliario;
 	
-	@Column(name = "Is_Dano_Parcial")
 	private boolean danoParcial;
 	
-	@Column(name = "Is_Dano_Total")
 	private boolean danoTotal;
 	
-	@Column(name = "Is_Adobe")
 	private boolean isAdobe;
 	
-	@Column(name = "Is_Cemento")
 	private boolean isCemento;
 	
-	@Column(name = "Is_Ladrillo")
 	private boolean isladrillo;
 	
-	@Column(name = "Is_Madera")
 	private boolean isMadera;
 	
-	@Column(name = "Otros_Material")
 	private String otrosMaterial;
-
-	@Column(name = "Is_Energia_Electrica")
+	
 	private boolean isenergiaElectrica;
 	
-	@Column(name = "Is_Agua")
 	private boolean isAgua;
 	
-	@Column(name = "Is_Gas")
 	private boolean isGas;
 	
-	@Column(name = "Is_Drenaje")
 	private boolean isDrenaje;
 	
-	@Column(name = "Is_Vialidad")
 	private boolean isVialidad;
 	
-	@Column(name = "Is_Telefono")
 	private boolean isTelefono;
 	
-	@Column(name = "Otros_Servicios")
 	private String otrosServicios;
-	
-	@MapsId
-	@OneToOne(fetch = FetchType.EAGER)
-	private Solicitud solicitud;
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
 
 	public String getCantidadVacuno() {
 		return cantidadVacuno;
@@ -494,14 +421,4 @@ public class DaniosPerdidas {
 	public void setOtrosServicios(String otrosServicios) {
 		this.otrosServicios = otrosServicios;
 	}
-
-	public Solicitud getSolicitud() {
-		return solicitud;
-	}
-
-	public void setSolicitud(Solicitud solicitud) {
-		this.solicitud = solicitud;
-	}
-	
-	
 }
