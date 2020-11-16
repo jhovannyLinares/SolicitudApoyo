@@ -2,37 +2,43 @@ package mx.gob.bienestar.persistencia.entidades;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.MapsId;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "m_apoyo")
 public class Apoyo {
-	
+
 	@Id
 	@Column(unique = true, name = "id")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "APOYO_SEQ")
 	@SequenceGenerator(sequenceName = "apoyo_seq", allocationSize = 1, name = "APOYO_SEQ")
 	private Long id;
 
-	
 	@Column(name = "apoyo")
 	private String apoyo;
-	
+
 	@Column(name = "tipo")
 	private String tipo;
-	
+
 	@Column(name = "cantidad")
 	private String cantidad;
-	
+
 	@Column(name = "temporalidad")
 	private String temporalidad;
-	
+
 	@Column(name = "dar_Seguimiento")
 	private Boolean darSeguimiento;
+
+	@MapsId
+	@OneToOne(fetch = FetchType.EAGER)
+	private Solicitud solicitud;
 
 	public Long getId() {
 		return id;
@@ -81,4 +87,15 @@ public class Apoyo {
 	public void setDarSeguimiento(Boolean darSeguimiento) {
 		this.darSeguimiento = darSeguimiento;
 	}
+
+	public Solicitud getSolicitud() {
+		return solicitud;
+	}
+
+	public void setSolicitud(Solicitud solicitud) {
+		this.solicitud = solicitud;
+	}
+
+	
+
 }

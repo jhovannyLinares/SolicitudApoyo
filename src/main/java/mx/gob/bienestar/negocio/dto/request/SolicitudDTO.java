@@ -3,7 +3,6 @@ package mx.gob.bienestar.negocio.dto.request;
 import java.io.Serializable;
 
 import mx.gob.bienestar.negocio.vo.DatosPersonaVO;
-import mx.gob.bienestar.persistencia.entidades.Banco;
 
 public class SolicitudDTO implements Serializable {
 
@@ -17,7 +16,8 @@ public class SolicitudDTO implements Serializable {
 
 	private DatosPersonaVO datosPersona = new DatosPersonaVO();
 	
-//	private BancoVO banco = new BancoVO();
+
+	private Boolean firmaSolicitud;
 
 	public long getFolio() {
 		return folio;
@@ -50,5 +50,14 @@ public class SolicitudDTO implements Serializable {
 	public void setDatosPersona(DatosPersonaVO datosPersona) {
 		this.datosPersona = datosPersona;
 	}
+
+	public Boolean getFirmaSolicitud() {
+		return firmaSolicitud;
+	}
+
+	public void setFirmaSolicitud(Boolean firmaSolicitud) {
+		this.firmaSolicitud = firmaSolicitud;
+	}
+
 
 }

@@ -2,9 +2,12 @@ package mx.gob.bienestar.persistencia.entidades;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.MapsId;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -17,111 +20,115 @@ public class DaniosPerdidas {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "PER_SEQ")
 	@SequenceGenerator(sequenceName = "perdidas_seq", allocationSize = 1, name = "PER_SEQ")
 	private Long id;
-	
+
 	@Column(name = "Cantidad_Vacuno")
 	private String cantidadVacuno;
-	
+
 	@Column(name = "Cantidad_Caprino")
 	private String cantidadCaprino;
-	
+
 	@Column(name = "Cantidad_Ovino")
 	private String cantidadOvino;
-	
+
 	@Column(name = "Cantidad_Porcino")
 	private String CantidadPorcino;
-	
+
 	@Column(name = "Cantidad_Equino")
 	private String CantidadEquino;
-	
+
 	@Column(name = "Cantidad_Avicola")
 	private String CantidadAvicola;
-	
+
 	@Column(name = "Is_Maiz")
 	private String isMaiz;
-	
+
 	@Column(name = "Is_Frijol")
 	private String isFrijol;
-	
+
 	@Column(name = "Is_Arroz")
 	private String isArroz;
-	
+
 	@Column(name = "Is_Citricos")
 	private String isCitricos;
-	
+
 	@Column(name = "Is_Cacao")
 	private String isCacao;
-	
+
 	@Column(name = "Is_Coco")
 	private String isCoco;
-	
+
 	@Column(name = "Is_Cana")
 	private String isCana;
-	
+
 	@Column(name = "Is_Sorgo")
 	private String isSorgo;
-	
+
 	@Column(name = "Cultivo_Otro")
 	private String CultivoOtro;
-	
+
 	@Column(name = "Cultivo_Superficie")
 	private String CultivoSuperficie;
-	
+
 	@Column(name = "Is_Colchon")
 	private String isColchon;
-	
+
 	@Column(name = "Is_Cama")
 	private String isCama;
-	
+
 	@Column(name = "Is_Comedor")
 	private String isComedor;
-	
+
 	@Column(name = "Is_Sala")
 	private String isSala;
-	
+
 	@Column(name = "Is_Estufa")
 	private String isEstufa;
-	
+
 	@Column(name = "Is_Refrigerador")
 	private String isRefrigerador;
-	
+
 	@Column(name = "Is_Lavadora")
 	private String isLavadora;
-	
+
 	@Column(name = "Is_Radio")
 	private String isRadio;
-	
+
 	@Column(name = "Is_Television")
 	private String isTelevision;
-	
+
 	@Column(name = "Is_Microondas")
 	private String isMicroondas;
-	
+
 	@Column(name = "Is_Computadora")
 	private String isComputadora;
-	
+
 	@Column(name = "Otros_Mobiliario")
 	private String otrosM;
-	
+
 	@Column(name = "Is_Dano_Parcial")
 	private String danoParcial;
-	
+
 	@Column(name = "Is_Dano_Total")
 	private String danoTotal;
-	
+
 	@Column(name = "Is_Adobe")
 	private String isAdobe;
-	
+
 	@Column(name = "Is_Cemento")
 	private String isCemento;
-	
+
 	@Column(name = "Is_Ladrillo")
 	private String isladrillo;
-	
+
 	@Column(name = "Is_Madera")
 	private String isMadera;
-	
+
 	@Column(name = "Otros_Material")
 	private String otrosMaterial;
+
+	@MapsId
+	@OneToOne(fetch = FetchType.EAGER)
+	private Solicitud solicitud;
 
 	public Long getId() {
 		return id;
@@ -409,6 +416,14 @@ public class DaniosPerdidas {
 
 	public void setOtrosMaterial(String otrosMaterial) {
 		this.otrosMaterial = otrosMaterial;
+	}
+
+	public Solicitud getSolicitud() {
+		return solicitud;
+	}
+
+	public void setSolicitud(Solicitud solicitud) {
+		this.solicitud = solicitud;
 	}
 
 }

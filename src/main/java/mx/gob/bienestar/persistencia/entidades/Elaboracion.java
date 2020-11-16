@@ -2,9 +2,12 @@ package mx.gob.bienestar.persistencia.entidades;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.MapsId;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -38,6 +41,10 @@ public class Elaboracion {
 	
 	@Column(name = "is_Firma")
 	private Boolean isFirma;
+	
+	@MapsId
+	@OneToOne(fetch = FetchType.EAGER)
+	private Solicitud solicitud;
 
 	public Long getId() {
 		return id;
@@ -102,4 +109,14 @@ public class Elaboracion {
 	public void setIsFirma(Boolean isFirma) {
 		this.isFirma = isFirma;
 	}
+
+	public Solicitud getSolicitud() {
+		return solicitud;
+	}
+
+	public void setSolicitud(Solicitud solicitud) {
+		this.solicitud = solicitud;
+	}
+
+	
 }
