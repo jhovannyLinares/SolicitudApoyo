@@ -51,7 +51,7 @@ public class DatosPersona {
 	private String edad;
 
 	@Column(name = "Fecha_Nacimiento")
-	private Date fechaNacimiento;
+	private String fechaNacimiento;
 
 	@Column(name = "Estado_Nacimiento")
 	private String estadoNacimiento;
@@ -197,11 +197,11 @@ public class DatosPersona {
 		this.edad = edad;
 	}
 
-	public Date getFechaNacimiento() {
+	public String getFechaNacimiento() {
 		return fechaNacimiento;
 	}
 
-	public void setFechaNacimiento(Date fechaNacimiento) {
+	public void setFechaNacimiento(String fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 

@@ -3,15 +3,15 @@ package mx.gob.bienestar.negocio.vo;
 public class BancoVO {
 
 	private Long id;
-	
+
 	private String tieneCuentaBancaria;
-		
+
 	private String banco;
-		
+
 	private String tarjeta;
-		
+
 	private String clabe;
-		
+
 	private String cuenta;
 
 	public Long getId() {
@@ -61,4 +61,11 @@ public class BancoVO {
 	public void setCuenta(String cuenta) {
 		this.cuenta = cuenta;
 	}
+
+	@Override
+	public String toString() {
+		return "BancoVO [id=" + id + ", tieneCuentaBancaria=" + tieneCuentaBancaria + ", banco=" + banco + ", tarjeta="
+				+ tarjeta + ", clabe=" + clabe + ", cuenta=" + cuenta + "]";
+	}
+
 }

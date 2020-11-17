@@ -2,12 +2,11 @@ package mx.gob.bienestar.persistencia.entidades;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.MapsId;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -39,8 +38,12 @@ public class Incorporacion {
 	@Column(name = "programa")
 	private String programa;
 
-	@MapsId
-	@ManyToOne(fetch = FetchType.EAGER)
+////	@MapsId
+//	@ManyToOne(fetch = FetchType.EAGER)
+//	private Solicitud solicitud;
+
+	@ManyToOne
+	@JoinColumn(name = "solicitud_id", nullable = false)
 	private Solicitud solicitud;
 
 	public Long getId() {

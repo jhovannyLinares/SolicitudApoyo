@@ -7,7 +7,6 @@ import java.util.List;
 import mx.gob.bienestar.negocio.vo.ApoyoVO;
 import mx.gob.bienestar.negocio.vo.AuxRecibirApoyoVO;
 import mx.gob.bienestar.negocio.vo.BancoVO;
-import mx.gob.bienestar.negocio.vo.CompromisoAuxiliarVO;
 import mx.gob.bienestar.negocio.vo.DatosPersonaVO;
 import mx.gob.bienestar.negocio.vo.ElaboracionVO;
 import mx.gob.bienestar.negocio.vo.IncorporacionVO;
@@ -21,6 +20,8 @@ public class SolicitudDTO implements Serializable {
 
 	private String tipoSolicitud;
 
+	private Long folio;
+
 	private String fecha;
 
 	private boolean firmaSolicitud;
@@ -29,19 +30,25 @@ public class SolicitudDTO implements Serializable {
 
 	private DatosPersonaVO datosPersona = new DatosPersonaVO();
 
-	private PerdidasVO perdidas = new PerdidasVO();
-
-	private List<IncorporacionVO> incorporacionVOs = new ArrayList<IncorporacionVO>();
-
 	private AuxRecibirApoyoVO auxRecibirApoyo = new AuxRecibirApoyoVO();
 
 	private BancoVO banco = new BancoVO();
 
-	private CompromisoAuxiliarVO compromisoAuxiliar = new CompromisoAuxiliarVO();
-
 	private ApoyoVO apoyo = new ApoyoVO();
 
+	private List<IncorporacionVO> incorporaciones = new ArrayList<IncorporacionVO>();
+
+	private PerdidasVO perdidas = new PerdidasVO();
+
 	private ElaboracionVO elaboracion = new ElaboracionVO();
+
+	public Long getFolio() {
+		return folio;
+	}
+
+	public void setFolio(Long folio) {
+		this.folio = folio;
+	}
 
 	public Long getId() {
 		return id;
@@ -99,12 +106,12 @@ public class SolicitudDTO implements Serializable {
 		this.perdidas = perdidas;
 	}
 
-	public List<IncorporacionVO> getIncorporacionVOs() {
-		return incorporacionVOs;
+	public List<IncorporacionVO> getIncorporaciones() {
+		return incorporaciones;
 	}
 
-	public void setIncorporacionVOs(List<IncorporacionVO> incorporacionVOs) {
-		this.incorporacionVOs = incorporacionVOs;
+	public void setIncorporaciones(List<IncorporacionVO> incorporaciones) {
+		this.incorporaciones = incorporaciones;
 	}
 
 	public AuxRecibirApoyoVO getAuxRecibirApoyo() {
@@ -121,14 +128,6 @@ public class SolicitudDTO implements Serializable {
 
 	public void setBanco(BancoVO banco) {
 		this.banco = banco;
-	}
-
-	public CompromisoAuxiliarVO getCompromisoAuxiliar() {
-		return compromisoAuxiliar;
-	}
-
-	public void setCompromisoAuxiliar(CompromisoAuxiliarVO compromisoAuxiliar) {
-		this.compromisoAuxiliar = compromisoAuxiliar;
 	}
 
 	public ApoyoVO getApoyo() {
@@ -151,9 +150,9 @@ public class SolicitudDTO implements Serializable {
 	public String toString() {
 		return "SolicitudDTO [id=" + id + ", tipoSolicitud=" + tipoSolicitud + ", fecha=" + fecha + ", firmaSolicitud="
 				+ firmaSolicitud + ", firmaCompromisoAuxiliar=" + firmaCompromisoAuxiliar + ", datosPersona="
-				+ datosPersona + ", perdidas=" + perdidas + ", incorporacionVOs=" + incorporacionVOs
-				+ ", auxRecibirApoyo=" + auxRecibirApoyo + ", banco=" + banco + ", compromisoAuxiliar="
-				+ compromisoAuxiliar + ", apoyo=" + apoyo + ", elaboracion=" + elaboracion + "]";
+				+ datosPersona + ", auxRecibirApoyo=" + auxRecibirApoyo + ", banco=" + banco + ", apoyo=" + apoyo
+				+ ", incorporaciones=" + incorporaciones + ", perdidas=" + perdidas + ", elaboracion=" + elaboracion
+				+ "]";
 	}
 
 }

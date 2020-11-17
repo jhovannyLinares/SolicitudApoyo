@@ -22,13 +22,19 @@ public class Elaboracion {
 	private Long id;
 	
 	@Column(name = "id_Elaboracion")
-	private String elaboracion;
+	private String elavoracionId;
+	
+	@Column(name = "persona")
+	private String persona;
 	
 	@Column(name = "lugar")
 	private String lugar;
 	
 	@Column(name = "quien_Elaboro")
 	private String quienElaboro;
+	
+	@Column(name = "dependencia")
+	private String dependencia;
 	
 	@Column(name = "nombre")
 	private String nombre;
@@ -54,12 +60,20 @@ public class Elaboracion {
 		this.id = id;
 	}
 
-	public String getElaboracion() {
-		return elaboracion;
+	public String getElavoracionId() {
+		return elavoracionId;
 	}
 
-	public void setElaboracion(String elaboracion) {
-		this.elaboracion = elaboracion;
+	public void setElavoracionId(String elavoracionId) {
+		this.elavoracionId = elavoracionId;
+	}
+
+	public String getPersona() {
+		return persona;
+	}
+
+	public void setPersona(String persona) {
+		this.persona = persona;
 	}
 
 	public String getLugar() {
@@ -76,6 +90,14 @@ public class Elaboracion {
 
 	public void setQuienElaboro(String quienElaboro) {
 		this.quienElaboro = quienElaboro;
+	}
+
+	public String getDependencia() {
+		return dependencia;
+	}
+
+	public void setDependencia(String dependencia) {
+		this.dependencia = dependencia;
 	}
 
 	public String getNombre() {
@@ -118,5 +140,7 @@ public class Elaboracion {
 		this.solicitud = solicitud;
 	}
 
+	
+	
 	
 }

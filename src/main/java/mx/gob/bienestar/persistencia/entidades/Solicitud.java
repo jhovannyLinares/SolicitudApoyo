@@ -24,6 +24,9 @@ public class Solicitud {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SOLICITUD_SEQ")
 	@SequenceGenerator(sequenceName = "SOLICITUD_SEQ", allocationSize = 1, name = "SOLICITUD_SEQ")
 	private Long id;
+	
+	@Column(name = "folio")
+	private Long folio;
 
 	@Column(name = "tipo_Solicitud")
 	private String tipoSolicitud;
@@ -41,7 +44,7 @@ public class Solicitud {
 	private DatosPersona datosPersona = new DatosPersona();
 
 	@OneToOne(mappedBy = "solicitud", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	private AuxRecibirApoyo auxiliar = new AuxRecibirApoyo();
+	private AuxRecibirApoyo auxRecibirApoyo = new AuxRecibirApoyo();
 
 	@OneToOne(mappedBy = "solicitud", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private Banco banco = new Banco();
@@ -54,7 +57,7 @@ public class Solicitud {
 
 	@OneToOne(mappedBy = "solicitud", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private DaniosPerdidas perdidas = new DaniosPerdidas();
-	
+
 	@OneToOne(mappedBy = "solicitud", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private Elaboracion elaboracion = new Elaboracion();
 
@@ -64,6 +67,16 @@ public class Solicitud {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+	
+	
+
+	public Long getFolio() {
+		return folio;
+	}
+
+	public void setFolio(Long folio) {
+		this.folio = folio;
 	}
 
 	public String getTipoSolicitud() {
@@ -106,12 +119,12 @@ public class Solicitud {
 		this.datosPersona = datosPersona;
 	}
 
-	public AuxRecibirApoyo getAuxiliar() {
-		return auxiliar;
+	public AuxRecibirApoyo getAuxRecibirApoyo() {
+		return auxRecibirApoyo;
 	}
 
-	public void setAuxiliar(AuxRecibirApoyo auxiliar) {
-		this.auxiliar = auxiliar;
+	public void setAuxRecibirApoyo(AuxRecibirApoyo auxRecibirApoyo) {
+		this.auxRecibirApoyo = auxRecibirApoyo;
 	}
 
 	public Banco getBanco() {
@@ -144,6 +157,14 @@ public class Solicitud {
 
 	public void setPerdidas(DaniosPerdidas perdidas) {
 		this.perdidas = perdidas;
+	}
+
+	public Elaboracion getElaboracion() {
+		return elaboracion;
+	}
+
+	public void setElaboracion(Elaboracion elaboracion) {
+		this.elaboracion = elaboracion;
 	}
 
 }

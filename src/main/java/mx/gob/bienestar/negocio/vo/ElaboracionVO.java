@@ -3,6 +3,8 @@ package mx.gob.bienestar.negocio.vo;
 public class ElaboracionVO {
 
 	private Long id;
+	
+	private String elavoracionId;
 
 	private String persona;
 
@@ -26,6 +28,14 @@ public class ElaboracionVO {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public String getElavoracionId() {
+		return elavoracionId;
+	}
+
+	public void setElavoracionId(String elavoracionId) {
+		this.elavoracionId = elavoracionId;
 	}
 
 	public String getPersona() {
@@ -90,6 +100,13 @@ public class ElaboracionVO {
 
 	public void setIsFirma(Boolean isFirma) {
 		this.isFirma = isFirma;
+	}
+
+	@Override
+	public String toString() {
+		return "ElaboracionVO [id=" + id + ", elavoracionId=" + elavoracionId + ", persona=" + persona + ", lugar="
+				+ lugar + ", quienElaboro=" + quienElaboro + ", dependencia=" + dependencia + ", nombre=" + nombre
+				+ ", paterno=" + paterno + ", materno=" + materno + ", isFirma=" + isFirma + "]";
 	}
 
 }

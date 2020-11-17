@@ -8,7 +8,7 @@ public class ApoyoVO {
 
 	private String especie;
 
-	private String transfEcono;
+	private String transferenciaEconomica;
 
 	private String otro;
 
@@ -44,12 +44,12 @@ public class ApoyoVO {
 		this.especie = especie;
 	}
 
-	public String getTransfEcono() {
-		return transfEcono;
+	public String getTransferenciaEconomica() {
+		return transferenciaEconomica;
 	}
 
-	public void setTransfEcono(String transfEcono) {
-		this.transfEcono = transfEcono;
+	public void setTransferenciaEconomica(String transferenciaEconomica) {
+		this.transferenciaEconomica = transferenciaEconomica;
 	}
 
 	public String getOtro() {
@@ -92,6 +92,12 @@ public class ApoyoVO {
 		this.darSeguimiento = darSeguimiento;
 	}
 
+	@Override
+	public String toString() {
+		return "ApoyoVO [id=" + id + ", alimentario=" + alimentario + ", especie=" + especie
+				+ ", transferenciaEconomica=" + transferenciaEconomica + ", otro=" + otro + ", tipo=" + tipo
+				+ ", cantidad=" + cantidad + ", temporalidad=" + temporalidad + ", darSeguimiento=" + darSeguimiento
+				+ "]";
+	}
 
-	
 }

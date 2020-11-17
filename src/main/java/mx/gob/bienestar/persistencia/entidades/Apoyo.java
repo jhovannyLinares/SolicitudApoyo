@@ -23,13 +23,13 @@ public class Apoyo {
 
 	@Column(name = "alimentario")
 	private String alimentario;
-	
+
 	@Column(name = "especie")
 	private String especie;
-	
-	@Column(name = "transfEcono")
-	private String transfEcono;
-	
+
+	@Column(name = "transferencia_Economica")
+	private String transferenciaEconomica;
+
 	@Column(name = "otro")
 	private String otro;
 
@@ -113,12 +113,12 @@ public class Apoyo {
 		this.especie = especie;
 	}
 
-	public String getTransfEcono() {
-		return transfEcono;
+	public String getTransferenciaEconomica() {
+		return transferenciaEconomica;
 	}
 
-	public void setTransfEcono(String transfEcono) {
-		this.transfEcono = transfEcono;
+	public void setTransferenciaEconomica(String transferenciaEconomica) {
+		this.transferenciaEconomica = transferenciaEconomica;
 	}
 
 	public String getOtro() {
@@ -128,7 +128,5 @@ public class Apoyo {
 	public void setOtro(String otro) {
 		this.otro = otro;
 	}
-
-	
 
 }

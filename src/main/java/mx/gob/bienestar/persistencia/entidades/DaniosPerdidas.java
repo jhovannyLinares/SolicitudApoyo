@@ -40,29 +40,29 @@ public class DaniosPerdidas {
 	private String CantidadAvicola;
 
 	@Column(name = "Is_Maiz")
-	private boolean isMaiz;
-	
+	private String isMaiz;
+
 	@Column(name = "Is_Frijol")
-	private boolean isFrijol;
-	
+	private String isFrijol;
+
 	@Column(name = "Is_Arroz")
-	private boolean isArroz;
-	
+	private String isArroz;
+
 	@Column(name = "Is_Citricos")
-	private boolean isCitricos;
-	
+	private String isCitricos;
+
 	@Column(name = "Is_Cacao")
-	private boolean isCacao;
-	
+	private String isCacao;
+
 	@Column(name = "Is_Coco")
-	private boolean isCoco;
-	
+	private String isCoco;
+
 	@Column(name = "Is_Cana")
-	private boolean isCana;
-	
+	private String isCana;
+
 	@Column(name = "Is_Sorgo")
-	private boolean isSorgo;
-	
+	private String isSorgo;
+
 	@Column(name = "Cultivo_Otro")
 	private String CultivoOtro;
 
@@ -70,83 +70,83 @@ public class DaniosPerdidas {
 	private String CultivoSuperficie;
 
 	@Column(name = "Is_Colchon")
-	private boolean isColchon;
-	
+	private String isColchon;
+
 	@Column(name = "Is_Cama")
-	private boolean isCama;
-	
+	private String isCama;
+
 	@Column(name = "Is_Comedor")
-	private boolean isComedor;
-	
+	private String isComedor;
+
 	@Column(name = "Is_Sala")
-	private boolean isSala;
-	
+	private String isSala;
+
 	@Column(name = "Is_Estufa")
-	private boolean isEstufa;
-	
+	private String isEstufa;
+
 	@Column(name = "Is_Refrigerador")
-	private boolean isRefrigerador;
-	
+	private String isRefrigerador;
+
 	@Column(name = "Is_Lavadora")
-	private boolean isLavadora;
-	
+	private String isLavadora;
+
 	@Column(name = "Is_Radio")
-	private boolean isRadio;
-	
+	private String isRadio;
+
 	@Column(name = "Is_Television")
-	private boolean isTelevision;
-	
+	private String isTelevision;
+
 	@Column(name = "Is_Microondas")
-	private boolean isMicroondas;
-	
+	private String isMicroondas;
+
 	@Column(name = "Is_Computadora")
-	private boolean isComputadora;
-	
+	private String isComputadora;
+
 	@Column(name = "Otros_Mobiliario")
 	private String otrosMobiliario;
-	
+
 	@Column(name = "Is_Dano_Parcial")
-	private boolean danoParcial;
-	
+	private String danoParcial;
+
 	@Column(name = "Is_Dano_Total")
-	private boolean danoTotal;
-	
+	private String danoTotal;
+
 	@Column(name = "Is_Adobe")
-	private boolean isAdobe;
-	
+	private String isAdobe;
+
 	@Column(name = "Is_Cemento")
-	private boolean isCemento;
-	
+	private String isCemento;
+
 	@Column(name = "Is_Ladrillo")
-	private boolean isladrillo;
-	
+	private String isladrillo;
+
 	@Column(name = "Is_Madera")
-	private boolean isMadera;
-	
+	private String isMadera;
+
 	@Column(name = "Otros_Material")
 	private String otrosMaterial;
 
 	@Column(name = "Is_Energia_Electrica")
-	private boolean isenergiaElectrica;
-	
+	private String isenergiaElectrica;
+
 	@Column(name = "Is_Agua")
-	private boolean isAgua;
-	
+	private String isAgua;
+
 	@Column(name = "Is_Gas")
-	private boolean isGas;
-	
+	private String isGas;
+
 	@Column(name = "Is_Drenaje")
-	private boolean isDrenaje;
-	
+	private String isDrenaje;
+
 	@Column(name = "Is_Vialidad")
-	private boolean isVialidad;
-	
+	private String isVialidad;
+
 	@Column(name = "Is_Telefono")
-	private boolean isTelefono;
-	
+	private String isTelefono;
+
 	@Column(name = "Otros_Servicios")
 	private String otrosServicios;
-	
+
 	@MapsId
 	@OneToOne(fetch = FetchType.EAGER)
 	private Solicitud solicitud;
@@ -207,67 +207,67 @@ public class DaniosPerdidas {
 		CantidadAvicola = cantidadAvicola;
 	}
 
-	public boolean isMaiz() {
+	public String getIsMaiz() {
 		return isMaiz;
 	}
 
-	public void setMaiz(boolean isMaiz) {
+	public void setIsMaiz(String isMaiz) {
 		this.isMaiz = isMaiz;
 	}
 
-	public boolean isFrijol() {
+	public String getIsFrijol() {
 		return isFrijol;
 	}
 
-	public void setFrijol(boolean isFrijol) {
+	public void setIsFrijol(String isFrijol) {
 		this.isFrijol = isFrijol;
 	}
 
-	public boolean isArroz() {
+	public String getIsArroz() {
 		return isArroz;
 	}
 
-	public void setArroz(boolean isArroz) {
+	public void setIsArroz(String isArroz) {
 		this.isArroz = isArroz;
 	}
 
-	public boolean isCitricos() {
+	public String getIsCitricos() {
 		return isCitricos;
 	}
 
-	public void setCitricos(boolean isCitricos) {
+	public void setIsCitricos(String isCitricos) {
 		this.isCitricos = isCitricos;
 	}
 
-	public boolean isCacao() {
+	public String getIsCacao() {
 		return isCacao;
 	}
 
-	public void setCacao(boolean isCacao) {
+	public void setIsCacao(String isCacao) {
 		this.isCacao = isCacao;
 	}
 
-	public boolean isCoco() {
+	public String getIsCoco() {
 		return isCoco;
 	}
 
-	public void setCoco(boolean isCoco) {
+	public void setIsCoco(String isCoco) {
 		this.isCoco = isCoco;
 	}
 
-	public boolean isCana() {
+	public String getIsCana() {
 		return isCana;
 	}
 
-	public void setCana(boolean isCana) {
+	public void setIsCana(String isCana) {
 		this.isCana = isCana;
 	}
 
-	public boolean isSorgo() {
+	public String getIsSorgo() {
 		return isSorgo;
 	}
 
-	public void setSorgo(boolean isSorgo) {
+	public void setIsSorgo(String isSorgo) {
 		this.isSorgo = isSorgo;
 	}
 
@@ -287,91 +287,91 @@ public class DaniosPerdidas {
 		CultivoSuperficie = cultivoSuperficie;
 	}
 
-	public boolean isColchon() {
+	public String getIsColchon() {
 		return isColchon;
 	}
 
-	public void setColchon(boolean isColchon) {
+	public void setIsColchon(String isColchon) {
 		this.isColchon = isColchon;
 	}
 
-	public boolean isCama() {
+	public String getIsCama() {
 		return isCama;
 	}
 
-	public void setCama(boolean isCama) {
+	public void setIsCama(String isCama) {
 		this.isCama = isCama;
 	}
 
-	public boolean isComedor() {
+	public String getIsComedor() {
 		return isComedor;
 	}
 
-	public void setComedor(boolean isComedor) {
+	public void setIsComedor(String isComedor) {
 		this.isComedor = isComedor;
 	}
 
-	public boolean isSala() {
+	public String getIsSala() {
 		return isSala;
 	}
 
-	public void setSala(boolean isSala) {
+	public void setIsSala(String isSala) {
 		this.isSala = isSala;
 	}
 
-	public boolean isEstufa() {
+	public String getIsEstufa() {
 		return isEstufa;
 	}
 
-	public void setEstufa(boolean isEstufa) {
+	public void setIsEstufa(String isEstufa) {
 		this.isEstufa = isEstufa;
 	}
 
-	public boolean isRefrigerador() {
+	public String getIsRefrigerador() {
 		return isRefrigerador;
 	}
 
-	public void setRefrigerador(boolean isRefrigerador) {
+	public void setIsRefrigerador(String isRefrigerador) {
 		this.isRefrigerador = isRefrigerador;
 	}
 
-	public boolean isLavadora() {
+	public String getIsLavadora() {
 		return isLavadora;
 	}
 
-	public void setLavadora(boolean isLavadora) {
+	public void setIsLavadora(String isLavadora) {
 		this.isLavadora = isLavadora;
 	}
 
-	public boolean isRadio() {
+	public String getIsRadio() {
 		return isRadio;
 	}
 
-	public void setRadio(boolean isRadio) {
+	public void setIsRadio(String isRadio) {
 		this.isRadio = isRadio;
 	}
 
-	public boolean isTelevision() {
+	public String getIsTelevision() {
 		return isTelevision;
 	}
 
-	public void setTelevision(boolean isTelevision) {
+	public void setIsTelevision(String isTelevision) {
 		this.isTelevision = isTelevision;
 	}
 
-	public boolean isMicroondas() {
+	public String getIsMicroondas() {
 		return isMicroondas;
 	}
 
-	public void setMicroondas(boolean isMicroondas) {
+	public void setIsMicroondas(String isMicroondas) {
 		this.isMicroondas = isMicroondas;
 	}
 
-	public boolean isComputadora() {
+	public String getIsComputadora() {
 		return isComputadora;
 	}
 
-	public void setComputadora(boolean isComputadora) {
+	public void setIsComputadora(String isComputadora) {
 		this.isComputadora = isComputadora;
 	}
 
@@ -383,51 +383,51 @@ public class DaniosPerdidas {
 		this.otrosMobiliario = otrosMobiliario;
 	}
 
-	public boolean isDanoParcial() {
+	public String getDanoParcial() {
 		return danoParcial;
 	}
 
-	public void setDanoParcial(boolean danoParcial) {
+	public void setDanoParcial(String danoParcial) {
 		this.danoParcial = danoParcial;
 	}
 
-	public boolean isDanoTotal() {
+	public String getDanoTotal() {
 		return danoTotal;
 	}
 
-	public void setDanoTotal(boolean danoTotal) {
+	public void setDanoTotal(String danoTotal) {
 		this.danoTotal = danoTotal;
 	}
 
-	public boolean isAdobe() {
+	public String getIsAdobe() {
 		return isAdobe;
 	}
 
-	public void setAdobe(boolean isAdobe) {
+	public void setIsAdobe(String isAdobe) {
 		this.isAdobe = isAdobe;
 	}
 
-	public boolean isCemento() {
+	public String getIsCemento() {
 		return isCemento;
 	}
 
-	public void setCemento(boolean isCemento) {
+	public void setIsCemento(String isCemento) {
 		this.isCemento = isCemento;
 	}
 
-	public boolean isIsladrillo() {
+	public String getIsladrillo() {
 		return isladrillo;
 	}
 
-	public void setIsladrillo(boolean isladrillo) {
+	public void setIsladrillo(String isladrillo) {
 		this.isladrillo = isladrillo;
 	}
 
-	public boolean isMadera() {
+	public String getIsMadera() {
 		return isMadera;
 	}
 
-	public void setMadera(boolean isMadera) {
+	public void setIsMadera(String isMadera) {
 		this.isMadera = isMadera;
 	}
 
@@ -439,51 +439,51 @@ public class DaniosPerdidas {
 		this.otrosMaterial = otrosMaterial;
 	}
 
-	public boolean isIsenergiaElectrica() {
+	public String getIsenergiaElectrica() {
 		return isenergiaElectrica;
 	}
 
-	public void setIsenergiaElectrica(boolean isenergiaElectrica) {
+	public void setIsenergiaElectrica(String isenergiaElectrica) {
 		this.isenergiaElectrica = isenergiaElectrica;
 	}
 
-	public boolean isAgua() {
+	public String getIsAgua() {
 		return isAgua;
 	}
 
-	public void setAgua(boolean isAgua) {
+	public void setIsAgua(String isAgua) {
 		this.isAgua = isAgua;
 	}
 
-	public boolean isGas() {
+	public String getIsGas() {
 		return isGas;
 	}
 
-	public void setGas(boolean isGas) {
+	public void setIsGas(String isGas) {
 		this.isGas = isGas;
 	}
 
-	public boolean isDrenaje() {
+	public String getIsDrenaje() {
 		return isDrenaje;
 	}
 
-	public void setDrenaje(boolean isDrenaje) {
+	public void setIsDrenaje(String isDrenaje) {
 		this.isDrenaje = isDrenaje;
 	}
 
-	public boolean isVialidad() {
+	public String getIsVialidad() {
 		return isVialidad;
 	}
 
-	public void setVialidad(boolean isVialidad) {
+	public void setIsVialidad(String isVialidad) {
 		this.isVialidad = isVialidad;
 	}
 
-	public boolean isTelefono() {
+	public String getIsTelefono() {
 		return isTelefono;
 	}
 
-	public void setTelefono(boolean isTelefono) {
+	public void setIsTelefono(String isTelefono) {
 		this.isTelefono = isTelefono;
 	}
 
@@ -502,6 +502,5 @@ public class DaniosPerdidas {
 	public void setSolicitud(Solicitud solicitud) {
 		this.solicitud = solicitud;
 	}
-	
-	
+
 }

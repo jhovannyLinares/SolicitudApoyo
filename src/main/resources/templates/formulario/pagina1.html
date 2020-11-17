@@ -6,7 +6,10 @@
             <!-- Contenido -->
             <form role="form" class="needs-validation" method="post" th:object="${solicitudDTO}" th:action="@{/formulario/pagina1}" novalidate>
                <!--            Solicitud de Apoyo -->
-               <div class="form-row bd-callout-info bd-callout active">
+               <div class="form-row bd-callout-info bd-callout active" >
+               
+               <input id="prodId" name="prodId" type="hidden" th:value="${param.folio[0]}" th:field="*{folio}">
+               
                   <div class="col-sm-1 gray"></div>
                   <div class="col-sm-10 gray">
                      <p th:text="#{Texto.Seccion0.Titulo}"></p>
@@ -34,7 +37,7 @@
                         <label for="start">
                            <spam th:text="#{Texto.Fecha}"></spam>
                         </label>
-                        <input class="form-control" type="date" id="start" name="trip-start"  min="2020-01-01" max="2020-12-31">
+                        <input class="form-control" type="date" id="start" name="trip-start"  min="2020-01-01" max="2020-12-31" th:field="*{fecha}">
                      </div>
                   </div>
                   <div class="col-sm-12 white">
@@ -646,295 +649,6 @@
 					</div>
 				</div>
 
-
-
-
-				<div class="form-row bd-callout-info bd-callout active">
-                  <div class="col-sm-1 gray"></div>
-                  <div class="col-sm-10 gray">
-                     <p th:text="#{Texto.Seccion2.Titulo}"></p>
-                  </div>
-                  <div class="col-sm-1 gray"></div>
-                  <!-- NOMBRE -->
-                  <div class="col-sm-4">
-                     <div class="form-group">
-                        <label for="nombre">
-                           <spam th:text="#{Texto.Nombre}"></spam>
-                        </label>
-                        <input
-                           th:field="*{auxRecibirApoyo.nombre}" class="form-control"
-                           type="text" id="nombre" th:placeholder="#{Texto.Nombre}" >
-                     </div>
-                  </div>
-                  <div class="col-sm-4">
-                     <div class="form-group">
-                        <label for="paterno">
-                           <spam th:text="#{Texto.Paterno}"></spam>
-                        </label>
-                        <input
-                           th:field="*{auxRecibirApoyo.paterno}" class="form-control"
-                           type="text" id="paterno" th:placeholder="#{Texto.Paterno}">
-                     </div>
-                  </div>
-                  <div class="col-sm-4">
-                     <div class="form-group">
-                        <label for="materno">
-                           <spam th:text="#{Texto.Materno}"></spam>
-                        </label>
-                        <input
-                           th:field="*{auxRecibirApoyo.materno}" class="form-control"
-                           type="text" id="materno" th:placeholder="#{Texto.Materno}">
-                     </div>
-                  </div>
-                  <!-- INFORMACION -->
-                  <div class="col-sm-1">
-                     <div class="form-group">
-                        <label for="sexo">
-                           <spam th:text="#{Texto.Sexo}"></spam>
-                        </label>
-                        <div class="custom-control custom-radio custom-control-inline">    
-                           <input type="radio" id="hombre" name="hombre" class="custom-control-input" th:value="#{Texto.Masculino}" th:field="*{auxRecibirApoyo.sexo}">
-                           <label class="custom-control-label" for="hombre" th:text="H"></label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                           <input type="radio" id="mujer" name="mujer" class="custom-control-input" th:value="#{Texto.Femenino}" th:field="*{auxRecibirApoyo.sexo}">
-                           <label class="custom-control-label" for="mujer" th:text="M"></label>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-sm-1">
-                     <div class="form-group">
-                        <label for="edad">
-                           <spam th:text="#{Texto.Edad}"></spam>
-                        </label>
-                        <input
-                           th:field="*{auxRecibirApoyo.edad}" class="form-control"
-                           type="text" id="edad" th:placeholder="#{Texto.Edad}">
-                     </div>
-                  </div>
-                  <div class="col-sm-2">
-                     <div class="form-group">
-                        <label for="fechaNacimiento">
-                           <spam th:text="#{Texto.FechaNacimiento}"></spam>
-                        </label>
-                        <input
-                           th:field="*{auxRecibirApoyo.fechaNacimiento}" class="form-control"
-                           type="date" id="fechaNacimiento" th:placeholder="#{Texto.FechaNacimiento}">
-                     </div>
-                  </div>
-                  <div class="col-sm-3">
-                     <div class="form-group">
-                        <label for="estadoNacimiento">
-                           <spam th:text="#{Texto.EstadoNacimiento}"></spam>
-                        </label>
-                        <input
-                           th:field="*{auxRecibirApoyo.estadoNacimiento}" class="form-control"
-                           type="text" id="estadoNacimiento" th:placeholder="#{Texto.EstadoNacimiento}">
-                     </div>
-                  </div>
-                  <div class="col-sm-3">
-                     <div class="form-group">
-                        <label for="telefonoFijo">
-                           <spam th:text="#{Texto.TelefoFijo}"></spam>
-                        </label>
-                        <input
-                           th:field="*{auxRecibirApoyo.telefonoFijo}" class="form-control" th:placeholder="#{Texto.TelefoFijo}">
-                     </div>
-                  </div>
-                  <div class="col-sm-2">
-                     <div class="form-group">
-                        <label for="celular">
-                           <spam th:text="#{Texto.Celular}"></spam>
-                        </label>
-                        <input
-                           th:field="*{auxRecibirApoyo.celular}" class="form-control"
-                           type="text" id="celular" th:placeholder="#{Texto.Celular}">
-                     </div>
-                  </div>
-                  <!-- CURP CE -->
-                  <div class="col-sm-6">
-                     <div class="form-group">
-                        <label for="claveElector">
-                           <spam th:text="#{Texto.ClaveElector}"></spam>
-                        </label>
-                        <input
-                           th:field="*{auxRecibirApoyo.claveElector}" class="form-control"
-                           type="text" id="claveElector" th:placeholder="#{Texto.ClaveElector}">
-                     </div>
-                  </div>
-                  <div class="col-sm-6">
-                     <div class="form-group">
-                        <label for="curp">
-                           <spam th:text="#{Texto.Curp}"></spam>
-                        </label>
-                        <input
-                           th:field="*{auxRecibirApoyo.curp}" class="form-control"
-                           type="text" id="curp" th:placeholder="#{Texto.Curp}">
-                     </div>
-                  </div>
-                  <!-- DIRECCION -->
-                  <div class="col-sm-3">
-                     <div class="form-group">
-                        <label for="localidad">
-                           <spam th:text="#{Texto.Localidad}"></spam>
-                        </label>
-                        <input
-                           th:field="*{auxRecibirApoyo.localidad}" class="form-control"
-                           type="text" id="localidad" th:placeholder="#{Texto.Localidad}">
-                     </div>
-                  </div>
-                  <div class="col-sm-2">
-                     <div class="form-group">
-                        <label for="colonia">
-                           <spam th:text="#{Texto.Colonia}"></spam>
-                        </label>
-                        <input
-                           th:field="*{auxRecibirApoyo.colonia}" class="form-control"
-                           type="text" id="colonia" th:placeholder="#{Texto.Colonia}">
-                     </div>
-                  </div>
-                  <div class="col-sm-2">
-                     <div class="form-group">
-                        <label for="calle">
-                           <spam th:text="#{Texto.Calle}"></spam>
-                        </label>
-                        <input
-                           th:field="*{auxRecibirApoyo.calle}" class="form-control"
-                           type="text" id="calle" th:placeholder="#{Texto.Calle}">
-                     </div>
-                  </div>
-                  <div class="col-sm-1">
-                     <div class="form-group">
-                        <label for="numExt">
-                           <spam th:text="#{Texto.NoExterior}"></spam>
-                        </label>
-                        <input
-                           th:field="*{auxRecibirApoyo.numExt}" class="form-control"
-                           type="text" id="numExt" th:placeholder="#{Texto.NoExterior}">
-                     </div>
-                  </div>
-                  <div class="col-sm-1">
-                     <div class="form-group">
-                        <label for="numInt">
-                           <spam th:text="#{Texto.NoInterior}"></spam>
-                        </label>
-                        <input
-                           th:field="*{auxRecibirApoyo.numInt}" class="form-control"
-                           type="text" id="numInt" th:placeholder="#{Texto.NoInterior}">
-                     </div>
-                  </div>
-                  <div class="col-sm-1">
-                     <div class="form-group">
-                        <label for="manzana">
-                           <spam th:text="#{Texto.Mz}"></spam>
-                        </label>
-                        <input
-                           th:field="*{auxRecibirApoyo.manzana}" class="form-control"
-                           type="text" id="manzana" th:placeholder="#{Texto.Mz}">
-                     </div>
-                  </div>
-                  <div class="col-sm-1">
-                     <div class="form-group">
-                        <label for="lote">
-                           <spam th:text="#{Texto.Lote}"></spam>
-                        </label>
-                        <input
-                           th:field="*{auxRecibirApoyo.lote}" class="form-control"
-                           type="text" id="lote" th:placeholder="#{Texto.Lote}">
-                     </div>
-                  </div>
-                  <div class="col-sm-1">
-                     <div class="form-group">
-                        <label for="codigoPostal">
-                           <spam th:text="#{Texto.Cp}"></spam>
-                        </label>
-                        <input
-                           th:field="*{auxRecibirApoyo.codigoPostal}" class="form-control"
-                           type="text" id="codigoPostal" th:placeholder="#{Texto.Cp}">
-                     </div>
-                  </div>
-                  <!-- PARENTEZCO, DOCUMENTOS -->
-                  <div class="col-sm-3">
-                     <label for="codigoPostal">
-                        <spam th:text="#{Texto.Parentesco}"></spam>
-                     </label>
-                     <select name="select" class="form-control" th:field="*{auxRecibirApoyo.parentesco}" >
-                        <option value="madre">MADRE</option>
-                        <option value="padre">PADRE</option>
-                        <option value="abuelo">ABUELO/A</option>
-                        <option value="tio">TIO/A</option>
-                        <option value="hermano">HERMANO/A(18+)</option>
-                        <option value="hijo">HIJO/A(18+)</option>
-                        <option value="esposo">ESPOSO/A</option>
-                        <option value="concubino">CONCUBINO/A</option>
-                        <option value="unionLibre">UNIÓN LIBRE</option>
-                        <option value="amigo">AMIGO/A, PADRINO, MADRINA, VECINO/A</option>
-                        <option value="tutor">TUTOR/A</option>
-                        <option value="casaHogar">CASA HOGAR, A.C., I.A.P.</option>
-                        <option value="adopcion">ADOPCIÓN</option>
-                     </select>
-                  </div>
-                  <div class="col-sm-3">
-                     <label for="codigoPostal">
-                        <spam th:text="#{Texto.Seccion2.documento.uno}"></spam>
-                     </label>
-                     <select name="select" class="form-control" th:field="*{auxRecibirApoyo.documentoUno}">
-                        <option value="credencialResponsable">CREDENCIAL DE ELECTOR DEL RESPONSABLE</option>
-                        <option value="actaNacBeneficiario">ACTA DE NACIMIENTO DEL BENEFICIARIO</option>
-                        <option value="actaNacHijo">ACTA DE NACIMIENTO DE LA/EL HIJO</option>
-                        <option value="actaMatrimonio">ACTA DE MATRIMONIO</option>
-                        <option value="constanciaConcubinato">CONSTANCIA DE CONCUBINATO</option>
-                        <option value="conpromisoSolidario">FIRMAR COMPROMISO SOLIDARIO (PARTE POSTERIOR)</option>
-                        <option value="actaTutor">SENTENCIA Y/O ACTA DE TUTOR</option>
-                        <option value="constanciaDesamparo">CONSTANCIA DE NIÑO/AEN DESAMPARO</option>
-                        <option value="sentencia">SENTENCIA</option>
-                        <option value="actaAdopcion">ACTA DE ADOPCIÓN</option>
-                     </select>
-                  </div>
-                  <div class="col-sm-3 ">
-                     <label for="codigoPostal">
-                        <spam th:text="#{Texto.Seccion2.documentos.dos}"></spam>
-                     </label>
-                     <select name="select" class="form-control" th:field="*{auxRecibirApoyo.documentoDos}">
-                        <option value="credencialResponsable">CREDENCIAL DE ELECTOR DEL RESPONSABLE</option>
-                        <option value="actaNacBeneficiario">ACTA DE NACIMIENTO DEL BENEFICIARIO</option>
-                        <option value="actaNacHijo">ACTA DE NACIMIENTO DE LA/EL HIJO</option>
-                        <option value="actaMatrimonio">ACTA DE MATRIMONIO</option>
-                        <option value="constanciaConcubinato">CONSTANCIA DE CONCUBINATO</option>
-                        <option value="conpromisoSolidario">FIRMAR COMPROMISO SOLIDARIO (PARTE POSTERIOR)</option>
-                        <option value="actaTutor">SENTENCIA Y/O ACTA DE TUTOR</option>
-                        <option value="constanciaDesamparo">CONSTANCIA DE NIÑO/AEN DESAMPARO</option>
-                        <option value="sentencia">SENTENCIA</option>
-                        <option value="actaAdopcion">ACTA DE ADOPCIÓN</option>
-                     </select>
-                  </div>
-                  <div class="col-sm-3">
-                     <label for="codigoPostal">
-                        <spam th:text="#{Texto.Seccion2.documentos.tres}"></spam>
-                     </label>
-                     <select name="select" class="form-control" th:field="*{auxRecibirApoyo.documentoTres}">
-                        <option value="credencialResponsable">CREDENCIAL DE ELECTOR DEL RESPONSABLE</option>
-                        <option value="actaNacBeneficiario">ACTA DE NACIMIENTO DEL BENEFICIARIO</option>
-                        <option value="actaNacHijo">ACTA DE NACIMIENTO DE LA/EL HIJO</option>
-                        <option value="actaMatrimonio">ACTA DE MATRIMONIO</option>
-                        <option value="constanciaConcubinato">CONSTANCIA DE CONCUBINATO</option>
-                        <option value="conpromisoSolidario">FIRMAR COMPROMISO SOLIDARIO (PARTE POSTERIOR)</option>
-                        <option value="actaTutor">SENTENCIA Y/O ACTA DE TUTOR</option>
-                        <option value="constanciaDesamparo">CONSTANCIA DE NIÑO/AEN DESAMPARO</option>
-                        <option value="sentencia">SENTENCIA</option>
-                        <option value="actaAdopcion">ACTA DE ADOPCIÓN</option>
-                     </select>
-                  </div>
-                  <div class="col-sm-7 white"></div>
-                  <div class="alert alert-danger" role="alert"
-                     th:if="${(param.error != null)}">
-                     <i class="fa fa-warning"> <span th:text=#{Texto.NotFolio}></span>
-                     </i>
-                  </div>
-                  <div class="col-sm-12 white">
-                     <br>
-                  </div>
-               </div>
                <div class="form-row bd-callout-info bd-callout active">
                   <div class="col-sm-1 gray"></div>
                   <div class="col-sm-10 gray">
@@ -998,6 +712,7 @@
                      <br>
                   </div>
                </div>
+              
                <div class="form-row bd-callout-info bd-callout active">
                   <div class="col-sm-1 gray"></div>
                   <div class="col-sm-10 gray">
@@ -1067,7 +782,7 @@
                         <div class="custom-control custom-radio custom-control-inline">
                            <input type="radio" id="tranfEco" name="tranfEco"
                               class="custom-control-input" value="true"
-                              th:field="*{apoyo.transfEcono}"> <label
+                              th:field="*{apoyo.transferenciaEconomica}"> <label
                               class="custom-control-label" for="tranfEco"
                               th:text="#{Texto.TranferenciaEconomica}"></label>
                         </div>
@@ -1188,14 +903,14 @@
                      <br>
                   </div>
                   <div class="col-sm-12">&nbsp;</div>
-                  <div class="row" th:each="incorporacionVO,item : *{incorporacionVOs} ">
+                  <div class="row" th:each="incorporacionVO,item : *{incorporaciones} ">
                      <hr>
                      <div class="col-sm-2">
                         <div class="form-group">
                            <label for="nombre">
                               <spam th:text="#{Texto.Nombre}"></spam>
                            </label>
-                           <input th:field="*{incorporacionVOs[__${item.count}__].nombre}" class="form-control" type="text" id="nombre" th:placeholder="#{PlaceHolder.Nombre}" >
+                           <input th:field="*{incorporaciones[__${item.count}__].nombre}" class="form-control" type="text" id="nombre" th:placeholder="#{PlaceHolder.Nombre}" >
                         </div>
                      </div>
                      <!-- Paterno -->
@@ -1204,7 +919,7 @@
                            <label for="paterno">
                               <spam th:text="#{Texto.Paterno}"></spam>
                            </label>
-                           <input th:field="*{incorporacionVOs[__${item.count}__].paterno}" class="form-control" type="text" id="paterno" th:placeholder="#{PlaceHolder.APaterno}" >
+                           <input th:field="*{incorporaciones[__${item.count}__].paterno}" class="form-control" type="text" id="paterno" th:placeholder="#{PlaceHolder.APaterno}" >
                         </div>
                      </div>
                      <!-- Materno -->
@@ -1213,7 +928,7 @@
                            <label for="materno">
                               <spam th:text="#{Texto.Materno}"></spam>
                            </label>
-                           <input th:field="*{incorporacionVOs[__${item.count}__].materno}" class="form-control" type="text" id="materno" th:placeholder="#{PlaceHolder.AMaterno}" >
+                           <input th:field="*{incorporaciones[__${item.count}__].materno}" class="form-control" type="text" id="materno" th:placeholder="#{PlaceHolder.AMaterno}" >
                         </div>
                      </div>
                      <div class="col-sm-2">
@@ -1221,7 +936,7 @@
                            <label for="edad">
                               <spam th:text="#{Texto.Edad}"></spam>
                            </label>
-                           <input th:field="*{incorporacionVOs[__${item.count}__].edad}" class="form-control input-number" type="text" id="edad" th:placeholder="#{PlaceHolder.Edad}">
+                           <input th:field="*{incorporaciones[__${item.count}__].edad}" class="form-control input-number" type="text" id="edad" th:placeholder="#{PlaceHolder.Edad}">
                         </div>
                      </div>
                      <div class="col-sm-2">
@@ -1229,7 +944,7 @@
                            <label for="parentesto">
                               <spam th:text="#{Texto.Parentesco}"></spam>
                            </label>
-                           <input th:field="*{incorporacionVOs[__${item.count}__].edad}" class="form-control" type="text" id="parentesto" th:placeholder="#{Texto.Parentesco}">
+                           <input th:field="*{incorporaciones[__${item.count}__].parentesco}" class="form-control" type="text" id="parentesto" th:placeholder="#{Texto.Parentesco}">
                         </div>
                      </div>
                      <div class="col-sm-2">
@@ -1237,7 +952,7 @@
                            <label for="parentesto">
                               <spam th:text="#{Texto.Programa}"></spam>
                            </label>
-                           <input th:field="*{incorporacionVOs[__${item.count}__].programa}" class="form-control" type="text" id="parentesto" th:placeholder="#{Texto.Programa}">
+                           <input th:field="*{incorporaciones[__${item.count}__].programa}" class="form-control" type="text" id="parentesto" th:placeholder="#{Texto.Programa}">
                         </div>
                      </div>
                   </div>
@@ -1552,7 +1267,7 @@
                      <div class="form-group col-sm-2" align="center">
                         <br/><br/><br/>
                         <div class="custom-control custom-checkbox custom-control-inline">
-                           <input type="checkbox" id="firmaAuxiliar" name="firmaAuxiliar" class="custom-control-input" th:field="*{compromisoAuxiliar.isFirma}" value="true" >
+                           <input type="checkbox" id="firmaAuxiliar" name="firmaAuxiliar" class="custom-control-input" th:field="*{firmaCompromisoAuxiliar}" value="true" >
                            <label class="custom-control-label" for="firmaAuxiliar" th:text="#{Texto.Firma.Responsable}"></label>
                         </div>
                      </div>
@@ -1632,7 +1347,7 @@
                         <label for="id">
                            <spam th:text="#{Texto.ID}"></spam>
                         </label>
-                        <input th:field="*{elaboracion.id}" class="form-control" type="text" id="id" th:placeholder="#{Texto.ID}" >
+                        <input th:field="*{elaboracion.elavoracionId}" class="form-control" type="text" id="id" th:placeholder="#{Texto.ID}" >
                      </div>
                   </div>
                   <div class="col-sm-3">

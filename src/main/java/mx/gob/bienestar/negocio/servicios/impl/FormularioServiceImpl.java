@@ -14,11 +14,15 @@ import mx.gob.bienestar.negocio.dto.request.FolioDTO;
 import mx.gob.bienestar.negocio.dto.request.SolicitudDTO;
 import mx.gob.bienestar.negocio.servicios.IFormularioService;
 import mx.gob.bienestar.negocio.servicios.config.ServiceMaster;
+import mx.gob.bienestar.negocio.util.mapper.MapperUtil;
 import mx.gob.bienestar.negocio.vo.IncorporacionVO;
 import mx.gob.bienestar.persistencia.entidades.Configuracion;
 import mx.gob.bienestar.persistencia.entidades.Folio;
+import mx.gob.bienestar.persistencia.entidades.Incorporacion;
+import mx.gob.bienestar.persistencia.entidades.Solicitud;
 import mx.gob.bienestar.persistencia.repositorio.IConfiguracionRepository;
 import mx.gob.bienestar.persistencia.repositorio.IFolioRepository;
+import mx.gob.bienestar.persistencia.repositorio.ISolicitudRepository;
 
 @Service
 public class FormularioServiceImpl extends ServiceMaster implements IFormularioService {
@@ -28,6 +32,9 @@ public class FormularioServiceImpl extends ServiceMaster implements IFormularioS
 
 	@Autowired
 	private IFolioRepository folioRepository;
+	
+	@Autowired
+	private ISolicitudRepository solicitudRepository;
 
 	@Override
 	public String getPrincipal(Model model, HttpSession session) {
@@ -56,7 +63,7 @@ public class FormularioServiceImpl extends ServiceMaster implements IFormularioS
 
 				folioRepository.save(folio);
 
-				return PAGINA1_REDIRECT;
+				return PAGINA1_REDIRECT.concat(dto.getFolio().toString());
 			}
 
 		}
@@ -92,7 +99,7 @@ public class FormularioServiceImpl extends ServiceMaster implements IFormularioS
 			incorporacionVOs.add(vo);
 		}
 
-		dto.setIncorporacionVOs(incorporacionVOs);
+		dto.setIncorporaciones(incorporacionVOs);
 
 		model.addAttribute("solicitudDTO", dto);
 
@@ -101,9 +108,61 @@ public class FormularioServiceImpl extends ServiceMaster implements IFormularioS
 
 	@Override
 	public String postPagina1(Model model, HttpSession session, SolicitudDTO dto) {
-		
+
 		System.out.println(dto.toString());
+
+		Solicitud solicitud = new Solicitud();
+
+		MapperUtil.map(dto, solicitud);
+
+		if (solicitud.getDatosPersona() != null && solicitud.getDatosPersona().getNombres() != null) {
+			solicitud.getDatosPersona().setSolicitud(solicitud);
+		} else {
+			solicitud.setDatosPersona(null);
+		}
+
+		if (solicitud.getAuxRecibirApoyo() != null && solicitud.getAuxRecibirApoyo().getNombre() != null) {
+			solicitud.getAuxRecibirApoyo().setSolicitud(solicitud);
+		} else {
+			solicitud.setAuxRecibirApoyo(null);
+		}
+
+		if (solicitud.getBanco() != null && solicitud.getBanco().getBanco() != null) {
+			solicitud.getBanco().setSolicitud(solicitud);
+		} else {
+			solicitud.setBanco(null);
+		}
+
+		if (solicitud.getApoyo() != null) {
+			solicitud.getApoyo().setSolicitud(solicitud);
+		} else {
+			solicitud.setApoyo(null);
+		}
+
+		if (solicitud.getIncorporaciones() != null) {
+
+			for (Incorporacion in : solicitud.getIncorporaciones()) {
+				in.setSolicitud(solicitud);
+			}
+
+		} else {
+			solicitud.setIncorporaciones(null);
+		}
+
+		if (solicitud.getPerdidas() != null) {
+			solicitud.getPerdidas().setSolicitud(solicitud);
+		} else {
+			solicitud.setPerdidas(null);
+		}
+
+		if (solicitud.getElaboracion() != null) {
+			solicitud.getElaboracion().setSolicitud(solicitud);
+		} else {
+			solicitud.setElaboracion(null);
+		}
 		
+		solicitudRepository.save(solicitud);
+
 		return PRINCIPAL_REDIRECT;
 	}
 

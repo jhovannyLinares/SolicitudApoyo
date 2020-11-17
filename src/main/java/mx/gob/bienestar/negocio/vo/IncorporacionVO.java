@@ -72,6 +72,10 @@ public class IncorporacionVO {
 		this.programa = programa;
 	}
 
-	
+	@Override
+	public String toString() {
+		return "IncorporacionVO [id=" + id + ", nombre=" + nombre + ", paterno=" + paterno + ", materno=" + materno
+				+ ", edad=" + edad + ", parentesco=" + parentesco + ", programa=" + programa + "]";
+	}
 
 }
