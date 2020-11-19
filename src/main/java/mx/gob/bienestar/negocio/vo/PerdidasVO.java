@@ -2,6 +2,9 @@ package mx.gob.bienestar.negocio.vo;
 
 public class PerdidasVO {
 
+	// GANADO
+	private String isGanado;
+	
 	private String cantidadVacuno;
 
 	private String cantidadCaprino;
@@ -14,6 +17,9 @@ public class PerdidasVO {
 
 	private String CantidadAvicola;
 
+	//AGRICULTURA
+    private String isAgricultura;
+	
 	private String isMaiz;
 
 	private String isFrijol;
@@ -24,16 +30,35 @@ public class PerdidasVO {
 
 	private String isCacao;
 
-	private String isCoco;
+	private String isPlatano;
 
 	private String isCana;
 
 	private String isSorgo;
 
 	private String CultivoOtro;
+	
+	private String supMaiz;
+	
+	private String supFrijol;
+	
+	private String supPlatano;
+	
+	private String supArroz;
+	
+	private String supCacao;
+	
+	private String supCana;
+	
+	private String supSorgo;
+	
+	private String supCitricos;
+	
+	private String supOtro;
 
-	private String CultivoSuperficie;
-
+	//MOBILIARIO
+	private String isMoviliario;
+	
 	private String isColchon;
 
 	private String isCama;
@@ -57,21 +82,19 @@ public class PerdidasVO {
 	private String isComputadora;
 
 	private String otrosMobiliario;
+	
+	//VIVIENDA
+	private String isVivienda;
+	
+	private String materialMuro;
+	
+	private String materialTecho;
 
-	private String danoParcial;
-
-	private String danoTotal;
-
-	private String isAdobe;
-
-	private String isCemento;
-
-	private String isladrillo;
-
-	private String isMadera;
-
-	private String otrosMaterial;
-
+	private String danosVivienda;
+	
+	//SERVICIOS
+	private String isServicios;
+	
 	private String isenergiaElectrica;
 
 	private String isAgua;
@@ -83,8 +106,18 @@ public class PerdidasVO {
 	private String isVialidad;
 
 	private String isTelefono;
+	
+	private String isInternet;
 
 	private String otrosServicios;
+
+	public String getIsGanado() {
+		return isGanado;
+	}
+
+	public void setIsGanado(String isGanado) {
+		this.isGanado = isGanado;
+	}
 
 	public String getCantidadVacuno() {
 		return cantidadVacuno;
@@ -134,6 +167,14 @@ public class PerdidasVO {
 		CantidadAvicola = cantidadAvicola;
 	}
 
+	public String getIsAgricultura() {
+		return isAgricultura;
+	}
+
+	public void setIsAgricultura(String isAgricultura) {
+		this.isAgricultura = isAgricultura;
+	}
+
 	public String getIsMaiz() {
 		return isMaiz;
 	}
@@ -174,12 +215,12 @@ public class PerdidasVO {
 		this.isCacao = isCacao;
 	}
 
-	public String getIsCoco() {
-		return isCoco;
+	public String getIsPlatano() {
+		return isPlatano;
 	}
 
-	public void setIsCoco(String isCoco) {
-		this.isCoco = isCoco;
+	public void setIsPlatano(String isPlatano) {
+		this.isPlatano = isPlatano;
 	}
 
 	public String getIsCana() {
@@ -206,12 +247,84 @@ public class PerdidasVO {
 		CultivoOtro = cultivoOtro;
 	}
 
-	public String getCultivoSuperficie() {
-		return CultivoSuperficie;
+	public String getSupMaiz() {
+		return supMaiz;
 	}
 
-	public void setCultivoSuperficie(String cultivoSuperficie) {
-		CultivoSuperficie = cultivoSuperficie;
+	public void setSupMaiz(String supMaiz) {
+		this.supMaiz = supMaiz;
+	}
+
+	public String getSupFrijol() {
+		return supFrijol;
+	}
+
+	public void setSupFrijol(String supFrijol) {
+		this.supFrijol = supFrijol;
+	}
+
+	public String getSupPlatano() {
+		return supPlatano;
+	}
+
+	public void setSupPlatano(String supPlatano) {
+		this.supPlatano = supPlatano;
+	}
+
+	public String getSupArroz() {
+		return supArroz;
+	}
+
+	public void setSupArroz(String supArroz) {
+		this.supArroz = supArroz;
+	}
+
+	public String getSupCacao() {
+		return supCacao;
+	}
+
+	public void setSupCacao(String supCacao) {
+		this.supCacao = supCacao;
+	}
+
+	public String getSupCana() {
+		return supCana;
+	}
+
+	public void setSupCana(String supCana) {
+		this.supCana = supCana;
+	}
+
+	public String getSupSorgo() {
+		return supSorgo;
+	}
+
+	public void setSupSorgo(String supSorgo) {
+		this.supSorgo = supSorgo;
+	}
+
+	public String getSupCitricos() {
+		return supCitricos;
+	}
+
+	public void setSupCitricos(String supCitricos) {
+		this.supCitricos = supCitricos;
+	}
+
+	public String getSupOtro() {
+		return supOtro;
+	}
+
+	public void setSupOtro(String supOtro) {
+		this.supOtro = supOtro;
+	}
+
+	public String getIsMoviliario() {
+		return isMoviliario;
+	}
+
+	public void setIsMoviliario(String isMoviliario) {
+		this.isMoviliario = isMoviliario;
 	}
 
 	public String getIsColchon() {
@@ -310,60 +423,44 @@ public class PerdidasVO {
 		this.otrosMobiliario = otrosMobiliario;
 	}
 
-	public String getDanoParcial() {
-		return danoParcial;
+	public String getIsVivienda() {
+		return isVivienda;
 	}
 
-	public void setDanoParcial(String danoParcial) {
-		this.danoParcial = danoParcial;
+	public void setIsVivienda(String isVivienda) {
+		this.isVivienda = isVivienda;
 	}
 
-	public String getDanoTotal() {
-		return danoTotal;
+	public String getMaterialMuro() {
+		return materialMuro;
 	}
 
-	public void setDanoTotal(String danoTotal) {
-		this.danoTotal = danoTotal;
+	public void setMaterialMuro(String materialMuro) {
+		this.materialMuro = materialMuro;
 	}
 
-	public String getIsAdobe() {
-		return isAdobe;
+	public String getMaterialTecho() {
+		return materialTecho;
 	}
 
-	public void setIsAdobe(String isAdobe) {
-		this.isAdobe = isAdobe;
+	public void setMaterialTecho(String materialTecho) {
+		this.materialTecho = materialTecho;
 	}
 
-	public String getIsCemento() {
-		return isCemento;
+	public String getDanosVivienda() {
+		return danosVivienda;
 	}
 
-	public void setIsCemento(String isCemento) {
-		this.isCemento = isCemento;
+	public void setDanosVivienda(String danosVivienda) {
+		this.danosVivienda = danosVivienda;
 	}
 
-	public String getIsladrillo() {
-		return isladrillo;
+	public String getIsServicios() {
+		return isServicios;
 	}
 
-	public void setIsladrillo(String isladrillo) {
-		this.isladrillo = isladrillo;
-	}
-
-	public String getIsMadera() {
-		return isMadera;
-	}
-
-	public void setIsMadera(String isMadera) {
-		this.isMadera = isMadera;
-	}
-
-	public String getOtrosMaterial() {
-		return otrosMaterial;
-	}
-
-	public void setOtrosMaterial(String otrosMaterial) {
-		this.otrosMaterial = otrosMaterial;
+	public void setIsServicios(String isServicios) {
+		this.isServicios = isServicios;
 	}
 
 	public String getIsenergiaElectrica() {
@@ -414,6 +511,14 @@ public class PerdidasVO {
 		this.isTelefono = isTelefono;
 	}
 
+	public String getIsInternet() {
+		return isInternet;
+	}
+
+	public void setIsInternet(String isInternet) {
+		this.isInternet = isInternet;
+	}
+
 	public String getOtrosServicios() {
 		return otrosServicios;
 	}
@@ -424,23 +529,26 @@ public class PerdidasVO {
 
 	@Override
 	public String toString() {
-		return "PerdidasVO [cantidadVacuno=" + cantidadVacuno + ", cantidadCaprino=" + cantidadCaprino
-				+ ", cantidadOvino=" + cantidadOvino + ", CantidadPorcino=" + CantidadPorcino + ", CantidadEquino="
-				+ CantidadEquino + ", CantidadAvicola=" + CantidadAvicola + ", isMaiz=" + isMaiz + ", isFrijol="
-				+ isFrijol + ", isArroz=" + isArroz + ", isCitricos=" + isCitricos + ", isCacao=" + isCacao
-				+ ", isCoco=" + isCoco + ", isCana=" + isCana + ", isSorgo=" + isSorgo + ", CultivoOtro=" + CultivoOtro
-				+ ", CultivoSuperficie=" + CultivoSuperficie + ", isColchon=" + isColchon + ", isCama=" + isCama
-				+ ", isComedor=" + isComedor + ", isSala=" + isSala + ", isEstufa=" + isEstufa + ", isRefrigerador="
-				+ isRefrigerador + ", isLavadora=" + isLavadora + ", isRadio=" + isRadio + ", isTelevision="
-				+ isTelevision + ", isMicroondas=" + isMicroondas + ", isComputadora=" + isComputadora
-				+ ", otrosMobiliario=" + otrosMobiliario + ", danoParcial=" + danoParcial + ", danoTotal=" + danoTotal
-				+ ", isAdobe=" + isAdobe + ", isCemento=" + isCemento + ", isladrillo=" + isladrillo + ", isMadera="
-				+ isMadera + ", otrosMaterial=" + otrosMaterial + ", isenergiaElectrica=" + isenergiaElectrica
+		return "PerdidasVO [isGanado=" + isGanado + ", cantidadVacuno=" + cantidadVacuno + ", cantidadCaprino="
+				+ cantidadCaprino + ", cantidadOvino=" + cantidadOvino + ", CantidadPorcino=" + CantidadPorcino
+				+ ", CantidadEquino=" + CantidadEquino + ", CantidadAvicola=" + CantidadAvicola + ", isAgricultura="
+				+ isAgricultura + ", isMaiz=" + isMaiz + ", isFrijol=" + isFrijol + ", isArroz=" + isArroz
+				+ ", isCitricos=" + isCitricos + ", isCacao=" + isCacao + ", isPlatano=" + isPlatano + ", isCana="
+				+ isCana + ", isSorgo=" + isSorgo + ", CultivoOtro=" + CultivoOtro + ", supMaiz=" + supMaiz
+				+ ", supFrijol=" + supFrijol + ", supPlatano=" + supPlatano + ", supArroz=" + supArroz + ", supCacao="
+				+ supCacao + ", supCana=" + supCana + ", supSorgo=" + supSorgo + ", supCitricos=" + supCitricos
+				+ ", supOtro=" + supOtro + ", isMoviliario=" + isMoviliario + ", isColchon=" + isColchon + ", isCama="
+				+ isCama + ", isComedor=" + isComedor + ", isSala=" + isSala + ", isEstufa=" + isEstufa
+				+ ", isRefrigerador=" + isRefrigerador + ", isLavadora=" + isLavadora + ", isRadio=" + isRadio
+				+ ", isTelevision=" + isTelevision + ", isMicroondas=" + isMicroondas + ", isComputadora="
+				+ isComputadora + ", otrosMobiliario=" + otrosMobiliario + ", isVivienda=" + isVivienda
+				+ ", materialMuro=" + materialMuro + ", materialTecho=" + materialTecho + ", danosVivienda="
+				+ danosVivienda + ", isServicios=" + isServicios + ", isenergiaElectrica=" + isenergiaElectrica
 				+ ", isAgua=" + isAgua + ", isGas=" + isGas + ", isDrenaje=" + isDrenaje + ", isVialidad=" + isVialidad
-				+ ", isTelefono=" + isTelefono + ", otrosServicios=" + otrosServicios + ", toString()="
-				+ super.toString() + "]";
+				+ ", isTelefono=" + isTelefono + ", isInternet=" + isInternet + ", otrosServicios=" + otrosServicios
+				+ ", toString()=" + super.toString() + "]";
 	}
-	
-	
+
+		
 
 }

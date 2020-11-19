@@ -21,6 +21,10 @@ public class DaniosPerdidas {
 	@SequenceGenerator(sequenceName = "perdidas_seq", allocationSize = 1, name = "PER_SEQ")
 	private Long id;
 
+	//GANADO
+	@Column(name = "Is_Ganado")
+	private String isGanado;
+	
 	@Column(name = "Cantidad_Vacuno")
 	private String cantidadVacuno;
 
@@ -39,6 +43,10 @@ public class DaniosPerdidas {
 	@Column(name = "Cantidad_Avicola")
 	private String CantidadAvicola;
 
+	//AGRICULTURA
+	@Column(name = "Is_Agricultura")
+	private String isAgricultura;
+	
 	@Column(name = "Is_Maiz")
 	private String isMaiz;
 
@@ -54,8 +62,8 @@ public class DaniosPerdidas {
 	@Column(name = "Is_Cacao")
 	private String isCacao;
 
-	@Column(name = "Is_Coco")
-	private String isCoco;
+	@Column(name = "Is_Platano")
+	private String isPlatano;
 
 	@Column(name = "Is_Cana")
 	private String isCana;
@@ -65,10 +73,38 @@ public class DaniosPerdidas {
 
 	@Column(name = "Cultivo_Otro")
 	private String CultivoOtro;
+	
+	@Column(name = "Superficie_Maiz")
+	private String supMaiz;
+	
+	@Column(name = "Superficie_Frijol")
+	private String supFrijol;
+	
+	@Column(name = "Superficie_Platano")
+	private String supPlatano;
+	
+	@Column(name = "Superficie_Arroz")
+	private String supArroz;
+	
+	@Column(name = "Superficie_Cacao")
+	private String supCacao;
+	
+	@Column(name = "Superficie_Cana")
+	private String supCana;
+	
+	@Column(name = "Superficie_Sorgo")
+	private String supSorgo;
+	
+	@Column(name = "Superficie_Citricos")
+	private String supCitricos;
+	
+	@Column(name = "Superficie_Otro")
+	private String supOtro;
 
-	@Column(name = "Cultivo_Superficie")
-	private String CultivoSuperficie;
-
+	//MOVILIARIO
+	@Column(name = "Is_Moviliario")
+	private String isMoviliario;
+	
 	@Column(name = "Is_Colchon")
 	private String isColchon;
 
@@ -105,27 +141,23 @@ public class DaniosPerdidas {
 	@Column(name = "Otros_Mobiliario")
 	private String otrosMobiliario;
 
-	@Column(name = "Is_Dano_Parcial")
-	private String danoParcial;
+	//VIVIENDA
+	@Column(name = "Is_Vivienda")
+	private String isVivienda;
+	
+	@Column(name = "Material_Muro")
+	private String materialMuro;
 
-	@Column(name = "Is_Dano_Total")
-	private String danoTotal;
+	@Column(name = "Material_Techo")
+	private String materialTecho;
 
-	@Column(name = "Is_Adobe")
-	private String isAdobe;
+	@Column(name = "Danos_Vivienda")
+	private String danosVivienda;
 
-	@Column(name = "Is_Cemento")
-	private String isCemento;
-
-	@Column(name = "Is_Ladrillo")
-	private String isladrillo;
-
-	@Column(name = "Is_Madera")
-	private String isMadera;
-
-	@Column(name = "Otros_Material")
-	private String otrosMaterial;
-
+	//SERVICIOS
+	@Column(name = "Is_Servicios")
+	private String isServicios;
+	
 	@Column(name = "Is_Energia_Electrica")
 	private String isenergiaElectrica;
 
@@ -144,6 +176,9 @@ public class DaniosPerdidas {
 	@Column(name = "Is_Telefono")
 	private String isTelefono;
 
+	@Column(name = "Is_Internet")
+	private String isInternet;
+	
 	@Column(name = "Otros_Servicios")
 	private String otrosServicios;
 
@@ -157,6 +192,14 @@ public class DaniosPerdidas {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public String getIsGanado() {
+		return isGanado;
+	}
+
+	public void setIsGanado(String isGanado) {
+		this.isGanado = isGanado;
 	}
 
 	public String getCantidadVacuno() {
@@ -207,6 +250,14 @@ public class DaniosPerdidas {
 		CantidadAvicola = cantidadAvicola;
 	}
 
+	public String getIsAgricultura() {
+		return isAgricultura;
+	}
+
+	public void setIsAgricultura(String isAgricultura) {
+		this.isAgricultura = isAgricultura;
+	}
+
 	public String getIsMaiz() {
 		return isMaiz;
 	}
@@ -247,12 +298,12 @@ public class DaniosPerdidas {
 		this.isCacao = isCacao;
 	}
 
-	public String getIsCoco() {
-		return isCoco;
+	public String getIsPlatano() {
+		return isPlatano;
 	}
 
-	public void setIsCoco(String isCoco) {
-		this.isCoco = isCoco;
+	public void setIsPlatano(String isPlatano) {
+		this.isPlatano = isPlatano;
 	}
 
 	public String getIsCana() {
@@ -279,12 +330,84 @@ public class DaniosPerdidas {
 		CultivoOtro = cultivoOtro;
 	}
 
-	public String getCultivoSuperficie() {
-		return CultivoSuperficie;
+	public String getSupMaiz() {
+		return supMaiz;
 	}
 
-	public void setCultivoSuperficie(String cultivoSuperficie) {
-		CultivoSuperficie = cultivoSuperficie;
+	public void setSupMaiz(String supMaiz) {
+		this.supMaiz = supMaiz;
+	}
+
+	public String getSupFrijol() {
+		return supFrijol;
+	}
+
+	public void setSupFrijol(String supFrijol) {
+		this.supFrijol = supFrijol;
+	}
+
+	public String getSupPlatano() {
+		return supPlatano;
+	}
+
+	public void setSupPlatano(String supPlatano) {
+		this.supPlatano = supPlatano;
+	}
+
+	public String getSupArroz() {
+		return supArroz;
+	}
+
+	public void setSupArroz(String supArroz) {
+		this.supArroz = supArroz;
+	}
+
+	public String getSupCacao() {
+		return supCacao;
+	}
+
+	public void setSupCacao(String supCacao) {
+		this.supCacao = supCacao;
+	}
+
+	public String getSupCana() {
+		return supCana;
+	}
+
+	public void setSupCana(String supCana) {
+		this.supCana = supCana;
+	}
+
+	public String getSupSorgo() {
+		return supSorgo;
+	}
+
+	public void setSupSorgo(String supSorgo) {
+		this.supSorgo = supSorgo;
+	}
+
+	public String getSupCitricos() {
+		return supCitricos;
+	}
+
+	public void setSupCitricos(String supCitricos) {
+		this.supCitricos = supCitricos;
+	}
+
+	public String getSupOtro() {
+		return supOtro;
+	}
+
+	public void setSupOtro(String supOtro) {
+		this.supOtro = supOtro;
+	}
+
+	public String getIsMoviliario() {
+		return isMoviliario;
+	}
+
+	public void setIsMoviliario(String isMoviliario) {
+		this.isMoviliario = isMoviliario;
 	}
 
 	public String getIsColchon() {
@@ -383,60 +506,44 @@ public class DaniosPerdidas {
 		this.otrosMobiliario = otrosMobiliario;
 	}
 
-	public String getDanoParcial() {
-		return danoParcial;
+	public String getIsVivienda() {
+		return isVivienda;
 	}
 
-	public void setDanoParcial(String danoParcial) {
-		this.danoParcial = danoParcial;
+	public void setIsVivienda(String isVivienda) {
+		this.isVivienda = isVivienda;
 	}
 
-	public String getDanoTotal() {
-		return danoTotal;
+	public String getMaterialMuro() {
+		return materialMuro;
 	}
 
-	public void setDanoTotal(String danoTotal) {
-		this.danoTotal = danoTotal;
+	public void setMaterialMuro(String materialMuro) {
+		this.materialMuro = materialMuro;
 	}
 
-	public String getIsAdobe() {
-		return isAdobe;
+	public String getMaterialTecho() {
+		return materialTecho;
 	}
 
-	public void setIsAdobe(String isAdobe) {
-		this.isAdobe = isAdobe;
+	public void setMaterialTecho(String materialTecho) {
+		this.materialTecho = materialTecho;
 	}
 
-	public String getIsCemento() {
-		return isCemento;
+	public String getDanosVivienda() {
+		return danosVivienda;
 	}
 
-	public void setIsCemento(String isCemento) {
-		this.isCemento = isCemento;
+	public void setDanosVivienda(String danosVivienda) {
+		this.danosVivienda = danosVivienda;
 	}
 
-	public String getIsladrillo() {
-		return isladrillo;
+	public String getIsServicios() {
+		return isServicios;
 	}
 
-	public void setIsladrillo(String isladrillo) {
-		this.isladrillo = isladrillo;
-	}
-
-	public String getIsMadera() {
-		return isMadera;
-	}
-
-	public void setIsMadera(String isMadera) {
-		this.isMadera = isMadera;
-	}
-
-	public String getOtrosMaterial() {
-		return otrosMaterial;
-	}
-
-	public void setOtrosMaterial(String otrosMaterial) {
-		this.otrosMaterial = otrosMaterial;
+	public void setIsServicios(String isServicios) {
+		this.isServicios = isServicios;
 	}
 
 	public String getIsenergiaElectrica() {
@@ -487,6 +594,14 @@ public class DaniosPerdidas {
 		this.isTelefono = isTelefono;
 	}
 
+	public String getIsInternet() {
+		return isInternet;
+	}
+
+	public void setIsInternet(String isInternet) {
+		this.isInternet = isInternet;
+	}
+
 	public String getOtrosServicios() {
 		return otrosServicios;
 	}
@@ -503,4 +618,5 @@ public class DaniosPerdidas {
 		this.solicitud = solicitud;
 	}
 
+	
 }
