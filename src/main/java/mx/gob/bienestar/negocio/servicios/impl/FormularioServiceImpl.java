@@ -121,23 +121,23 @@ public class FormularioServiceImpl extends ServiceMaster implements IFormularioS
 			solicitud.setDatosPersona(null);
 		}
 
-		if (solicitud.getAuxRecibirApoyo() != null && solicitud.getAuxRecibirApoyo().getNombre() != null) {
-			solicitud.getAuxRecibirApoyo().setSolicitud(solicitud);
-		} else {
-			solicitud.setAuxRecibirApoyo(null);
-		}
-
-		if (solicitud.getBanco() != null && solicitud.getBanco().getBanco() != null) {
-			solicitud.getBanco().setSolicitud(solicitud);
-		} else {
-			solicitud.setBanco(null);
-		}
-
-		if (solicitud.getApoyo() != null) {
-			solicitud.getApoyo().setSolicitud(solicitud);
-		} else {
-			solicitud.setApoyo(null);
-		}
+//		if (solicitud.getAuxRecibirApoyo() != null && solicitud.getAuxRecibirApoyo().getNombre() != null) {
+//			solicitud.getAuxRecibirApoyo().setSolicitud(solicitud);
+//		} else {
+//			solicitud.setAuxRecibirApoyo(null);
+//		}
+//
+//		if (solicitud.getBanco() != null && solicitud.getBanco().getBanco() != null) {
+//			solicitud.getBanco().setSolicitud(solicitud);
+//		} else {
+//			solicitud.setBanco(null);
+//		}
+//
+//		if (solicitud.getApoyo() != null) {
+//			solicitud.getApoyo().setSolicitud(solicitud);
+//		} else {
+//			solicitud.setApoyo(null);
+//		}
 
 		if (solicitud.getIncorporaciones() != null) {
 

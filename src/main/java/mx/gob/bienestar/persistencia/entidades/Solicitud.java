@@ -43,14 +43,14 @@ public class Solicitud {
 	@OneToOne(mappedBy = "solicitud", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private DatosPersona datosPersona = new DatosPersona();
 
-	@OneToOne(mappedBy = "solicitud", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	private AuxRecibirApoyo auxRecibirApoyo = new AuxRecibirApoyo();
-
-	@OneToOne(mappedBy = "solicitud", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	private Banco banco = new Banco();
-
-	@OneToOne(mappedBy = "solicitud", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	private Apoyo apoyo = new Apoyo();
+//	@OneToOne(mappedBy = "solicitud", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+//	private AuxRecibirApoyo auxRecibirApoyo = new AuxRecibirApoyo();
+//
+//	@OneToOne(mappedBy = "solicitud", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+//	private Banco banco = new Banco();
+//
+//	@OneToOne(mappedBy = "solicitud", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+//	private Apoyo apoyo = new Apoyo();
 
 	@OneToMany(mappedBy = "solicitud", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<Incorporacion> incorporaciones = new ArrayList<Incorporacion>();
@@ -119,29 +119,29 @@ public class Solicitud {
 		this.datosPersona = datosPersona;
 	}
 
-	public AuxRecibirApoyo getAuxRecibirApoyo() {
-		return auxRecibirApoyo;
-	}
-
-	public void setAuxRecibirApoyo(AuxRecibirApoyo auxRecibirApoyo) {
-		this.auxRecibirApoyo = auxRecibirApoyo;
-	}
-
-	public Banco getBanco() {
-		return banco;
-	}
-
-	public void setBanco(Banco banco) {
-		this.banco = banco;
-	}
-
-	public Apoyo getApoyo() {
-		return apoyo;
-	}
-
-	public void setApoyo(Apoyo apoyo) {
-		this.apoyo = apoyo;
-	}
+//	public AuxRecibirApoyo getAuxRecibirApoyo() {
+//		return auxRecibirApoyo;
+//	}
+//
+//	public void setAuxRecibirApoyo(AuxRecibirApoyo auxRecibirApoyo) {
+//		this.auxRecibirApoyo = auxRecibirApoyo;
+//	}
+//
+//	public Banco getBanco() {
+//		return banco;
+//	}
+//
+//	public void setBanco(Banco banco) {
+//		this.banco = banco;
+//	}
+//
+//	public Apoyo getApoyo() {
+//		return apoyo;
+//	}
+//
+//	public void setApoyo(Apoyo apoyo) {
+//		this.apoyo = apoyo;
+//	}
 
 	public List<Incorporacion> getIncorporaciones() {
 		return incorporaciones;

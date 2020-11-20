@@ -4,9 +4,9 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import mx.gob.bienestar.negocio.vo.ApoyoVO;
-import mx.gob.bienestar.negocio.vo.AuxRecibirApoyoVO;
-import mx.gob.bienestar.negocio.vo.BancoVO;
+//import mx.gob.bienestar.negocio.vo.ApoyoVO;
+//import mx.gob.bienestar.negocio.vo.AuxRecibirApoyoVO;
+//import mx.gob.bienestar.negocio.vo.BancoVO;
 import mx.gob.bienestar.negocio.vo.DatosPersonaVO;
 import mx.gob.bienestar.negocio.vo.ElaboracionVO;
 import mx.gob.bienestar.negocio.vo.IncorporacionVO;
@@ -30,11 +30,11 @@ public class SolicitudDTO implements Serializable {
 
 	private DatosPersonaVO datosPersona = new DatosPersonaVO();
 
-	private AuxRecibirApoyoVO auxRecibirApoyo = new AuxRecibirApoyoVO();
-
-	private BancoVO banco = new BancoVO();
-
-	private ApoyoVO apoyo = new ApoyoVO();
+//	private AuxRecibirApoyoVO auxRecibirApoyo = new AuxRecibirApoyoVO();
+//
+//	private BancoVO banco = new BancoVO();
+//
+//	private ApoyoVO apoyo = new ApoyoVO();
 
 	private List<IncorporacionVO> incorporaciones = new ArrayList<IncorporacionVO>();
 
@@ -114,29 +114,29 @@ public class SolicitudDTO implements Serializable {
 		this.incorporaciones = incorporaciones;
 	}
 
-	public AuxRecibirApoyoVO getAuxRecibirApoyo() {
-		return auxRecibirApoyo;
-	}
-
-	public void setAuxRecibirApoyo(AuxRecibirApoyoVO auxRecibirApoyo) {
-		this.auxRecibirApoyo = auxRecibirApoyo;
-	}
-
-	public BancoVO getBanco() {
-		return banco;
-	}
-
-	public void setBanco(BancoVO banco) {
-		this.banco = banco;
-	}
-
-	public ApoyoVO getApoyo() {
-		return apoyo;
-	}
-
-	public void setApoyo(ApoyoVO apoyo) {
-		this.apoyo = apoyo;
-	}
+//	public AuxRecibirApoyoVO getAuxRecibirApoyo() {
+//		return auxRecibirApoyo;
+//	}
+//
+//	public void setAuxRecibirApoyo(AuxRecibirApoyoVO auxRecibirApoyo) {
+//		this.auxRecibirApoyo = auxRecibirApoyo;
+//	}
+//
+//	public BancoVO getBanco() {
+//		return banco;
+//	}
+//
+//	public void setBanco(BancoVO banco) {
+//		this.banco = banco;
+//	}
+//
+//	public ApoyoVO getApoyo() {
+//		return apoyo;
+//	}
+//
+//	public void setApoyo(ApoyoVO apoyo) {
+//		this.apoyo = apoyo;
+//	}
 
 	public ElaboracionVO getElaboracion() {
 		return elaboracion;
@@ -146,13 +146,21 @@ public class SolicitudDTO implements Serializable {
 		this.elaboracion = elaboracion;
 	}
 
+//	@Override
+//	public String toString() {
+//		return "SolicitudDTO [id=" + id + ", tipoSolicitud=" + tipoSolicitud + ", fecha=" + fecha + ", firmaSolicitud="
+//				+ firmaSolicitud + ", firmaCompromisoAuxiliar=" + firmaCompromisoAuxiliar + ", datosPersona="
+//				+ datosPersona + ", auxRecibirApoyo=" + auxRecibirApoyo + ", banco=" + banco + ", apoyo=" + apoyo
+//				+ ", incorporaciones=" + incorporaciones + ", perdidas=" + perdidas + ", elaboracion=" + elaboracion
+//				+ "]";
+//	}
 	@Override
 	public String toString() {
 		return "SolicitudDTO [id=" + id + ", tipoSolicitud=" + tipoSolicitud + ", fecha=" + fecha + ", firmaSolicitud="
 				+ firmaSolicitud + ", firmaCompromisoAuxiliar=" + firmaCompromisoAuxiliar + ", datosPersona="
-				+ datosPersona + ", auxRecibirApoyo=" + auxRecibirApoyo + ", banco=" + banco + ", apoyo=" + apoyo
-				+ ", incorporaciones=" + incorporaciones + ", perdidas=" + perdidas + ", elaboracion=" + elaboracion
+				+ datosPersona + ", incorporaciones=" + incorporaciones + ", perdidas=" + perdidas + ", elaboracion=" + elaboracion
 				+ "]";
 	}
+
 
 }
